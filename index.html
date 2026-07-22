@@ -1,804 +1,1249 @@
-/* Color Palette */
-:root {
-    /* Logo Colors */
-    --light-gray: #f4f3f3;
-    --dark-gray: #3b3937;
-    --light-red: #f2d2d3;
-    --light-crimson: #f1aab9;
-    --gray-orange: #a68e7d;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hope's Holistic Haven - Your trusted partner for holistic wellness, natural remedies, and mindful living.">
+    <meta name="keywords" content="holistic health, wellness, natural remedies, mindfulness, holistic haven">
+    <title>Hope's Holistic Haven - Wellness & Natural Living</title>
     
-    /* Flyer Colors */
-    --light-orange: #f7f2f0;
-    --light-red-flyer: #eed4d2;
-    --dark-gray-flyer: #3c3b3b;
-    --gray-flyer: #978f8d;
-    --pastel-red: #e6a9af;
-    --peach: #ffbd59;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--dark-gray-flyer);
-    line-height: 1.6;
-    background-color: var(--light-gray);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ==================== NAVIGATION ==================== */
-.navbar {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 3px solid var(--pastel-red);
-}
-
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-    color: var(--dark-gray-flyer);
-    font-weight: 700;
-}
-
-.logo .tagline {
-    font-size: 0.85rem;
-    color: var(--pastel-red);
-    font-style: italic;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark-gray-flyer);
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.nav-links a:hover {
-    color: var(--pastel-red);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--pastel-red);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.donate-btn {
-    background: var(--pastel-red) !important;
-    color: white !important;
-    padding: 0.7rem 1.5rem !important;
-    border-radius: 25px;
-    transition: background 0.3s ease;
-}
-
-.donate-btn:hover {
-    background: var(--light-crimson) !important;
-}
-
-.donate-btn::after {
-    display: none !important;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--dark-gray-flyer);
-    margin: 5px 0;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-/* ==================== HERO SECTION ==================== */
-.hero {
-    background: linear-gradient(135deg, var(--light-orange) 0%, var(--light-red-flyer) 100%);
-    padding: 100px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 189, 89, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    color: var(--dark-gray-flyer);
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.hero h1 span {
-    color: var(--pastel-red);
-}
-
-.hero p {
-    font-size: 1.3rem;
-    color: var(--dark-gray-flyer);
-    margin-bottom: 0.5rem;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--gray-flyer);
-    max-width: 600px;
-    margin: 1.5rem auto;
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--pastel-red);
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-top: 1.5rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(230, 169, 175, 0.3);
-}
-
-.cta-button:hover {
-    background: var(--light-crimson);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(230, 169, 175, 0.4);
-}
-
-/* ==================== ABOUT SECTION ==================== */
-.about {
-    padding: 80px 20px;
-    background: white;
-}
-
-.about h2,
-.services h2,
-.testimonials h2,
-.store h2,
-.blog h2,
-.contact h2,
-.donate h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--dark-gray-flyer);
-    position: relative;
-    padding-bottom: 1.5rem;
-}
-
-.about h2::after,
-.services h2::after,
-.testimonials h2::after,
-.store h2::after,
-.blog h2::after,
-.contact h2::after,
-.donate h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--pastel-red), transparent);
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    color: var(--gray-flyer);
-    line-height: 1.8;
-}
-
-.about-text h3 {
-    color: var(--dark-gray-flyer);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.values-grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.value-item {
-    background: linear-gradient(135deg, rgba(230, 169, 175, 0.1), rgba(255, 189, 89, 0.1));
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    border-left: 4px solid var(--pastel-red);
-}
-
-.value-item:hover {
-    transform: translateX(10px);
-}
-
-.value-item i {
-    font-size: 2rem;
-    color: var(--pastel-red);
-    margin-bottom: 1rem;
-}
-
-.value-item h4 {
-    color: var(--dark-gray-flyer);
-    margin-bottom: 0.5rem;
-}
-
-.value-item p {
-    color: var(--gray-flyer);
-    font-size: 0.95rem;
-}
-
-/* ==================== SERVICES SECTION ==================== */
-.services {
-    padding: 80px 20px;
-    background: var(--light-orange);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: white;
-    padding: 2.5rem 2rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--pastel-red);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(230, 169, 175, 0.2);
-}
-
-.service-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, var(--light-red-flyer), var(--light-orange));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 2rem;
-    color: white;
-}
-
-.service-card h3 {
-    color: var(--dark-gray-flyer);
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-}
-
-.service-card p {
-    color: var(--gray-flyer);
-    line-height: 1.6;
-}
-
-/* ==================== TESTIMONIALS SECTION ==================== */
-.testimonials {
-    padding: 80px 20px;
-    background: white;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background: linear-gradient(135deg, var(--light-red-flyer), var(--light-orange));
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.stars {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.stars i {
-    color: var(--peach);
-    font-size: 1rem;
-}
-
-.testimonial-text {
-    color: var(--dark-gray-flyer);
-    font-style: italic;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.testimonial-author {
-    color: var(--gray-flyer);
-    font-weight: 600;
-}
-
-/* ==================== STORE SECTION ==================== */
-.store {
-    padding: 80px 20px;
-    background: var(--light-orange);
-}
-
-.store-intro,
-.blog-intro {
-    text-align: center;
-    color: var(--gray-flyer);
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-}
-
-.store-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.store-item {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.store-item:hover {
-    transform: scale(1.05);
-}
-
-.store-image {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, var(--pastel-red), var(--peach));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 2.5rem;
-    color: white;
-}
-
-.store-item h3 {
-    color: var(--dark-gray-flyer);
-    margin-bottom: 0.5rem;
-}
-
-.store-item p {
-    color: var(--gray-flyer);
-    font-size: 0.95rem;
-}
-
-.store .cta-button {
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-}
-
-/* ==================== BLOG SECTION ==================== */
-.blog {
-    padding: 80px 20px;
-    background: white;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.blog-post {
-    background: linear-gradient(135deg, var(--light-red-flyer), var(--light-orange));
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.blog-image {
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(135deg, var(--pastel-red), var(--peach));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: white;
-}
-
-.blog-post h3 {
-    color: var(--dark-gray-flyer);
-    margin: 1.5rem 1.5rem 1rem;
-}
-
-.blog-post p {
-    color: var(--gray-flyer);
-    margin: 0 1.5rem;
-    font-size: 0.95rem;
-}
-
-.read-more {
-    display: inline-block;
-    color: var(--pastel-red);
-    text-decoration: none;
-    font-weight: 600;
-    margin: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.read-more:hover {
-    color: var(--light-crimson);
-}
-
-/* ==================== CONTACT SECTION ==================== */
-.contact {
-    padding: 80px 20px;
-    background: var(--light-orange);
-}
-
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin-top: 3rem;
-}
-
-.contact-info h3 {
-    color: var(--dark-gray-flyer);
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-}
-
-.info-item {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.info-item i {
-    font-size: 1.5rem;
-    color: var(--pastel-red);
-    margin-top: 0.25rem;
-}
-
-.info-item h4 {
-    color: var(--dark-gray-flyer);
-    margin-bottom: 0.5rem;
-}
-
-.info-item p {
-    color: var(--gray-flyer);
-}
-
-.info-item a {
-    color: var(--pastel-red);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.info-item a:hover {
-    color: var(--light-crimson);
-}
-
-.social-links {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 2px solid var(--light-red-flyer);
-}
-
-.social-links h4 {
-    color: var(--dark-gray-flyer);
-    margin-bottom: 1rem;
-}
-
-.social-links a {
-    display: inline-flex;
-    width: 45px;
-    height: 45px;
-    background: var(--pastel-red);
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    margin-right: 1rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    background: var(--light-crimson);
-    transform: translateY(-3px);
-}
-
-/* Contact Form */
-.contact-form {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    color: var(--dark-gray-flyer);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    padding: 0.75rem;
-    border: 2px solid var(--light-red-flyer);
-    border-radius: 5px;
-    font-family: inherit;
-    color: var(--dark-gray-flyer);
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--pastel-red);
-}
-
-.submit-btn {
-    background: var(--pastel-red);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-
-.submit-btn:hover {
-    background: var(--light-crimson);
-    transform: translateY(-2px);
-}
-
-/* ==================== DONATE SECTION ==================== */
-.donate {
-    padding: 80px 20px;
-    background: white;
-    text-align: center;
-}
-
-.donate p {
-    color: var(--gray-flyer);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
-.donate-options {
-    margin: 2rem 0;
-}
-
-.donate-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: var(--pastel-red);
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(230, 169, 175, 0.3);
-}
-
-.donate-link:hover {
-    background: var(--light-crimson);
-    transform: scale(1.05);
-}
-
-.donate-message {
-    color: var(--gray-flyer);
-    margin-top: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.95rem;
-}
-
-/* ==================== FOOTER ==================== */
-.footer {
-    background: var(--dark-gray-flyer);
-    color: var(--light-gray);
-    text-align: center;
-    padding: 2rem;
-}
-
-.footer p {
-    margin: 0.5rem 0;
-}
-
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 1rem;
-        gap: 1rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .services-grid,
-    .testimonials-grid,
-    .store-grid,
-    .blog-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about h2,
-    .services h2,
-    .testimonials h2,
-    .store h2,
-    .blog h2,
-    .contact h2,
-    .donate h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo h1 {
-        font-size: 1.3rem;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero {
-        padding: 60px 20px;
-    }
-
-    .hero-subtitle {
-        font-size: 0.95rem;
-    }
-
-    .cta-button {
-        padding: 0.75rem 2rem;
-    }
-
-    .about h2,
-    .services h2,
-    .testimonials h2,
-    .store h2,
-    .blog h2,
-    .contact h2,
-    .donate h2 {
-        font-size: 1.5rem;
-    }
-
-    .service-card,
-    .testimonial-card,
-    .store-item,
-    .blog-post {
-        padding: 1.5rem;
-    }
-
-    .social-links a {
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
-    }
-}
-
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Color Palette */
+        :root {
+            /* Logo Colors */
+            --light-gray: #f4f3f3;
+            --dark-gray: #3b3937;
+            --light-red: #f2d2d3;
+            --light-crimson: #f1aab9;
+            --gray-orange: #a68e7d;
+            
+            /* Flyer Colors */
+            --light-orange: #f7f2f0;
+            --light-red-flyer: #eed4d2;
+            --dark-gray-flyer: #3c3b3b;
+            --gray-flyer: #978f8d;
+            --pastel-red: #e6a9af;
+            --peach: #ffbd59;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-gray-flyer);
+            line-height: 1.6;
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--pastel-red);
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--dark-gray-flyer);
+            font-weight: 700;
+        }
+
+        .logo .tagline {
+            font-size: 0.85rem;
+            color: var(--pastel-red);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray-flyer);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--pastel-red);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pastel-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .donate-btn {
+            background: var(--pastel-red) !important;
+            color: white !important;
+            padding: 0.7rem 1.5rem !important;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background: var(--light-crimson) !important;
+        }
+
+        .donate-btn::after {
+            display: none !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark-gray-flyer);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            background: linear-gradient(135deg, var(--light-orange) 0%, var(--light-red-flyer) 100%);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 189, 89, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--dark-gray-flyer);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--pastel-red);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--dark-gray-flyer);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-flyer);
+            max-width: 600px;
+            margin: 1.5rem auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--pastel-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(230, 169, 175, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--light-crimson);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(230, 169, 175, 0.4);
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .about h2,
+        .services h2,
+        .testimonials h2,
+        .store h2,
+        .blog h2,
+        .contact h2,
+        .donate h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-gray-flyer);
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .about h2::after,
+        .services h2::after,
+        .testimonials h2::after,
+        .store h2::after,
+        .blog h2::after,
+        .contact h2::after,
+        .donate h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--pastel-red), transparent);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-flyer);
+            line-height: 1.8;
+        }
+
+        .about-text h3 {
+            color: var(--dark-gray-flyer);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .value-item {
+            background: linear-gradient(135deg, rgba(230, 169, 175, 0.1), rgba(255, 189, 89, 0.1));
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--pastel-red);
+        }
+
+        .value-item:hover {
+            transform: translateX(10px);
+        }
+
+        .value-item i {
+            font-size: 2rem;
+            color: var(--pastel-red);
+            margin-bottom: 1rem;
+        }
+
+        .value-item h4 {
+            color: var(--dark-gray-flyer);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            color: var(--gray-flyer);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services {
+            padding: 80px 20px;
+            background: var(--light-orange);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--pastel-red);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(230, 169, 175, 0.2);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--light-red-flyer), var(--light-orange));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            color: var(--dark-gray-flyer);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--gray-flyer);
+            line-height: 1.6;
+        }
+
+        /* ==================== TESTIMONIALS SECTION ==================== */
+        .testimonials {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, var(--light-red-flyer), var(--light-orange));
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars i {
+            color: var(--peach);
+            font-size: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--dark-gray-flyer);
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            color: var(--gray-flyer);
+            font-weight: 600;
+        }
+
+        /* ==================== STORE SECTION ==================== */
+        .store {
+            padding: 80px 20px;
+            background: var(--light-orange);
+        }
+
+        .store-intro,
+        .blog-intro {
+            text-align: center;
+            color: var(--gray-flyer);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .store-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .store-item:hover {
+            transform: scale(1.05);
+        }
+
+        .store-image {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--pastel-red), var(--peach));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .store-item h3 {
+            color: var(--dark-gray-flyer);
+            margin-bottom: 0.5rem;
+        }
+
+        .store-item p {
+            color: var(--gray-flyer);
+            font-size: 0.95rem;
+        }
+
+        .store .cta-button {
+            display: block;
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+        /* ==================== BLOG SECTION ==================== */
+        .blog {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background: linear-gradient(135deg, var(--light-red-flyer), var(--light-orange));
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--pastel-red), var(--peach));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .blog-post h3 {
+            color: var(--dark-gray-flyer);
+            margin: 1.5rem 1.5rem 1rem;
+        }
+
+        .blog-post p {
+            color: var(--gray-flyer);
+            margin: 0 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--pastel-red);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--light-crimson);
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 80px 20px;
+            background: var(--light-orange);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--dark-gray-flyer);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--pastel-red);
+            margin-top: 0.25rem;
+        }
+
+        .info-item h4 {
+            color: var(--dark-gray-flyer);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: var(--gray-flyer);
+        }
+
+        .info-item a {
+            color: var(--pastel-red);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: var(--light-crimson);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--light-red-flyer);
+        }
+
+        .social-links h4 {
+            color: var(--dark-gray-flyer);
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 45px;
+            height: 45px;
+            background: var(--pastel-red);
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--light-crimson);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--dark-gray-flyer);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.75rem;
+            border: 2px solid var(--light-red-flyer);
+            border-radius: 5px;
+            font-family: inherit;
+            color: var(--dark-gray-flyer);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--pastel-red);
+        }
+
+        .submit-btn {
+            background: var(--pastel-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--light-crimson);
+            transform: translateY(-2px);
+        }
+
+        /* ==================== DONATE SECTION ==================== */
+        .donate {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .donate p {
+            color: var(--gray-flyer);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .donate-options {
+            margin: 2rem 0;
+        }
+
+        .donate-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--pastel-red);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(230, 169, 175, 0.3);
+        }
+
+        .donate-link:hover {
+            background: var(--light-crimson);
+            transform: scale(1.05);
+        }
+
+        .donate-message {
+            color: var(--gray-flyer);
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.95rem;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--dark-gray-flyer);
+            color: var(--light-gray);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1rem;
+                gap: 1rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .store-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about h2,
+            .services h2,
+            .testimonials h2,
+            .store h2,
+            .blog h2,
+            .contact h2,
+            .donate h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .cta-button {
+                padding: 0.75rem 2rem;
+            }
+
+            .about h2,
+            .services h2,
+            .testimonials h2,
+            .store h2,
+            .blog h2,
+            .contact h2,
+            .donate h2 {
+                font-size: 1.5rem;
+            }
+
+            .service-card,
+            .testimonial-card,
+            .store-item,
+            .blog-post {
+                padding: 1.5rem;
+            }
+
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>🌿 Hope's Holistic Haven</h1>
+                    <p class="tagline">Wellness & Natural Living</p>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#store">Store</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#donate" class="donate-btn">Donate</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to <span>Hope's Holistic Haven</span></h1>
+                <p>Your Journey to Wellness Starts Here</p>
+                <p class="hero-subtitle">Discover natural remedies, mindfulness practices, and holistic solutions for a healthier, more balanced life. Join our community of wellness enthusiasts.</p>
+                <a href="#services" class="cta-button">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Hope's Holistic Haven, your trusted partner in holistic wellness and natural living. With over a decade of experience in alternative medicine and wellness coaching, we are dedicated to helping you achieve optimal health through natural and proven methods.</p>
+                    <h3>Our Mission</h3>
+                    <p>Our mission is to empower individuals to take control of their health and wellbeing through holistic approaches, natural remedies, and mindful living practices. We believe in treating the whole person—mind, body, and spirit.</p>
+                    <h3>Our Vision</h3>
+                    <p>We envision a world where everyone has access to quality holistic healthcare and wellness resources, enabling them to live vibrant, healthy, and fulfilling lives.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Natural</h4>
+                        <p>We prioritize natural, organic solutions that work in harmony with your body's natural healing abilities.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-heart"></i>
+                        <h4>Compassionate</h4>
+                        <p>Every recommendation is made with genuine care for your wellbeing and overall health journey.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Evidence-Based</h4>
+                        <p>Our practices are grounded in scientific research and traditional wisdom combined.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>Community</h4>
+                        <p>We believe in the power of community support on the journey to wellness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Holistic Coaching</h3>
+                    <p>Personalized wellness coaching sessions to help you achieve your health goals through natural methods and lifestyle changes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Nutrition Counseling</h3>
+                    <p>Expert nutrition guidance tailored to your specific needs, focusing on whole foods and plant-based nutrition.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-om"></i>
+                    </div>
+                    <h3>Mindfulness Workshops</h3>
+                    <p>Guided meditation and mindfulness sessions to reduce stress, improve mental clarity, and enhance overall wellbeing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <h3>Herbal Remedies</h3>
+                    <p>Natural herbal solutions and supplement recommendations for common health concerns and wellness support.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Sleep Optimization</h3>
+                    <p>Comprehensive approach to improving sleep quality through natural remedies, lifestyle adjustments, and sleep hygiene practices.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Wellness Planning</h3>
+                    <p>Customized wellness plans designed to fit your lifestyle and help you achieve long-term health goals sustainably.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Hope's Holistic Haven completely transformed my approach to health. I feel more energized and balanced than ever before!"</p>
+                    <p class="testimonial-author">— Sarah Johnson</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The nutrition counseling was exactly what I needed. The personalized approach really made the difference in my wellness journey."</p>
+                    <p class="testimonial-author">— Michael Chen</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I've tried many wellness programs, but Hope's approach is unique. Highly recommend to anyone seeking real, sustainable health improvements!"</p>
+                    <p class="testimonial-author">— Emily Rodriguez</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The mindfulness workshops have been life-changing. I finally found peace and clarity I've been searching for."</p>
+                    <p class="testimonial-author">— David Thompson</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STORE SECTION ==================== -->
+    <section class="store" id="store">
+        <div class="container">
+            <h2>Wellness Store</h2>
+            <p class="store-intro">Discover our carefully curated selection of natural products, supplements, and wellness essentials for your holistic health journey.</p>
+            <div class="store-grid">
+                <div class="store-item">
+                    <div class="store-image">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Organic Tea Blends</h3>
+                    <p>Premium selection of herbal teas for relaxation, energy, and immune support. $12.99 each</p>
+                </div>
+                <div class="store-item">
+                    <div class="store-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Vitamin Supplements</h3>
+                    <p>Natural vitamin and mineral supplements to support your daily wellness routine. $19.99 each</p>
+                </div>
+                <div class="store-item">
+                    <div class="store-image">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Essential Oils</h3>
+                    <p>Therapeutic-grade essential oils for aromatherapy and natural wellness. $24.99 each</p>
+                </div>
+                <div class="store-item">
+                    <div class="store-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Wellness Guides</h3>
+                    <p>Comprehensive e-books and guides for holistic health, nutrition, and mindfulness. $9.99 each</p>
+                </div>
+                <div class="store-item">
+                    <div class="store-image">
+                        <i class="fas fa-jar"></i>
+                    </div>
+                    <h3>Superfoods</h3>
+                    <p>Organic superfood powders and mixes rich in nutrients and antioxidants. $14.99 each</p>
+                </div>
+                <div class="store-item">
+                    <div class="store-image">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Wellness Bundles</h3>
+                    <p>Curated bundles combining multiple products for comprehensive wellness support. $49.99 each</p>
+                </div>
+            </div>
+            <a href="https://shop.hopesholistichaven.com" class="cta-button" target="_blank">Visit Store</a>
+        </div>
+    </section>
+
+    <!-- ==================== BLOG SECTION ==================== -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>Wellness Blog</h2>
+            <p class="blog-intro">Stay informed with our latest articles on holistic health, natural remedies, wellness tips, and mindful living practices.</p>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>5 Essential Herbs for Daily Wellness</h3>
+                    <p>Discover the most powerful medicinal herbs that you can easily incorporate into your daily routine for better health and vitality.</p>
+                    <a href="https://blog.hopesholistichaven.com/herbs" class="read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>The Science of Better Sleep</h3>
+                    <p>Learn proven techniques to improve sleep quality naturally, including sleep hygiene tips and herbal remedies for restful nights.</p>
+                    <a href="https://blog.hopesholistichaven.com/sleep" class="read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Plant-Based Nutrition Guide</h3>
+                    <p>Everything you need to know about transitioning to a plant-based diet and maintaining optimal nutrition naturally.</p>
+                    <a href="https://blog.hopesholistichaven.com/nutrition" class="read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <i class="fas fa-meditation"></i>
+                    </div>
+                    <h3>Mindfulness for Stress Relief</h3>
+                    <p>Master simple meditation and mindfulness techniques to reduce stress, anxiety, and find inner peace in your daily life.</p>
+                    <a href="https://blog.hopesholistichaven.com/mindfulness" class="read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Detox Your Body Naturally</h3>
+                    <p>Safe and effective ways to detoxify your body using natural methods, superfoods, and proven wellness practices.</p>
+                    <a href="https://blog.hopesholistichaven.com/detox" class="read-more">Read More →</a>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Heart Health Naturally</h3>
+                    <p>Natural ways to support cardiovascular health through diet, exercise, stress management, and herbal supplements.</p>
+                    <a href="https://blog.hopesholistichaven.com/heart-health" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Wellness Street, Health City, HC 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+1-555-123-4567">(555) 123-4567</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@hopesholistichaven.com">info@hopesholistichaven.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <a href="https://facebook.com/hopesholistichaven" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/hopesholistichaven" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/hopesholistichaven" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/hopesholistichaven" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="inquiry">General Inquiry</option>
+                            <option value="services">About Services</option>
+                            <option value="products">About Products</option>
+                            <option value="coaching">Wellness Coaching</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DONATE SECTION ==================== -->
+    <section class="donate" id="donate">
+        <div class="container">
+            <h2>Support Our Mission</h2>
+            <p>Your generous donations help us continue providing quality wellness resources, coaching, and support to our community. Together, we can make holistic health accessible to everyone.</p>
+            <div class="donate-options">
+                <a href="https://donate.hopesholistichaven.com" class="donate-link" target="_blank">
+                    <i class="fas fa-heart"></i>
+                    Donate Now
+                </a>
+            </div>
+            <p class="donate-message">Every contribution, no matter the size, makes a significant impact in helping us expand our services and reach more people on their wellness journey. Thank you for your support!</p>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Hope's Holistic Haven. All rights reserved.</p>
+            <p>Empowering wellness through holistic living and natural remedies.</p>
+            <p><a href="#" style="color: var(--pastel-red); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: var(--pastel-red); text-decoration: none;">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        navItems.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
