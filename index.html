@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hope's Holistic Haven - Your trusted partner for holistic wellness, natural remedies, and mindful living.">
-    <meta name="keywords" content="holistic health, wellness, natural remedies, mindfulness, holistic haven">
-    <title>Hope's Holistic Haven - Wellness & Natural Living</title>
-    
+
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="github.io/HHLogo.png">
     
     <style>
         /* ==================== COLOR PALETTE ==================== */
@@ -129,13 +123,13 @@
 
         /* ==================== HERO SECTION WITH FLOATING ELEMENTS ==================== */
         .hero {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #232323 0%, #111111 100%);
             color: white;
             padding: 80px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 700px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -161,15 +155,11 @@
             z-index: 1;
         }
 
-        .hero-content {
-            display: none;
-        }
-
         /* ==================== INTERACTIVE HEART WITH ICONS ==================== */
         .floating-heart-container {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -181,13 +171,14 @@
         }
 
         .heart-center {
-            font-size: 300px;
+            font-size: 800px;
             color: var(--accent-rose);
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 15px 50px rgba(200, 90, 84, 0.4));
+            filter: drop-shadow(0 20px 70px rgba(200, 90, 84, .45));
             line-height: 1;
+            transition: .4s ease;
         }
 
         .heart-wrapper:hover .heart-center {
@@ -219,8 +210,8 @@
 
         /* Position each icon around the heart */
         .floating-icon.icon-1 {
-            top: -160px;
-            left: 50%;
+            top: -170px;
+            left: 170%;
             transform: translateX(-50%) scale(0) translateY(20px);
             transition-delay: 0.1s;
         }
@@ -230,8 +221,8 @@
         }
 
         .floating-icon.icon-2 {
-            top: -80px;
-            right: -80px;
+            top: -170px;
+            right: -170px;
             transition-delay: 0.15s;
         }
 
@@ -241,8 +232,8 @@
         }
 
         .floating-icon.icon-3 {
-            top: -80px;
-            left: -80px;
+            top: -170px;
+            left: -170px;
             transition-delay: 0.2s;
         }
 
@@ -252,8 +243,8 @@
         }
 
         .floating-icon.icon-4 {
-            bottom: -80px;
-            right: -80px;
+            bottom: -170px;
+            right: -170px;
             transition-delay: 0.25s;
         }
 
@@ -263,8 +254,8 @@
         }
 
         .floating-icon.icon-5 {
-            bottom: -80px;
-            left: -80px;
+            bottom: -170px;
+            left: -170px;
             transition-delay: 0.3s;
         }
 
