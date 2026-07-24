@@ -193,7 +193,7 @@
             flex-wrap: wrap;
         }
 
-        /* ==================== FLOATING HEART & ICONS ==================== */
+        /* ==================== INTERACTIVE HEART WITH ICONS ==================== */
         .floating-heart-container {
             position: relative;
             width: 100%;
@@ -203,150 +203,127 @@
             justify-content: center;
         }
 
+        .heart-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+
         .heart-center {
-            font-size: 120px;
+            font-size: 150px;
             color: var(--accent-rose);
             position: relative;
             z-index: 2;
-            animation: heartBeat 1.5s ease-in-out infinite;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 10px 30px rgba(200, 90, 84, 0.3));
         }
 
-        @keyframes heartBeat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
+        .heart-wrapper:hover .heart-center {
+            transform: scale(1.15);
+            filter: drop-shadow(0 15px 40px rgba(200, 90, 84, 0.5));
         }
 
+        /* Floating icons that appear on hover */
         .floating-icon {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            background: white;
-            border-radius: 50%;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            color: var(--accent-rose);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            animation: float 6s ease-in-out infinite;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            transform: scale(0) translateY(20px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
         }
 
-        .floating-icon:nth-child(1) {
+        .heart-wrapper:hover .floating-icon {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* Position each icon around the heart */
+        .floating-icon.icon-1 {
+            top: -110px;
+            left: 50%;
+            transform: translateX(-50%) scale(0) translateY(20px);
+            transition-delay: 0.1s;
+        }
+
+        .heart-wrapper:hover .floating-icon.icon-1 {
+            transform: translateX(-50%) scale(1) translateY(0);
+        }
+
+        .floating-icon.icon-2 {
             top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation-delay: 0s;
+            right: -60px;
+            transition-delay: 0.15s;
         }
 
-        .floating-icon:nth-child(2) {
-            top: 40px;
-            right: 20px;
-            animation-delay: 0.5s;
+        .heart-wrapper:hover .floating-icon.icon-2 {
+            opacity: 1;
+            transform: scale(1) translateY(0);
         }
 
-        .floating-icon:nth-child(3) {
-            top: 40px;
-            left: 20px;
-            animation-delay: 1s;
+        .floating-icon.icon-3 {
+            top: -60px;
+            left: -60px;
+            transition-delay: 0.2s;
         }
 
-        .floating-icon:nth-child(4) {
-            bottom: 40px;
-            right: 40px;
-            animation-delay: 1.5s;
+        .heart-wrapper:hover .floating-icon.icon-3 {
+            opacity: 1;
+            transform: scale(1) translateY(0);
         }
 
-        .floating-icon:nth-child(5) {
-            bottom: 40px;
-            left: 40px;
-            animation-delay: 2s;
-        }
-
-        .floating-icon:nth-child(6) {
+        .floating-icon.icon-4 {
             bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation-delay: 2.5s;
+            right: -60px;
+            transition-delay: 0.25s;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: translateY(-20px) scale(1.05);
-                opacity: 0.9;
-            }
+        .heart-wrapper:hover .floating-icon.icon-4 {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        .floating-icon.icon-5 {
+            bottom: -60px;
+            left: -60px;
+            transition-delay: 0.3s;
+        }
+
+        .heart-wrapper:hover .floating-icon.icon-5 {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        .floating-icon svg {
+            width: 50px;
+            height: 50px;
         }
 
         .floating-icon-label {
             position: absolute;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             color: white;
-            background: rgba(200, 90, 84, 0.8);
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
+            background: rgba(200, 90, 84, 0.9);
+            padding: 0.35rem 0.65rem;
+            border-radius: 4px;
             white-space: nowrap;
             pointer-events: none;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
             opacity: 0;
-            animation: labelFade 6s ease-in-out infinite;
+            transition: opacity 0.3s ease;
         }
 
-        @keyframes labelFade {
-            0%, 100% {
-                opacity: 0;
-            }
-            40%, 60% {
-                opacity: 1;
-            }
-        }
-
-        .floating-icon:nth-child(1) .floating-icon-label {
-            animation-delay: 0s;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .floating-icon:nth-child(2) .floating-icon-label {
-            animation-delay: 0.5s;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .floating-icon:nth-child(3) .floating-icon-label {
-            animation-delay: 1s;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .floating-icon:nth-child(4) .floating-icon-label {
-            animation-delay: 1.5s;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .floating-icon:nth-child(5) .floating-icon-label {
-            animation-delay: 2s;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .floating-icon:nth-child(6) .floating-icon-label {
-            animation-delay: 2.5s;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
+        .floating-icon:hover .floating-icon-label {
+            opacity: 1;
         }
 
         .btn {
@@ -979,13 +956,17 @@
             }
 
             .heart-center {
-                font-size: 80px;
+                font-size: 100px;
             }
 
             .floating-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
+                width: 70px;
+                height: 70px;
+            }
+
+            .floating-icon svg {
+                width: 40px;
+                height: 40px;
             }
 
             .hero h1 {
@@ -999,18 +980,11 @@
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
-            .section-title,
-            .featured h2 {
-                font-size: 2rem;
-            }
-
-            .featured-grid,
             .services-grid,
             .testimonials-grid,
-            .shop-grid {
+            .featured-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1018,94 +992,26 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        @media (max-width: 480px) {
-            .logo h1 {
-                font-size: 1.2rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .hero {
-                padding: 60px 20px;
-                min-height: 500px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .section-title,
-            .featured h2 {
-                font-size: 1.5rem;
-            }
-
-            .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .floating-heart-container {
-                height: 250px;
-            }
-
-            .heart-center {
-                font-size: 60px;
-            }
-
-            .floating-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 20px;
-            }
-
-            .service-card,
-            .testimonial-card,
-            .shop-item {
-                padding: 1.5rem;
-            }
-
-            .social-links a {
-                width: 40px;
-                height: 40px;
-                font-size: 0.9rem;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-form input,
-            .newsletter-form button {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- ==================== NAVIGATION ==================== -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
                 <div class="logo">
-                    <h1>Hope's Holistic Haven</h1>
-                    <p>Wellness & Natural Living</p>
+                    <h1>🌿 Hope's Haven</h1>
+                    <p>Holistic Wellness</p>
                 </div>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#about">About</a></li>
+                <ul class="nav-links">
+                    <li><a href="#featured">Featured</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#shop">Shop</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger">
+                <div class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -1114,151 +1020,151 @@
         </div>
     </nav>
 
-    <!-- ==================== HERO SECTION WITH FLOATING ELEMENTS ==================== -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1>Welcome to Hope's Holistic Haven</h1>
-                    <p>Your Journey to Wellness Starts Here</p>
-                    <p class="hero-subtitle">Discover natural remedies, mindfulness practices, and holistic solutions for a healthier, more balanced life. Join our community of wellness enthusiasts dedicated to sustainable health and wellbeing.</p>
-                    <div class="hero-buttons">
-                        <a href="#services" class="btn btn-primary">Explore Services</a>
-                        <a href="#shop" class="btn btn-secondary">Shop Now</a>
-                    </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Welcome to Hope's Holistic Haven</h1>
+                <p>Discover the power of natural wellness</p>
+                <p class="hero-subtitle">
+                    Embrace a journey toward balance, healing, and mindful living. Explore our curated collection of holistic remedies, wellness practices, and community wisdom.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#featured" class="btn btn-primary">Explore Now</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </div>
-
-                <div class="floating-heart-container">
+            </div>
+            <div class="floating-heart-container">
+                <div class="heart-wrapper">
                     <div class="heart-center">❤️</div>
                     
-                    <div class="floating-icon">
-                        <i class="fas fa-user-circle"></i>
-                        <div class="floating-icon-label">About</div>
+                    <div class="floating-icon icon-1">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Testimonials: Speech bubble with stars -->
+                            <circle cx="50" cy="50" r="45" fill="#c85a54"/>
+                            <circle cx="50" cy="35" r="8" fill="#ffc107"/>
+                            <circle cx="40" cy="35" r="8" fill="#ffc107"/>
+                            <circle cx="60" cy="35" r="8" fill="#ffc107"/>
+                            <path d="M 30 50 Q 30 65 50 70 Q 70 65 70 50" fill="#2d7d6e"/>
+                            <polygon points="45,65 40,75 50,72" fill="#c85a54"/>
+                        </svg>
+                        <span class="floating-icon-label">Testimonials</span>
                     </div>
                     
-                    <div class="floating-icon">
-                        <i class="fas fa-spa"></i>
-                        <div class="floating-icon-label">Services</div>
+                    <div class="floating-icon icon-2">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Shop: Shopping bag -->
+                            <path d="M 30 40 L 35 20 Q 35 15 40 15 L 60 15 Q 65 15 65 20 L 70 40 L 30 40 Z" fill="#2d7d6e" stroke="#c85a54" stroke-width="2"/>
+                            <path d="M 30 40 L 32 70 Q 32 75 37 75 L 63 75 Q 68 75 68 70 L 70 40" fill="#c85a54" stroke="#2d7d6e" stroke-width="2"/>
+                            <circle cx="45" cy="55" r="4" fill="#ffffff"/>
+                            <circle cx="55" cy="55" r="4" fill="#ffffff"/>
+                        </svg>
+                        <span class="floating-icon-label">Shop</span>
                     </div>
                     
-                    <div class="floating-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                        <div class="floating-icon-label">Shop</div>
+                    <div class="floating-icon icon-3">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- About: Person silhouette -->
+                            <circle cx="50" cy="30" r="15" fill="#c85a54"/>
+                            <path d="M 50 50 Q 35 50 35 65 L 35 80 Q 35 85 40 85 L 60 85 Q 65 85 65 80 L 65 65 Q 65 50 50 50 Z" fill="#2d7d6e"/>
+                            <path d="M 20 80 L 20 70 Q 20 55 35 50" stroke="#c85a54" stroke-width="3" fill="none"/>
+                            <path d="M 80 80 L 80 70 Q 80 55 65 50" stroke="#c85a54" stroke-width="3" fill="none"/>
+                        </svg>
+                        <span class="floating-icon-label">About</span>
                     </div>
                     
-                    <div class="floating-icon">
-                        <i class="fas fa-envelope"></i>
-                        <div class="floating-icon-label">Contact</div>
+                    <div class="floating-icon icon-4">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Services: Spa/Wellness hand with leaf -->
+                            <path d="M 50 20 Q 40 35 45 50 Q 50 60 50 75" stroke="#2d7d6e" stroke-width="6" fill="none" stroke-linecap="round"/>
+                            <circle cx="50" cy="75" r="8" fill="#2d7d6e"/>
+                            <ellipse cx="65" cy="30" rx="12" ry="18" fill="#c85a54" transform="rotate(45 65 30)"/>
+                            <circle cx="50" cy="45" r="6" fill="#ffffff"/>
+                        </svg>
+                        <span class="floating-icon-label">Services</span>
                     </div>
                     
-                    <div class="floating-icon">
-                        <i class="fas fa-star"></i>
-                        <div class="floating-icon-label">Reviews</div>
-                    </div>
-                    
-                    <div class="floating-icon">
-                        <i class="fas fa-leaf"></i>
-                        <div class="floating-icon-label">Wellness</div>
+                    <div class="floating-icon icon-5">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Donate: Hands with heart -->
+                            <path d="M 25 50 Q 20 45 20 40 Q 20 30 30 30 Q 35 30 40 35" fill="#2d7d6e" stroke="#c85a54" stroke-width="2"/>
+                            <path d="M 75 50 Q 80 45 80 40 Q 80 30 70 30 Q 65 30 60 35" fill="#2d7d6e" stroke="#c85a54" stroke-width="2"/>
+                            <path d="M 35 45 Q 50 35 65 45 L 50 70 Z" fill="#c85a54" stroke="#ffffff" stroke-width="2"/>
+                            <circle cx="50" cy="50" r="3" fill="#ffffff"/>
+                        </svg>
+                        <span class="floating-icon-label">Donate</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== FEATURED SECTION ==================== -->
-    <section class="featured">
+    <!-- Featured Section -->
+    <section class="featured" id="featured">
         <div class="container">
             <h2>Featured Wellness Resources</h2>
             <div class="featured-grid">
                 <div class="featured-card">
-                    <div class="featured-image">
-                        <i class="fas fa-book"></i>
-                    </div>
+                    <div class="featured-image">🌱</div>
                     <div class="featured-content">
-                        <h3>Wellness Guide</h3>
-                        <p>Comprehensive guide to natural remedies, holistic practices, and sustainable wellness strategies.</p>
-                        <a href="#">Read More →</a>
+                        <h3>Natural Remedies</h3>
+                        <p>Discover time-tested herbal solutions and natural treatments for everyday wellness needs.</p>
+                        <a href="#shop">Explore Remedies →</a>
                     </div>
                 </div>
                 <div class="featured-card">
-                    <div class="featured-image">
-                        <i class="fas fa-video"></i>
-                    </div>
+                    <div class="featured-image">🧘</div>
                     <div class="featured-content">
-                        <h3>Meditation Videos</h3>
-                        <p>Access our library of guided meditation and mindfulness sessions for stress relief and mental clarity.</p>
-                        <a href="#">Watch Now →</a>
+                        <h3>Mindfulness Practices</h3>
+                        <p>Learn meditation, breathing techniques, and mindful living practices for inner peace.</p>
+                        <a href="#services">View Practices →</a>
                     </div>
                 </div>
                 <div class="featured-card">
-                    <div class="featured-image">
-                        <i class="fas fa-spa"></i>
-                    </div>
+                    <div class="featured-image">🌿</div>
                     <div class="featured-content">
-                        <h3>Wellness Workshops</h3>
-                        <p>Join our upcoming workshops on nutrition, sleep optimization, and holistic lifestyle coaching.</p>
-                        <a href="#">Learn More →</a>
+                        <h3>Holistic Living</h3>
+                        <p>Integrate wellness into every aspect of your life with our comprehensive guides.</p>
+                        <a href="#about">Learn More →</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SERVICES SECTION ==================== -->
+    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <h3>Holistic Coaching</h3>
-                    <p>Personalized wellness coaching sessions to help you achieve your health goals through natural methods.</p>
+                    <div class="service-icon">🎯</div>
+                    <h3>Wellness Coaching</h3>
+                    <p>Personalized guidance to help you achieve your health and wellness goals.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-apple-alt"></i>
-                    </div>
-                    <h3>Nutrition Counseling</h3>
-                    <p>Expert nutrition guidance tailored to your specific needs, focusing on whole foods and plant-based nutrition.</p>
+                    <div class="service-icon">📚</div>
+                    <h3>Educational Resources</h3>
+                    <p>Access our library of articles, guides, and videos on holistic health topics.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-om"></i>
-                    </div>
-                    <h3>Mindfulness Workshops</h3>
-                    <p>Guided meditation and mindfulness sessions to reduce stress, improve clarity, and enhance wellbeing.</p>
+                    <div class="service-icon">🤝</div>
+                    <h3>Community Support</h3>
+                    <p>Join our growing community of wellness enthusiasts and share experiences.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mortar-pestle"></i>
-                    </div>
-                    <h3>Herbal Remedies</h3>
-                    <p>Natural herbal solutions and supplement recommendations for common health concerns and wellness support.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <h3>Sleep Optimization</h3>
-                    <p>Comprehensive approach to improving sleep quality through natural remedies and sleep hygiene practices.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h3>Wellness Planning</h3>
-                    <p>Customized wellness plans designed to fit your lifestyle and achieve long-term health goals sustainably.</p>
+                    <div class="service-icon">✨</div>
+                    <h3>Retreats & Events</h3>
+                    <p>Participate in wellness retreats and community events throughout the year.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 class="section-title">What Our Community Says</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">
@@ -1268,8 +1174,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"Hope's Holistic Haven completely transformed my approach to health. I feel more energized and balanced than ever before!"</p>
-                    <p class="testimonial-author">— Sarah Johnson</p>
+                    <p class="testimonial-text">"Hope's Haven has transformed my approach to wellness. The natural remedies actually work!"</p>
+                    <p class="testimonial-author">- Sarah M.</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
@@ -1279,8 +1185,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"The nutrition counseling was exactly what I needed. The personalized approach made a real difference in my wellness journey."</p>
-                    <p class="testimonial-author">— Michael Chen</p>
+                    <p class="testimonial-text">"The mindfulness practices have brought so much peace into my daily life. Highly recommended!"</p>
+                    <p class="testimonial-author">- James T.</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">
@@ -1290,111 +1196,94 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"I've tried many wellness programs, but Hope's approach is unique. Highly recommend to anyone seeking sustainable health improvements!"</p>
-                    <p class="testimonial-author">— Emily Rodriguez</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"The mindfulness workshops have been life-changing. I finally found the peace and clarity I've been searching for."</p>
-                    <p class="testimonial-author">— David Thompson</p>
+                    <p class="testimonial-text">"A wonderful community of like-minded individuals focused on true wellness. Best investment!"</p>
+                    <p class="testimonial-author">- Emma L.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== ABOUT SECTION ==================== -->
+    <!-- Shop Section -->
+    <section class="shop" id="shop">
+        <div class="container">
+            <h2 class="section-title">Our Shop</h2>
+            <p class="shop-intro">Carefully curated natural products to support your wellness journey</p>
+            <div class="shop-grid">
+                <div class="shop-item">
+                    <div class="shop-image">🌿</div>
+                    <h3>Herbal Tea Blends</h3>
+                    <p>Premium organic tea blends for relaxation and vitality</p>
+                    <a href="#contact" class="btn btn-primary shop-cta">Learn More</a>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-image">💧</div>
+                    <h3>Essential Oils</h3>
+                    <p>Pure essential oils for aromatherapy and wellness</p>
+                    <a href="#contact" class="btn btn-primary shop-cta">Learn More</a>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-image">📖</div>
+                    <h3>Wellness Guides</h3>
+                    <p>Comprehensive e-books on natural living and holistic health</p>
+                    <a href="#contact" class="btn btn-primary shop-cta">Learn More</a>
+                </div>
+                <div class="shop-item">
+                    <div class="shop-image">🧴</div>
+                    <h3>Skincare Products</h3>
+                    <p>Natural, organic skincare made with love and intention</p>
+                    <a href="#contact" class="btn btn-primary shop-cta">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">About Us</h2>
+            <h2 class="section-title">About Hope's Holistic Haven</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Welcome to Hope's Holistic Haven, your trusted partner in holistic wellness and natural living. With over a decade of experience in alternative medicine and wellness coaching, we've helped thousands of individuals transform their health through evidence-based holistic approaches.</p>
+                    <p>Welcome to Hope's Holistic Haven, where we believe that true wellness comes from nurturing the mind, body, and spirit. Founded on the principles of natural healing and holistic living, we're dedicated to helping you discover the transformative power of nature.</p>
                     <h3>Our Mission</h3>
-                    <p>Our mission is to empower individuals to take control of their health and wellbeing through holistic approaches, natural remedies, and mindful living practices. We believe in treating the whole person—body, mind, and spirit.</p>
-                    <h3>Our Vision</h3>
-                    <p>We envision a world where everyone has access to quality holistic healthcare and wellness resources, enabling them to live vibrant, healthy, and fulfilling lives.</p>
+                    <p>To empower individuals on their wellness journey by providing authentic, science-backed natural remedies, mindfulness practices, and a supportive community united in the pursuit of holistic health.</p>
                 </div>
                 <div class="values-grid">
                     <div class="value-item">
                         <i class="fas fa-leaf"></i>
-                        <h4>Natural</h4>
-                        <p>We prioritize natural, organic solutions that work in harmony with your body's natural healing abilities.</p>
+                        <h4>Natural & Pure</h4>
+                        <p>Everything we offer is sourced with care and integrity, prioritizing natural ingredients and sustainable practices.</p>
                     </div>
                     <div class="value-item">
                         <i class="fas fa-heart"></i>
-                        <h4>Compassionate</h4>
-                        <p>Every recommendation is made with genuine care for your wellbeing and overall health journey.</p>
+                        <h4>Compassionate Care</h4>
+                        <p>We approach wellness with empathy and understanding, honoring each individual's unique journey.</p>
                     </div>
                     <div class="value-item">
                         <i class="fas fa-lightbulb"></i>
-                        <h4>Evidence-Based</h4>
-                        <p>Our practices are grounded in scientific research and traditional wisdom combined.</p>
-                    </div>
-                    <div class="value-item">
-                        <i class="fas fa-hands-helping"></i>
-                        <h4>Community</h4>
-                        <p>We believe in the power of community support on the journey to wellness.</p>
+                        <h4>Knowledge & Growth</h4>
+                        <p>We're committed to continuous learning and sharing wisdom that empowers our community.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SHOP SECTION ==================== -->
-    <section class="shop" id="shop">
+    <!-- Newsletter Section -->
+    <section class="newsletter">
         <div class="container">
-            <h2 class="section-title">Shop Wellness</h2>
-            <p class="shop-intro">Explore our curated collection of natural products, supplements, and wellness resources designed to support your holistic health journey.</p>
-            <div class="shop-grid">
-                <div class="shop-item">
-                    <div class="shop-image">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Herbal Supplements</h3>
-                    <p>Premium quality organic herbal supplements for natural wellness support.</p>
-                    <a href="#" class="btn btn-primary shop-cta">View Products</a>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-image">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Wellness Books</h3>
-                    <p>Handpicked books on holistic health, mindfulness, and natural living.</p>
-                    <a href="#" class="btn btn-primary shop-cta">Browse Books</a>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-image">
-                        <i class="fas fa-mug-hot"></i>
-                    </div>
-                    <h3>Herbal Teas</h3>
-                    <p>Organic, blended herbal teas for relaxation and wellness support.</p>
-                    <a href="#" class="btn btn-primary shop-cta">Shop Teas</a>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-image">
-                        <i class="fas fa-heart-pulse"></i>
-                    </div>
-                    <h3>Wellness Kits</h3>
-                    <p>Complete wellness kits combining supplements, teas, and guides.</p>
-                    <a href="#" class="btn btn-primary shop-cta">Explore Kits</a>
-                </div>
-            </div>
-            <div style="text-align: center;">
-                <a href="#" class="btn btn-primary">Visit Full Store</a>
-            </div>
+            <h2>Join Our Wellness Community</h2>
+            <p>Subscribe to our newsletter for exclusive tips, recipes, and wellness insights</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </section>
 
-    <!-- ==================== CONTACT SECTION ==================== -->
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title">Get in Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
@@ -1402,50 +1291,46 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Location</h4>
-                            <p>123 Wellness Street<br>Holistic City, HC 12345</p>
+                            <p>Sanctuary Valley, Nature's Embrace</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Phone</h4>
-                            <a href="tel:+1234567890">(123) 456-7890</a>
+                            <a href="tel:+1-555-wellness">+1 (555) WELLNESS-1</a>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <a href="mailto:hello@hopesholistic.com">hello@hopesholistic.com</a>
+                            <a href="mailto:hello@hopeshaven.com">hello@hopeshaven.com</a>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-clock"></i>
                         <div>
                             <h4>Hours</h4>
-                            <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat - Sun: 10:00 AM - 4:00 PM</p>
                         </div>
                     </div>
                     <div class="social-links">
                         <h4>Follow Us</h4>
-                        <a href="https://facebook.com" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://youtube.com" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 <form class="contact-form">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
@@ -1457,55 +1342,40 @@
         </div>
     </section>
 
-    <!-- ==================== NEWSLETTER SECTION ==================== -->
-    <section class="newsletter" id="newsletter">
-        <div class="container">
-            <h2>Stay Connected</h2>
-            <p>Subscribe to our newsletter for wellness tips, updates, and exclusive offers.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#testimonials">Testimonials</a>
-                    <a href="#contact">Contact</a>
+                    <h4>About</h4>
+                    <a href="#about">Our Story</a>
+                    <a href="#services">Our Services</a>
+                    <a href="#shop">Shop</a>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
-                    <a href="#">Wellness Blog</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Resources</a>
-                    <a href="#">Privacy Policy</a>
+                    <a href="#featured">Featured</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="#">Blog</a>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
-                    <a href="https://facebook.com">Facebook</a>
-                    <a href="https://instagram.com">Instagram</a>
-                    <a href="https://twitter.com">Twitter</a>
-                    <a href="https://youtube.com">YouTube</a>
+                    <h4>Support</h4>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy Policy</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Hope's Holistic Haven. All rights reserved.</p>
-                <p>Wellness is a journey, not a destination. Let's walk it together.</p>
+                <p>Nurturing wellness through natural wisdom and mindful living 🌿</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -1515,19 +1385,6 @@
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
             });
         });
     </script>
