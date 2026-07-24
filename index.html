@@ -155,6 +155,40 @@
             z-index: 1;
         }
 
+        .hero-heart{
+            width: 600px;
+            max-width: 80vw;
+            animation: heartbeat 5s east-in-out infinite;
+            transition: transform .35s ease;
+        }
+
+        .hero-hart:hover{
+            transform:scale(1.05);
+
+            @keyframes heartbeat{
+
+                0%, 100%{
+                    transform: scale(1);
+                }
+
+                6%{
+                    transform:scale(1.03);
+                }
+
+                12%{
+                    transform:scale(1);
+                }
+
+                18%{
+                    transform:scale(1.05);
+                }
+
+                24%{
+                    transform: scale(1);
+                }
+
+            }
+
         /* ==================== INTERACTIVE HEART WITH ICONS ==================== */
         .floating-heart-container {
             position: relative;
