@@ -131,11 +131,11 @@
         .hero {
             background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
             color: white;
-            padding: 120px 20px;
+            padding: 80px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 600px;
+            min-height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -153,51 +153,23 @@
         }
 
         .hero-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            display: flex;
             align-items: center;
-            max-width: 1000px;
+            justify-content: center;
+            width: 100%;
             position: relative;
             z-index: 1;
         }
 
         .hero-content {
-            text-align: left;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #e0e0e0;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            color: #b0b0b0;
-            margin: 2rem 0;
-            line-height: 1.7;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+            display: none;
         }
 
         /* ==================== INTERACTIVE HEART WITH ICONS ==================== */
         .floating-heart-container {
             position: relative;
             width: 100%;
-            height: 400px;
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -209,30 +181,31 @@
         }
 
         .heart-center {
-            font-size: 150px;
+            font-size: 300px;
             color: var(--accent-rose);
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 10px 30px rgba(200, 90, 84, 0.3));
+            filter: drop-shadow(0 15px 50px rgba(200, 90, 84, 0.4));
+            line-height: 1;
         }
 
         .heart-wrapper:hover .heart-center {
-            transform: scale(1.15);
-            filter: drop-shadow(0 15px 40px rgba(200, 90, 84, 0.5));
+            transform: scale(1.12);
+            filter: drop-shadow(0 20px 60px rgba(200, 90, 84, 0.6));
         }
 
         /* Floating icons that appear on hover */
         .floating-icon {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: white;
             border-radius: 50%;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: scale(0) translateY(20px);
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -246,7 +219,7 @@
 
         /* Position each icon around the heart */
         .floating-icon.icon-1 {
-            top: -110px;
+            top: -160px;
             left: 50%;
             transform: translateX(-50%) scale(0) translateY(20px);
             transition-delay: 0.1s;
@@ -257,8 +230,8 @@
         }
 
         .floating-icon.icon-2 {
-            top: -60px;
-            right: -60px;
+            top: -80px;
+            right: -80px;
             transition-delay: 0.15s;
         }
 
@@ -268,8 +241,8 @@
         }
 
         .floating-icon.icon-3 {
-            top: -60px;
-            left: -60px;
+            top: -80px;
+            left: -80px;
             transition-delay: 0.2s;
         }
 
@@ -279,8 +252,8 @@
         }
 
         .floating-icon.icon-4 {
-            bottom: -60px;
-            right: -60px;
+            bottom: -80px;
+            right: -80px;
             transition-delay: 0.25s;
         }
 
@@ -290,8 +263,8 @@
         }
 
         .floating-icon.icon-5 {
-            bottom: -60px;
-            left: -60px;
+            bottom: -80px;
+            left: -80px;
             transition-delay: 0.3s;
         }
 
@@ -301,21 +274,21 @@
         }
 
         .floating-icon svg {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
         }
 
         .floating-icon-label {
             position: absolute;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: white;
             background: rgba(200, 90, 84, 0.9);
-            padding: 0.35rem 0.65rem;
+            padding: 0.4rem 0.75rem;
             border-radius: 4px;
             white-space: nowrap;
             pointer-events: none;
-            bottom: -30px;
+            bottom: -35px;
             left: 50%;
             transform: translateX(-50%);
             opacity: 0;
@@ -942,39 +915,40 @@
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
 
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                text-align: center;
+            .hero {
+                min-height: 600px;
             }
 
             .floating-heart-container {
-                height: 300px;
-                margin-top: 2rem;
+                height: 400px;
             }
 
             .heart-center {
-                font-size: 100px;
+                font-size: 200px;
             }
 
             .floating-icon {
-                width: 70px;
-                height: 70px;
+                width: 80px;
+                height: 80px;
             }
 
             .floating-icon svg {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .floating-icon.icon-1 {
+                top: -120px;
             }
 
-            .hero-buttons {
-                justify-content: center;
+            .floating-icon.icon-2,
+            .floating-icon.icon-3 {
+                top: -60px;
+            }
+
+            .floating-icon.icon-4,
+            .floating-icon.icon-5 {
+                bottom: -60px;
             }
 
             .about-content,
@@ -1024,15 +998,6 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Welcome to Hope's Holistic Haven</h1>
-                <p>Discover the power of natural wellness</p>
-                <p class="hero-subtitle">
-                    Embrace a journey toward balance, healing, and mindful living. Explore our curated collection of holistic remedies, wellness practices, and community wisdom.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#featured" class="btn btn-primary">Explore Now</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
             </div>
             <div class="floating-heart-container">
                 <div class="heart-wrapper">
