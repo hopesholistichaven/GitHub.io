@@ -156,35 +156,24 @@
         }
 
         .hero-heart{
-            width: 600px;
+            width: 700px;
             max-width: 80vw;
-            animation: heartbeat 5s east-in-out infinite;
-            transition: transform .35s ease;
+            animation: float 8s ease-in-out infinite;
+            transition: transform .5s ease;
+            user-select:none;
         }
 
         .hero-hart:hover{
-            transform:scale(1.05);
+            transform:scale(1.04);
 
-            @keyframes heartbeat{
+            @keyframes float{
 
                 0%, 100%{
-                    transform: scale(1);
+                    transform: translateY(0px);
                 }
 
-                6%{
-                    transform:scale(1.03);
-                }
-
-                12%{
-                    transform:scale(1);
-                }
-
-                18%{
-                    transform:scale(1.05);
-                }
-
-                24%{
-                    transform: scale(1);
+                50%{
+                    transform:translateY(-10px);
                 }
 
             }
