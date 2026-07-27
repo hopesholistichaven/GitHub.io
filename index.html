@@ -2,8 +2,27 @@
 <html lang="en">
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="github.io/HHLogo.png">
-    
+   <img ssrc="HHLogo.png" class="logo-image">
+    <div c;ass="logo-text">
+    <p> Mind Body Spirit</p>
+    </div>
+
+    .logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    .logo-image{
+
+    height:44px;
+
+    width:auto;
+
+    }
+
     <style>
         /* ==================== COLOR PALETTE ==================== */
         :root {
@@ -163,17 +182,17 @@
             user-select:none;
         }
 
-        .hero-hart:hover{
+        .hero-heart:hover{
             transform:scale(1.04);
 
             @keyframes float{
 
-                0%, 100%{
-                    transform: translateY(0px);
+                0%,100%{
+                    transform: translateY(0);
                 }
 
                 50%{
-                    transform:translateY(-10px);
+                    transform:translateY(-12px);
                 }
 
             }
@@ -191,17 +210,6 @@
         .heart-wrapper {
             position: relative;
             cursor: pointer;
-        }
-
-        .heart-center {
-            font-size: 800px;
-            color: var(--accent-rose);
-            position: relative;
-            z-index: 2;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 20px 70px rgba(200, 90, 84, .45));
-            line-height: 1;
-            transition: .4s ease;
         }
 
         .heart-wrapper:hover .heart-center {
@@ -992,12 +1000,12 @@
                     <p>Holistic Wellness</p>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#featured">Featured</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                    <li><a href="#featured">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#testimonials">RESOURCES</a></li>
+                    <li><a href="#shop">BLOG</a></li>
+                    <li><a href="#about">DONATE</a></li>
+                    <li><a href="#CONTACT" class="nav-cta">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -1015,9 +1023,8 @@
             </div>
             <div class="floating-heart-container">
                 <div class="heart-wrapper">
-                    <div class="heart-center">❤️</div>
+                    <div class="heart-center">
                     
-                    <div class="floating-icon icon-1">
                         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <!-- Testimonials: Speech bubble with stars -->
                             <circle cx="50" cy="50" r="45" fill="#c85a54"/>
