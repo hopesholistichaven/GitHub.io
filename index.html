@@ -1,1221 +1,379 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <!-- Font Awesome Icons -->
-   <img ssrc="HHLogo.png" class="logo-image">
-    <div c;ass="logo-text">
-    <p> Mind Body Spirit</p>
-    </div>
-
-    .logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
-
-    .logo-image{
-
-    height:44px;
-
-    width:auto;
-
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260806-05-839f1a0","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/7949ff62d67710d5.telemetry_sdk.js" integrity="sha512-KIvXA82Di44YY/RH9/63A9MuTuavYgDFG8PfErJn7Wli4K0LAOk+coo/aPXk3+ZNL96nHh9VYD4PE+fLes+laQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hope's Holistic Haven</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #3b3937;
+      --paper: #f7f2f0;
+      --cream: #f4f3f3;
+      --signal: #e6a9af;
+      --muted: #978f8d;
+      --line: rgba(59, 57, 55, 0.16);
     }
 
-    <style>
-        /* ==================== COLOR PALETTE ==================== */
-        Background:
-#121212
-
-Text:
-#F7F7F7
-
-Heart:
-#C23A4B
-
-Accent:
-#E5C7C9
-
-Secondary:
-#8A8A8A
-
-        /* ==================== RESET & BASE STYLES ==================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            color: var(--gray-dark);
-            line-height: 1.6;
-            background-color: var(--primary-light);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ==================== HEADER & NAVIGATION ==================== */
-        .navbar {
-            background: var(--primary-light);
-            border-bottom: 1px solid var(--gray-light);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1.5rem 0;
-        }
-
-        .navbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .logo p {
-            font-size: 0.75rem;
-            color: var(--gray-medium);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 0.25rem;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-rose);
-        }
-
-        .nav-cta {
-            background: var(--accent-rose);
-            color: white;
-            padding: 0.75rem 1.75rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: var(--accent-green);
-            transform: translateY(-2px);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background: var(--primary-dark);
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-
-        /* ==================== HERO SECTION WITH FLOATING ELEMENTS ==================== */
-        .hero {
-            background: linear-gradient(135deg, #232323 0%, #111111 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(45, 125, 110, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-heart{
-            width: 700px;
-            max-width: 80vw;
-            animation: float 8s ease-in-out infinite;
-            transition: transform .5s ease;
-            user-select:none;
-        }
-
-        .hero-heart:hover{
-            transform:scale(1.04);
-
-            @keyframes float{
-
-                0%,100%{
-                    transform: translateY(0);
-                }
-
-                50%{
-                    transform:translateY(-12px);
-                }
-
-            }
-
-        /* ==================== INTERACTIVE HEART WITH ICONS ==================== */
-        .floating-heart-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .heart-wrapper {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .heart-wrapper:hover .heart-center {
-            transform: scale(1.12);
-            filter: drop-shadow(0 20px 60px rgba(200, 90, 84, 0.6));
-        }
-
-        /* Floating icons that appear on hover */
-        .floating-icon {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: scale(0) translateY(20px);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            cursor: pointer;
-        }
-
-        .heart-wrapper:hover .floating-icon {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-
-        /* Position each icon around the heart */
-        .floating-icon.icon-1 {
-            top: -170px;
-            left: 170%;
-            transform: translateX(-50%) scale(0) translateY(20px);
-            transition-delay: 0.1s;
-        }
-
-        .heart-wrapper:hover .floating-icon.icon-1 {
-            transform: translateX(-50%) scale(1) translateY(0);
-        }
-
-        .floating-icon.icon-2 {
-            top: -170px;
-            right: -170px;
-            transition-delay: 0.15s;
-        }
-
-        .heart-wrapper:hover .floating-icon.icon-2 {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-
-        .floating-icon.icon-3 {
-            top: -170px;
-            left: -170px;
-            transition-delay: 0.2s;
-        }
-
-        .heart-wrapper:hover .floating-icon.icon-3 {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-
-        .floating-icon.icon-4 {
-            bottom: -170px;
-            right: -170px;
-            transition-delay: 0.25s;
-        }
-
-        .heart-wrapper:hover .floating-icon.icon-4 {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-
-        .floating-icon.icon-5 {
-            bottom: -170px;
-            left: -170px;
-            transition-delay: 0.3s;
-        }
-
-        .heart-wrapper:hover .floating-icon.icon-5 {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-
-        .floating-icon svg {
-            width: 60px;
-            height: 60px;
-        }
-
-        .floating-icon-label {
-            position: absolute;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: white;
-            background: rgba(200, 90, 84, 0.9);
-            padding: 0.4rem 0.75rem;
-            border-radius: 4px;
-            white-space: nowrap;
-            pointer-events: none;
-            bottom: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .floating-icon:hover .floating-icon-label {
-            opacity: 1;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--accent-rose);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-green);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary-dark);
-        }
-
-        /* ==================== FEATURED SECTION ==================== */
-        .featured {
-            padding: 80px 20px;
-            background: var(--bg-light);
-        }
-
-        .featured h2 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .featured h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent-rose);
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .featured-card {
-            background: white;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .featured-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #2d7d6e 0%, #c85a54 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-
-        .featured-content {
-            padding: 2rem;
-        }
-
-        .featured-card h3 {
-            color: var(--primary-dark);
-            margin-bottom: 0.75rem;
-            font-size: 1.3rem;
-        }
-
-        .featured-card p {
-            color: var(--gray-medium);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .featured-card a {
-            color: var(--accent-rose);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .featured-card a:hover {
-            color: var(--accent-green);
-        }
-
-        /* ==================== SERVICES SECTION ==================== */
-        .services {
-            padding: 80px 20px;
-            background: white;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 1.5rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent-rose);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--bg-light);
-            padding: 2.5rem 2rem;
-            border-radius: 6px;
-            text-align: center;
-            border-top: 3px solid var(--accent-rose);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            border-top-color: var(--accent-green);
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent-rose);
-            margin-bottom: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            color: var(--accent-green);
-        }
-
-        .service-card h3 {
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .service-card p {
-            color: var(--gray-medium);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        /* ==================== TESTIMONIALS SECTION ==================== */
-        .testimonials {
-            padding: 80px 20px;
-            background: var(--bg-light);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 6px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid var(--accent-rose);
-        }
-
-        .stars {
-            display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .stars i {
-            color: #ffc107;
-            font-size: 0.9rem;
-        }
-
-        .testimonial-text {
-            color: var(--gray-dark);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        .testimonial-author {
-            color: var(--gray-medium);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        /* ==================== SHOP SECTION ==================== */
-        .shop {
-            padding: 80px 20px;
-            background: white;
-        }
-
-        .shop-intro {
-            text-align: center;
-            color: var(--gray-medium);
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .shop-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .shop-item {
-            background: var(--bg-light);
-            padding: 2rem;
-            border-radius: 6px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .shop-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .shop-image {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #c85a54, #2d7d6e);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
-            color: white;
-        }
-
-        .shop-item h3 {
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .shop-item p {
-            color: var(--gray-medium);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .shop-cta {
-            display: block;
-            margin: 0 auto;
-            width: fit-content;
-        }
-
-        /* ==================== ABOUT SECTION ==================== */
-        .about {
-            padding: 80px 20px;
-            background: var(--bg-light);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--gray-medium);
-            line-height: 1.8;
-        }
-
-        .about-text h3 {
-            color: var(--primary-dark);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .values-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .value-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--accent-rose);
-            transition: all 0.3s ease;
-        }
-
-        .value-item:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .value-item i {
-            font-size: 1.8rem;
-            color: var(--accent-rose);
-            margin-bottom: 1rem;
-        }
-
-        .value-item h4 {
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .value-item p {
-            color: var(--gray-medium);
-            font-size: 0.95rem;
-        }
-
-        /* ==================== CONTACT SECTION ==================== */
-        .contact {
-            padding: 80px 20px;
-            background: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .contact-info h3 {
-            color: var(--primary-dark);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-
-        .info-item {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--accent-rose);
-            margin-top: 0.25rem;
-            min-width: 30px;
-        }
-
-        .info-item h4 {
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .info-item p,
-        .info-item a {
-            color: var(--gray-medium);
-            font-size: 0.95rem;
-        }
-
-        .info-item a {
-            text-decoration: none;
-            color: var(--accent-rose);
-            transition: color 0.3s ease;
-        }
-
-        .info-item a:hover {
-            color: var(--accent-green);
-        }
-
-        .social-links {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--gray-light);
-        }
-
-        .social-links h4 {
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            width: 45px;
-            height: 45px;
-            background: var(--accent-rose);
-            border-radius: 4px;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            margin-right: 1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent-green);
-            transform: translateY(-3px);
-        }
-
-        /* Contact Form */
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            color: var(--primary-dark);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 0.75rem;
-            border: 1px solid var(--gray-light);
-            border-radius: 4px;
-            font-family: inherit;
-            color: var(--primary-dark);
-            transition: border-color 0.3s ease;
-            background: var(--bg-light);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-rose);
-            background: white;
-        }
-
-        .submit-btn {
-            background: var(--accent-rose);
-            color: white;
-            padding: 0.85rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .submit-btn:hover {
-            background: var(--accent-green);
-            transform: translateY(-2px);
-        }
-
-        /* ==================== NEWSLETTER SECTION ==================== */
-        .newsletter {
-            padding: 60px 20px;
-            background: var(--accent-rose);
-            color: white;
-            text-align: center;
-        }
-
-        .newsletter h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter p {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            min-width: 250px;
-            padding: 0.85rem;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .newsletter-form button {
-            padding: 0.85rem 1.5rem;
-            background: var(--accent-green);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            background: #235a52;
-            transform: translateY(-2px);
-        }
-
-        /* ==================== FOOTER ==================== */
-        .footer {
-            background: var(--primary-dark);
-            color: #b0b0b0;
-            text-align: center;
-            padding: 3rem 20px 1.5rem;
-            border-top: 1px solid #333;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .footer-section h4 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .footer-section a {
-            color: #b0b0b0;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-rose);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 2rem;
-        }
-
-        .footer p {
-            margin: 0.5rem 0;
-            font-size: 0.9rem;
-        }
-
-        /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 1rem;
-                gap: 1rem;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-
-            .hero {
-                min-height: 600px;
-            }
-
-            .floating-heart-container {
-                height: 400px;
-            }
-
-            .heart-center {
-                font-size: 200px;
-            }
-
-            .floating-icon {
-                width: 80px;
-                height: 80px;
-            }
-
-            .floating-icon svg {
-                width: 50px;
-                height: 50px;
-            }
-
-            .floating-icon.icon-1 {
-                top: -120px;
-            }
-
-            .floating-icon.icon-2,
-            .floating-icon.icon-3 {
-                top: -60px;
-            }
-
-            .floating-icon.icon-4,
-            .floating-icon.icon-5 {
-                bottom: -60px;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid,
-            .testimonials-grid,
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="logo">
-                    <h1>🌿 Hope's Haven</h1>
-                    <p>Holistic Wellness</p>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#featured">ABOUT</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#testimonials">RESOURCES</a></li>
-                    <li><a href="#shop">BLOG</a></li>
-                    <li><a href="#about">DONATE</a></li>
-                    <li><a href="#CONTACT" class="nav-cta">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    .brand-serif { font-family: "Fraunces", serif; }
+
+    .site-shell {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    .focus-ring:focus-visible {
+      outline: 3px solid var(--signal);
+      outline-offset: 4px;
+    }
+
+    .site-nav {
+      border-bottom: 1px solid var(--line);
+      background: rgba(250, 249, 245, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.15rem;
+      height: 2.15rem;
+      border-radius: 999px;
+      color: var(--cream);
+      background: #3b3937;
+      font-family: "Fraunces", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .editorial-rule {
+      height: 1px;
+      background: var(--line);
+      width: 100%;
+    }
+
+    .hero-section {
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh), 1vh));
+      background: #f8dfe4;
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      left: 0;
+      right: 0;
+      bottom: 3rem;
+      background: rgba(250, 249, 245, 0.24);
+    }
+
+    .hero-heart {
+      width: min(1320px, 99vw);
+      filter: drop-shadow(0 1.9rem 2.2rem rgba(0, 0, 0, 0.28));
+      animation: rise 7s ease-in-out infinite;
+    }
+
+    @keyframes rise {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-14px) rotate(2deg); }
+    }
+
+    .eyebrow {
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .feature-card {
+      border-top: 1px solid var(--ink);
+      transition: transform 0.28s ease;
+    }
+
+    .feature-card:hover { transform: translateY(-7px); }
+
+    .feature-image-wrap {
+      overflow: hidden;
+      background: #ddd8cf;
+    }
+
+    .feature-image-wrap img {
+      transition: transform 0.55s ease;
+    }
+
+    .feature-card:hover img { transform: scale(1.05); }
+
+    .numbered-list article {
+      border-top: 1px solid var(--line);
+    }
+
+    .numbered-list article:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .mobile-menu.is-open { max-height: 22rem; }
+
+    .form-feedback { display: none; }
+    .form-feedback.is-visible { display: block; }
+
+    @media (min-width: 768px) {
+      .mobile-menu { display: none !important; }
+    }
+  </style>
+  <script src="/_sdk/0e8d3a91e1c6f495.data_sdk.js" type="text/javascript" integrity="sha512-c00oDoGjsMgluCLLEyVl3suwEkgjOGGplVFbsilUoBg4aMKNmsL3mwsc9r0dPn95qiSZyjBousQXgROkAW7p/w=="></script>
+  <script src="/_sdk/04cc6185e046f597.resizing_sdk.js" type="text/javascript" integrity="sha512-CiE/G92aQF0nxneFg1kdOvXih8sQ1Z2a2QI3+r/WvzJwQqH6+IyB3iL07OkJmpm3ABAaf07+FnqWny98f5sR6w=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(244, 243, 243);">
+  <div class="site-shell">
+   <header class="sticky top-0 z-50 w-full">
+    <nav data-template-id="navbar-section" class="canva-header site-nav w-full" style="background: rgb(250, 249, 245);">
+     <div class="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 lg:px-10"><a href="#top" class="focus-ring flex items-center gap-3 rounded-sm" aria-label="Hope's Holistic Haven home"> <span class="brand-mark" aria-hidden="true">H</span> <span data-template-id="brand-name" class="canva-text text-sm font-bold uppercase tracking-[0.12em]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 14px; letter-spacing: 0.08rem;">Hope's Holistic Haven</span> </a>
+      <div class="hidden items-center gap-8 md:flex"><a data-template-id="nav-about" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.15em]" href="#about" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">About</a> <a data-template-id="nav-resources" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.15em]" href="#resources" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Resources</a> <a data-template-id="nav-services" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.15em]" href="#services" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Ways to work</a> <a data-template-id="nav-contact" class="canva-button focus-ring rounded-sm px-4 py-2 text-xs font-bold uppercase tracking-[0.12em]" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Contact</a>
+      </div><button id="menu-button" type="button" class="focus-ring rounded-sm p-2 md:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"> <i data-lucide="menu" aria-hidden="true"></i> </button>
+     </div>
+     <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="border-t border-black/10 px-5 py-4">
+       <div class="flex flex-col gap-1"><a data-template-id="mobile-nav-about" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#about" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">About</a> <a data-template-id="mobile-nav-resources" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#resources" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Resources</a> <a data-template-id="mobile-nav-services" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#services" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Ways to work</a> <a data-template-id="mobile-nav-contact" class="canva-button focus-ring mt-2 rounded-sm px-3 py-3 text-sm font-bold" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Contact</a>
+       </div>
+      </div>
+     </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-            </div>
-            <div class="floating-heart-container">
-                <div class="heart-wrapper">
-                    <div class="heart-center">
-                    
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Testimonials: Speech bubble with stars -->
-                            <circle cx="50" cy="50" r="45" fill="#c85a54"/>
-                            <circle cx="50" cy="35" r="8" fill="#ffc107"/>
-                            <circle cx="40" cy="35" r="8" fill="#ffc107"/>
-                            <circle cx="60" cy="35" r="8" fill="#ffc107"/>
-                            <path d="M 30 50 Q 30 65 50 70 Q 70 65 70 50" fill="#2d7d6e"/>
-                            <polygon points="45,65 40,75 50,72" fill="#c85a54"/>
-                        </svg>
-                        <span class="floating-icon-label">Testimonials</span>
-                    </div>
-                    
-                    <div class="floating-icon icon-2">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Shop: Shopping bag -->
-                            <path d="M 30 40 L 35 20 Q 35 15 40 15 L 60 15 Q 65 15 65 20 L 70 40 L 30 40 Z" fill="#2d7d6e" stroke="#c85a54" stroke-width="2"/>
-                            <path d="M 30 40 L 32 70 Q 32 75 37 75 L 63 75 Q 68 75 68 70 L 70 40" fill="#c85a54" stroke="#2d7d6e" stroke-width="2"/>
-                            <circle cx="45" cy="55" r="4" fill="#ffffff"/>
-                            <circle cx="55" cy="55" r="4" fill="#ffffff"/>
-                        </svg>
-                        <span class="floating-icon-label">Shop</span>
-                    </div>
-                    
-                    <div class="floating-icon icon-3">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- About: Person silhouette -->
-                            <circle cx="50" cy="30" r="15" fill="#c85a54"/>
-                            <path d="M 50 50 Q 35 50 35 65 L 35 80 Q 35 85 40 85 L 60 85 Q 65 85 65 80 L 65 65 Q 65 50 50 50 Z" fill="#2d7d6e"/>
-                            <path d="M 20 80 L 20 70 Q 20 55 35 50" stroke="#c85a54" stroke-width="3" fill="none"/>
-                            <path d="M 80 80 L 80 70 Q 80 55 65 50" stroke="#c85a54" stroke-width="3" fill="none"/>
-                        </svg>
-                        <span class="floating-icon-label">About</span>
-                    </div>
-                    
-                    <div class="floating-icon icon-4">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Services: Spa/Wellness hand with leaf -->
-                            <path d="M 50 20 Q 40 35 45 50 Q 50 60 50 75" stroke="#2d7d6e" stroke-width="6" fill="none" stroke-linecap="round"/>
-                            <circle cx="50" cy="75" r="8" fill="#2d7d6e"/>
-                            <ellipse cx="65" cy="30" rx="12" ry="18" fill="#c85a54" transform="rotate(45 65 30)"/>
-                            <circle cx="50" cy="45" r="6" fill="#ffffff"/>
-                        </svg>
-                        <span class="floating-icon-label">Services</span>
-                    </div>
-                    
-                    <div class="floating-icon icon-5">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Donate: Hands with heart -->
-                            <path d="M 25 50 Q 20 45 20 40 Q 20 30 30 30 Q 35 30 40 35" fill="#2d7d6e" stroke="#c85a54" stroke-width="2"/>
-                            <path d="M 75 50 Q 80 45 80 40 Q 80 30 70 30 Q 65 30 60 35" fill="#2d7d6e" stroke="#c85a54" stroke-width="2"/>
-                            <path d="M 35 45 Q 50 35 65 45 L 50 70 Z" fill="#c85a54" stroke="#ffffff" stroke-width="2"/>
-                            <circle cx="50" cy="50" r="3" fill="#ffffff"/>
-                        </svg>
-                        <span class="floating-icon-label">Donate</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+   </header>
+   <main>
+    <section id="top" data-template-id="hero-section" class="canva-section hero-section" style="background: rgb(248, 223, 228);">
+     <div class="relative z-10 mx-auto flex min-h-[inherit] w-full max-w-[1500px] items-center justify-center px-5 py-16 lg:px-10 lg:py-24">
+      <div class="relative flex w-full justify-center" aria-label="Decorative heart artwork">
+       <p data-template-id="hero-background-title" class="canva-text brand-serif pointer-events-none absolute left-1/2 top-[9%] z-0 w-max max-w-none -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-center text-[clamp(3.5rem,13vw,13rem)] font-bold uppercase leading-[0.82] tracking-[-0.06em] text-[#3b3937]" style="color: rgb(59, 57, 55); font-weight: 400; font-style: normal; font-size: 156px; letter-spacing: -0.06rem; line-height: 0.82;">HOPE'S HOLISTIC HAVEN</p>
+       <svg class="hero-heart relative z-10" viewBox="0 0 512 512" role="img" aria-label="Abstract orange heart"><path fill="#d62839" d="M256 469C217 430 70 320 70 193c0-72 56-126 125-126 29 0 50 11 61 32 11-21 32-32 61-32 69 0 125 54 125 126 0 127-147 237-186 276Z"></path>
+       </svg>
+      </div>
+     </div>
     </section>
-
-    <!-- Featured Section -->
-    <section class="featured" id="featured">
-        <div class="container">
-            <h2>Featured Wellness Resources</h2>
-            <div class="featured-grid">
-                <div class="featured-card">
-                    <div class="featured-image">🌱</div>
-                    <div class="featured-content">
-                        <h3>Natural Remedies</h3>
-                        <p>Discover time-tested herbal solutions and natural treatments for everyday wellness needs.</p>
-                        <a href="#shop">Explore Remedies →</a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <div class="featured-image">🧘</div>
-                    <div class="featured-content">
-                        <h3>Mindfulness Practices</h3>
-                        <p>Learn meditation, breathing techniques, and mindful living practices for inner peace.</p>
-                        <a href="#services">View Practices →</a>
-                    </div>
-                </div>
-                <div class="featured-card">
-                    <div class="featured-image">🌿</div>
-                    <div class="featured-content">
-                        <h3>Holistic Living</h3>
-                        <p>Integrate wellness into every aspect of your life with our comprehensive guides.</p>
-                        <a href="#about">Learn More →</a>
-                    </div>
-                </div>
-            </div>
+    <section id="resources" data-template-id="resources-section" class="canva-section bg-[#f7f2f0] px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="mx-auto max-w-[1500px]">
+      <div class="flex flex-col justify-between gap-7 border-b border-black pb-8 md:flex-row md:items-end">
+       <div class="max-w-2xl">
+        <p data-template-id="resources-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(230, 169, 175); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Start here</p>
+        <h2 data-template-id="resources-title" class="canva-text brand-serif mt-4 leading-none" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Small rituals. Big difference.</h2>
+       </div><a data-template-id="resources-link" class="canva-link focus-ring rounded-sm text-sm font-bold uppercase tracking-[0.12em]" href="#services" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Explore all resources →</a>
+      </div>
+      <div class="mt-10 grid gap-10 md:grid-cols-3">
+       <article data-template-id="resource-card-1" class="canva-card feature-card" style="background: rgb(243, 240, 233);">
+        <div class="feature-image-wrap aspect-[4/3]"><img data-template-id="resource-image-1" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5480193/pexels-photo-5480193.jpeg" alt="Close-up of hands preparing herbal ingredients in a mortar and pestle, top view.">
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Wellness Coaching</h3>
-                    <p>Personalized guidance to help you achieve your health and wellness goals.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📚</div>
-                    <h3>Educational Resources</h3>
-                    <p>Access our library of articles, guides, and videos on holistic health topics.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🤝</div>
-                    <h3>Community Support</h3>
-                    <p>Join our growing community of wellness enthusiasts and share experiences.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Retreats & Events</h3>
-                    <p>Participate in wellness retreats and community events throughout the year.</p>
-                </div>
-            </div>
+        <div class="py-5">
+         <p data-template-id="resource-index-1" class="canva-text text-xs font-bold uppercase tracking-[0.13em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">01 / Natural remedies</p>
+         <h3 data-template-id="resource-title-1" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px; line-height: 1.05;">Nature knows a thing or two.</h3>
+         <p data-template-id="resource-copy-1" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Grounded, approachable ways to bring herbal wisdom into your everyday rhythm.</p>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Community Says</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Hope's Haven has transformed my approach to wellness. The natural remedies actually work!"</p>
-                    <p class="testimonial-author">- Sarah M.</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"The mindfulness practices have brought so much peace into my daily life. Highly recommended!"</p>
-                    <p class="testimonial-author">- James T.</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"A wonderful community of like-minded individuals focused on true wellness. Best investment!"</p>
-                    <p class="testimonial-author">- Emma L.</p>
-                </div>
-            </div>
+       </article>
+       <article data-template-id="resource-card-2" class="canva-card feature-card" style="background: rgb(243, 240, 233);">
+        <div class="feature-image-wrap aspect-[4/3]"><img data-template-id="resource-image-2" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/8455474/pexels-photo-8455474.jpeg" alt="A serene woman practicing meditation outdoors near a lake, promoting wellness and relaxation.">
         </div>
+        <div class="py-5">
+         <p data-template-id="resource-index-2" class="canva-text text-xs font-bold uppercase tracking-[0.13em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">02 / Mindfulness</p>
+         <h3 data-template-id="resource-title-2" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px; line-height: 1.05;">Make a little room for yourself.</h3>
+         <p data-template-id="resource-copy-2" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Simple practices for finding calm, creating space, and returning to the present.</p>
+        </div>
+       </article>
+       <article data-template-id="resource-card-3" class="canva-card feature-card" style="background: rgb(243, 240, 233);">
+        <div class="feature-image-wrap aspect-[4/3]"><img data-template-id="resource-image-3" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/17890682/pexels-photo-17890682.jpeg" alt="Serene Zen setup with healing crystals and a candle on a wooden table, promoting tranquility.">
+        </div>
+        <div class="py-5">
+         <p data-template-id="resource-index-3" class="canva-text text-xs font-bold uppercase tracking-[0.13em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">03 / Holistic living</p>
+         <h3 data-template-id="resource-title-3" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px; line-height: 1.05;">Care is a daily practice.</h3>
+         <p data-template-id="resource-copy-3" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Ideas for making your home, habits, and personal rituals feel more intentional.</p>
+        </div>
+       </article>
+      </div>
+     </div>
     </section>
+    <section id="about" data-template-id="about-section" class="canva-section bg-[#f4f3f3] px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(250, 249, 245);">
+     <div class="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+      <div class="overflow-hidden bg-[#d8d4ca]"><img data-template-id="about-image" class="canva-image h-full min-h-[28rem] w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/10870128/pexels-photo-10870128.jpeg" alt="A peaceful side profile of a woman meditating with green plants in the background.">
+      </div>
+      <div class="flex flex-col justify-center">
+       <p data-template-id="about-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">The Hope's Haven approach</p>
+       <h2 data-template-id="about-title" class="canva-text brand-serif mt-5 max-w-3xl leading-[0.98]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 54px; letter-spacing: -0.04rem; line-height: 0.96;">Wellness is not a finish line.</h2>
+       <p data-template-id="about-copy-1" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(36, 35, 33); font-weight: 400; font-style: normal; font-size: 19px; line-height: 1.55;">Hope's Holistic Haven is here for the human side of feeling well: the slow mornings, the hard weeks, and the tiny choices that add up.</p>
+       <p data-template-id="about-copy-2" class="canva-text mt-5 max-w-2xl leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.7;">We share practical tools and gentle perspective for caring for your mind, body, and spirit without chasing perfection.</p><a data-template-id="about-link" class="canva-link focus-ring mt-8 w-fit rounded-sm border-b-2 border-black pb-2 text-sm font-bold uppercase tracking-[0.1em]" href="#contact" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Meet us where you are →</a>
+      </div>
+     </div>
+    </section>
+    <section id="services" data-template-id="services-section" class="canva-section bg-[#3b3937] px-5 py-20 text-[#f4f3f3] lg:px-10 lg:py-28" style="background: rgb(17, 17, 17);">
+     <div class="mx-auto max-w-[1500px]">
+      <div class="grid gap-8 border-b border-white/30 pb-10 md:grid-cols-[.75fr_1.25fr]">
+       <p data-template-id="services-kicker" class="canva-text eyebrow text-xs font-bold text-[#ef4f32]" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Ways we support you</p>
+       <h2 data-template-id="services-title" class="canva-text brand-serif max-w-3xl leading-[0.95]" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Support that feels real, useful, and human.</h2>
+      </div>
+      <div class="numbered-list mt-10">
+       <article class="grid gap-4 py-7 md:grid-cols-[8rem_1fr_1fr] md:gap-10">
+        <p data-template-id="service-number-1" class="canva-text text-sm font-bold text-[#ef4f32]" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">01</p>
+        <h3 data-template-id="service-title-1" class="canva-text brand-serif" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 27px;">Wellness coaching</h3>
+        <p data-template-id="service-copy-1" class="canva-text text-sm leading-6 text-[#d7d3cb]" style="color: rgb(215, 211, 203); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Personal guidance for goals that feel meaningful, practical, and possible to maintain.</p>
+       </article>
+       <article class="grid gap-4 py-7 md:grid-cols-[8rem_1fr_1fr] md:gap-10">
+        <p data-template-id="service-number-2" class="canva-text text-sm font-bold text-[#ef4f32]" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">02</p>
+        <h3 data-template-id="service-title-2" class="canva-text brand-serif" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 27px;">Resource library</h3>
+        <p data-template-id="service-copy-2" class="canva-text text-sm leading-6 text-[#d7d3cb]" style="color: rgb(215, 211, 203); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">A growing collection of clear, approachable guides for natural living and mindful care.</p>
+       </article>
+       <article class="grid gap-4 py-7 md:grid-cols-[8rem_1fr_1fr] md:gap-10">
+        <p data-template-id="service-number-3" class="canva-text text-sm font-bold text-[#ef4f32]" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">03</p>
+        <h3 data-template-id="service-title-3" class="canva-text brand-serif" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 27px;">Community gatherings</h3>
+        <p data-template-id="service-copy-3" class="canva-text text-sm leading-6 text-[#d7d3cb]" style="color: rgb(215, 211, 203); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Restorative spaces to pause, learn, and connect with others on their own wellness path.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section data-template-id="newsletter-section" class="canva-section bg-[#f1aab9] px-5 py-20 text-[#3b3937] lg:px-10 lg:py-24" style="background: rgb(241, 170, 185);">
+     <div class="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[1fr_.9fr] lg:items-end">
+      <div>
+       <p data-template-id="newsletter-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Stay close</p>
+       <h2 data-template-id="newsletter-title" class="canva-text brand-serif mt-5 max-w-3xl leading-[0.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">A little goodness in your inbox.</h2>
+      </div>
+      <div>
+       <p data-template-id="newsletter-copy" class="canva-text max-w-xl leading-7" style="color: rgb(59, 57, 55); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.65;">Receive gentle inspiration, seasonal rituals, and mindful wellness notes from Hope's Haven.</p>
+       <form id="newsletter-form" class="mt-7 flex flex-col gap-3 sm:flex-row" novalidate=""><label class="sr-only" for="newsletter-email">Email address</label> <input id="newsletter-email" data-template-id="newsletter-input" class="canva-input focus-ring min-w-0 flex-1 rounded-none border border-black bg-[#faf9f5] px-4 py-3 text-[#111111]" type="email" required="" aria-describedby="newsletter-feedback" placeholder="Your email address" style="background: rgb(250, 249, 245); color: rgb(17, 17, 17); font-weight: 400; font-style: normal; font-size: 16px;"> <button data-template-id="newsletter-button" class="canva-button focus-ring rounded-none px-6 py-3 text-sm font-bold uppercase tracking-[0.1em]" type="submit" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Subscribe</button>
+       </form>
+       <p id="newsletter-feedback" class="form-feedback mt-4 text-sm font-bold" aria-live="polite"></p>
+      </div>
+     </div>
+    </section>
+    <section id="contact" data-template-id="contact-section" class="canva-section bg-[#faf9f5] px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(250, 249, 245);">
+     <div class="mx-auto max-w-[1500px]">
+      <div class="grid gap-8 border-b border-black pb-10 lg:grid-cols-[.9fr_1.1fr]">
+       <div>
+        <p data-template-id="contact-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Say hello</p>
+        <h2 data-template-id="contact-title" class="canva-text brand-serif mt-5 leading-[0.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 58px; letter-spacing: -0.04rem; line-height: 0.95;">Let’s talk.</h2>
+       </div>
+       <p data-template-id="contact-copy" class="canva-text max-w-xl self-end text-lg leading-8" style="color: rgb(51, 49, 46); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Questions, collaborations, or a note about where you are in your wellness journey? We would love to hear from you.</p>
+      </div>
+      <div class="mt-12 grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
+       <aside class="space-y-8">
+        <div>
+         <h3 data-template-id="contact-email-label" class="canva-text text-xs font-bold uppercase tracking-[0.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Email</h3><a data-template-id="contact-email" class="canva-link focus-ring mt-2 inline-block rounded-sm text-lg font-semibold" href="mailto:hello@hopeshaven.com" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 18px;">hello@hopeshaven.com</a>
+        </div>
+        <div>
+         <h3 data-template-id="contact-location-label" class="canva-text text-xs font-bold uppercase tracking-[0.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Based in</h3>
+         <p data-template-id="contact-location" class="canva-text mt-2 max-w-xs leading-7" style="color: rgb(51, 49, 46); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">Sanctuary Valley
+Serving the community, wherever you are.</p>
+        </div>
+        <div>
+         <h3 data-template-id="contact-hours-label" class="canva-text text-xs font-bold uppercase tracking-[0.14em]" style="color: rgb(151, 143, 141); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Hours</h3>
+         <p data-template-id="contact-hours" class="canva-text mt-2 whitespace-pre-line leading-7" style="color: rgb(51, 49, 46); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">Monday–Friday: 9 AM–6 PM
+Saturday–Sunday: 10 AM–4 PM</p>
+        </div>
+       </aside>
+       <form id="contact-form" class="border-t border-black pt-7" novalidate="">
+        <div class="grid gap-6">
+         <div><label data-template-id="contact-name-label" class="canva-text mb-2 block text-sm font-bold" for="contact-name" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 15px;">Your name</label> <input id="contact-name" class="focus-ring w-full rounded-none border-b border-black bg-transparent px-0 py-3" type="text" required="">
+         </div>
+         <div><label data-template-id="contact-email-form-label" class="canva-text mb-2 block text-sm font-bold" for="contact-email-form" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 15px;">Email address</label> <input id="contact-email-form" class="focus-ring w-full rounded-none border-b border-black bg-transparent px-0 py-3" type="email" required="">
+         </div>
+         <div><label data-template-id="contact-message-label" class="canva-text mb-2 block text-sm font-bold" for="contact-message" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 15px;">Message</label> <textarea id="contact-message" class="focus-ring w-full resize-y rounded-none border-b border-black bg-transparent px-0 py-3" rows="5" required=""></textarea>
+         </div><button data-template-id="contact-submit-button" class="canva-button focus-ring mt-2 w-fit rounded-none px-7 py-3 text-sm font-bold uppercase tracking-[0.1em]" type="submit" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Send message</button>
+         <p id="contact-feedback" class="form-feedback text-sm font-bold" aria-live="polite"></p>
+        </div>
+       </form>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer data-template-id="footer-section" class="canva-footer bg-[#3b3937] px-5 py-10 text-[#f4f3f3] lg:px-10" style="background: rgb(17, 17, 17);">
+    <div class="mx-auto flex max-w-[1500px] flex-col justify-between gap-8 border-t border-white/25 pt-8 md:flex-row md:items-end">
+     <div>
+      <h2 data-template-id="footer-brand" class="canva-text brand-serif" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 28px;">Hope's Holistic Haven</h2>
+      <p data-template-id="footer-copy" class="canva-text mt-3 max-w-sm text-sm leading-6 text-[#c8c4bc]" style="color: rgb(200, 196, 188); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">A softer, more intentional approach to mind, body, and spirit.</p>
+     </div>
+     <div class="flex flex-wrap gap-x-6 gap-y-3"><a data-template-id="footer-about-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.12em]" href="#about" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">About</a> <a data-template-id="footer-resources-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.12em]" href="#resources" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Resources</a> <a data-template-id="footer-contact-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[0.12em]" href="#contact" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Contact</a>
+     </div>
+    </div>
+    <div class="mx-auto mt-10 max-w-[1500px]">
+     <p data-template-id="footer-copyright" class="canva-text text-xs text-[#a7a39b]" style="color: rgb(167, 163, 155); font-weight: 400; font-style: normal; font-size: 12px;">© 2026 Hope's Holistic Haven. All rights reserved.</p>
+    </div>
+   </footer>
+  </div>
+  <script src="/_sdk/fef09cb5f5b2424b.editing_sdk.js" integrity="sha512-PbmCvZWt+xecnQll4ofK5HTtTS+pGwwY1xn9+p49qHgEHml+uvyc0o1f2Eltkd4t324iwgnf7acUjfnKHkik1w=="></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
 
-    <!-- Shop Section -->
-    <section class="shop" id="shop">
-        <div class="container">
-            <h2 class="section-title">Our Shop</h2>
-            <p class="shop-intro">Carefully curated natural products to support your wellness journey</p>
-            <div class="shop-grid">
-                <div class="shop-item">
-                    <div class="shop-image">🌿</div>
-                    <h3>Herbal Tea Blends</h3>
-                    <p>Premium organic tea blends for relaxation and vitality</p>
-                    <a href="#contact" class="btn btn-primary shop-cta">Learn More</a>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-image">💧</div>
-                    <h3>Essential Oils</h3>
-                    <p>Pure essential oils for aromatherapy and wellness</p>
-                    <a href="#contact" class="btn btn-primary shop-cta">Learn More</a>
-                </div>
-                <div class="shop-item">
-                    <div class="shop-image">📖</div>
-                    <h3>Wellness Guides</h3>
-                    <p>Comprehensive e-books on natural living and holistic health</p>
-                    <a href="#contact" class="btn btn-primary shop-cta">Learn More</a>
-                </div>
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      function showFeedback(element, message, success) {
+        element.textContent = message;
+        element.classList.add("is-visible");
+        element.style.color = success ? "#111111" : "#7a160a";
+      }
+
+      document.getElementById("newsletter-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const input = document.getElementById("newsletter-email");
+        const feedback = document.getElementById("newsletter-feedback");
+
+        if (!input.checkValidity()) {
+          showFeedback(feedback, "Please enter a valid email address.", false);
+          input.focus();
+          return;
+        }
+
+        event.currentTarget.reset();
+        showFeedback(feedback, "Thank you — you’re on the list.", true);
+      });
+
+      document.getElementById("contact-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const feedback = document.getElementById("contact-feedback");
+
+        if (!form.checkValidity()) {
+          showFeedback(feedback, "Please complete each field before sending.", false);
+          const invalidField = form.querySelector(":invalid");
+          if (invalidField) invalidField.focus();
+          return;
+        }
+
+        form.reset();
+        showFeedback(feedback, "Thank you for reaching out. We’ll be in touch soon.", true);
+      });
+    });
+  </script>
+ 
+</body></html>
                 <div class="shop-item">
                     <div class="shop-image">🧴</div>
                     <h3>Skincare Products</h3>
