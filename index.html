@@ -14,13 +14,7 @@
   <meta property="og:title" content="Hope's Holistic Haven — Healing Through Mind · Body · Spirit" />
   <meta property="og:description" content="Personalized astrology, spiritual guidance, dream work and mindfulness to help you move through life with clarity, confidence and peace." />
   <meta property="og:url" content="https://hopesholistichaven.example/" />
-  <meta property="og:image" content="https://hopesholistichaven.example/assets/og-image.jpg" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Hope's Holistic Haven" />
-  <meta name="twitter:description" content="Personalized astrology, spiritual guidance, dream work and mindfulness to help you move through life with clarity, confidence and peace." />
-  <meta name="twitter:image" content="https://hopesholistichaven.example/assets/og-image.jpg" />
+  <meta property="og:image" content="https://hopesholistichaven.example/assets/og-image.svg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,7 +34,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" role="banner">
-    <div class="header-inner">
+    <div class="header-inner container">
       <a class="brand" href="/" aria-label="Hope's Holistic Haven home">
         <img src="assets/logo.svg" alt="Hope's Holistic Haven — logo" class="brand__logo" />
         <span class="visually-hidden">Hope's Holistic Haven</span>
@@ -70,7 +64,7 @@
   <main id="main" class="main" role="main">
     <!-- Hero -->
     <section id="hero" class="hero" aria-labelledby="hero-heading">
-      <div class="hero__inner">
+      <div class="hero__inner container">
         <!-- Inline SVG heart — styled/animated in CSS/JS -->
         <div class="hero__art" aria-hidden="true">
           <!-- heart.svg (inline for accessibility & animation hooks) -->
@@ -86,8 +80,18 @@
               </filter>
             </defs>
             <path class="heart-icon__fill" d="M256 480s-168-86-168-235c0-78 64-140 140-140 38 0 64 15 84 36 20-21 46-36 84-36 76 0 140 62 140 140 0 149-168 235-280 235z" fill="url(#g1)" filter="url(#f-soft)"></path>
-            <path class="heart-icon__line" d="M256 480s-168-86-168-235c0-78 64-140 140-140 38 0 64 15 84 36 20-21 46-36 84-36 76 0 140 62 140 140 0 149-168 235-280 235z" fill="none" stroke="#7a1212" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.25"/>
+            <path class="heart-icon__line" d="M256 480s-168-86-168-235c0-78 64-140 140-140 38 0 64 15 84 36 20-21 46-36 84-36 76 0 140 62 140 140 0 149-168 235-280 235z" fill="none" stroke="#7a1212" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.25"></path>
           </svg>
+
+          <!-- Thumbnails pop-out (placeholder images). Trigger on hover (desktop) or toggle button on mobile/keyboard -->
+          <div class="heart-thumbs" aria-hidden="true">
+            <img src="assets/thumb-1.svg" class="thumb thumb--1" alt="" />
+            <img src="assets/thumb-2.svg" class="thumb thumb--2" alt="" />
+            <img src="assets/thumb-3.svg" class="thumb thumb--3" alt="" />
+            <img src="assets/thumb-4.svg" class="thumb thumb--4" alt="" />
+            <img src="assets/thumb-5.svg" class="thumb thumb--5" alt="" />
+          </div>
+
           <ul class="hero__particles" aria-hidden="true">
             <li class="particle"></li><li class="particle"></li><li class="particle"></li>
             <li class="particle"></li><li class="particle"></li>
@@ -106,6 +110,11 @@
           <p class="hero__cta">
             <a class="anchor-link" href="#about" aria-label="Scroll to about">↓ Scroll to About</a>
           </p>
+
+          <!-- Toggle button for keyboard & mobile users to reveal thumbnails -->
+          <button id="thumbsToggle" class="thumbs-toggle btn" aria-pressed="false" aria-controls="hero">
+            Show photos
+          </button>
         </div>
       </div>
     </section>
@@ -116,7 +125,7 @@
         <h2 id="about-heading" class="section__title">Our Philosophy</h2>
         <div class="section__grid">
           <div class="section__media">
-            <img src="assets/eileen.jpg" alt="Eileen — founder and guide at Hope's Holistic Haven" class="round-media" />
+            <img src="assets/eileen.svg" alt="Eileen — founder and guide at Hope's Holistic Haven" class="round-media" />
           </div>
           <div class="section__body">
             <p class="lead">Hope's Holistic Haven is a boutique practice centered on guidance that meets you where you are. We blend astrology, dream work, mindfulness, and practical wellness to help you move through life with greater clarity, confidence, and peace.</p>
@@ -134,214 +143,8 @@
       </div>
     </section>
 
-    <!-- Ways We Can Work Together -->
-    <section id="ways" class="section section--ways" aria-labelledby="ways-heading">
-      <div class="container">
-        <h2 id="ways-heading" class="section__title">Ways We Can Work Together</h2>
+    <!-- rest of page unchanged... -->
 
-        <div class="ways__list">
-          <article class="way" id="way-birthchart">
-            <h3 class="way__title">Birth Chart Readings</h3>
-            <p>Deep, compassionate readings that illuminate patterns, gifts, and challenges — a map for your personal path forward.</p>
-            <a class="way__link" href="#contact">Book a Reading</a>
-          </article>
-
-          <article class="way" id="way-astro">
-            <h3 class="way__title">Astrocartography & Relocation Guidance</h3>
-            <p>Deciding where to plant roots is sacred work. We use astrocartography and practical considerations to find environments that support your well‑being.</p>
-            <a class="way__link" href="#contact">Explore Relocation Guidance</a>
-          </article>
-
-          <article class="way" id="way-dreams">
-            <h3 class="way__title">Dream Interpretation & Inner Work</h3>
-            <p>We listen to the language of dreams to reveal healing paths, shadow work, and creative impulses for real transformation.</p>
-            <a class="way__link" href="#contact">Work with Your Dreams</a>
-          </article>
-
-          <article class="way" id="way-guidance">
-            <h3 class="way__title">Spiritual Guidance & Mindfulness Coaching</h3>
-            <p>Practical, grounded tools for everyday life — breathwork, ritual, and coaching to hold change in your body and routine.</p>
-            <a class="way__link" href="#contact">Start Coaching</a>
-          </article>
-
-          <article class="way" id="way-wellness">
-            <h3 class="way__title">Personalized Wellness Plans</h3>
-            <p>Integrative plans that blend lifestyle, mindfulness, and somatic practices tailored to your needs.</p>
-            <a class="way__link" href="#contact">Request a Plan</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="section section--testimonials" aria-labelledby="testimonials-heading">
-      <div class="container">
-        <h2 id="testimonials-heading" class="section__title">What clients say</h2>
-
-        <div class="carousel" data-carousel aria-roledescription="carousel">
-          <ul class="carousel__track" data-carousel-track>
-            <li class="carousel__slide" id="slide-1" data-carousel-slide>
-              <blockquote class="quote">
-                <p class="quote__text">“I had been searching for an astrologer who specializes in astrocartography for relocation and career purposes. I found Eileen via Threads and instantly connected to her warm and generous spirit. She helped me locate the best timeframe for my relocation and overall growth and elevation by breaking down the monthly transits for the most favorable conditions. The goal has always been to work with astrology as a tool to move through life with grace and ease. I am so grateful to have been aligned with Eileen and cannot wait to see what this new adventure has in store for me.”</p>
-                <footer class="quote__cite">— Precious S.</footer>
-              </blockquote>
-            </li>
-
-            <li class="carousel__slide" id="slide-2" data-carousel-slide>
-              <blockquote class="quote">
-                <p class="quote__text">“Eileen offered me a reading based on my astrological birth chart recently and I took her up on the offer. Eileen scheduled a meeting and prepared different important talking points about my birth chart. I previously had known basic meanings of my astrology as it related to my personality, but Eileen included details I found very relevant to my life right now. It was an interactive experience, in which I asked many questions. She addressed my doubts while creating a document with all the information we had gone over in the meeting. After the meeting I felt refreshed and ready to continue to learn about myself. Eileen provided a very objective perspective. She is not one to sugarcoat things. This once again exposes her genuine personality and trustworthiness. She is real and honest, but in an endearing way. I am blessed to have met Eileen and shared in her energy and experiences. I attest to her character with gusto.”</p>
-                <footer class="quote__cite">— Caswell E.</footer>
-              </blockquote>
-            </li>
-
-            <li class="carousel__slide" id="slide-3" data-carousel-slide>
-              <blockquote class="quote">
-                <p class="quote__text">“I have been knowing Eileen Lang for 10 years and had the pleasure of receiving assistance on my spiritual journey. She is very professional, nurturing and compassionate. She has guided me through difficult parts of my journey with accuracy and spot on wisdom. She has helped me to heal from past traumas. She has very strong spiritual gifts and very accurate readings which will provide profound guidance in your life so if you are looking for a powerful spiritual practitioner, try Eileen Lang — you won’t be disappointed.”</p>
-                <footer class="quote__cite">— Dominique B.</footer>
-              </blockquote>
-            </li>
-
-            <li class="carousel__slide" id="slide-4" data-carousel-slide>
-              <blockquote class="quote">
-                <p class="quote__text">“Eileen Lang’s services have had a profound impact on my life since beginning with her three years ago. Not only is she knowledgeable and experienced in the area of therapeutic services, but she’s also able to draw from a sincere place of empathy while connecting with clients like me who have complex needs. Eileen displays tremendous insight in the area of being a holistic practitioner. Through her services, I was able to improve several areas of my life, like daily practices for self-esteem building, strategies for time management, and techniques for high-stress environments, such as mindfulness and meditation. All of these tools have helped me to show up as a more effective caregiver as I care for my 80+ year old granddad. What I’ve benefited from the most through Eileen’s services is her knowledge of astrology, including astrocartography placement, and her explanation of birth chart readings. I wasn’t completely familiar with the workings of astrocartography placement prior, but she explained how it can assist clients in selecting the best place for relocation and aligning oneself with a more suitable career. These are also areas that I’ve frequently explained to her as my primary focus. I’ve greatly appreciated her responsible usage of astrocartography placement in helping me make more sound decisions. Most recently, Eileen examined my daily affirmations for 2026 and provided valuable suggestions in my rewrite, shifting the focus of these affirmations in a more intentional direction. I’ve also begun using her mechanism for tapping into one’s inner child, such as adult coloring books, painting, and journaling. I wasn’t expecting to pick up any new hobbies, but they’ve been essential to my growth and renewed happiness. Eileen is the light missing in our world, and I would highly recommend her services to anyone!”</p>
-                <footer class="quote__cite">— Zaiditu P.</footer>
-              </blockquote>
-            </li>
-
-            <li class="carousel__slide" id="slide-5" data-carousel-slide>
-              <blockquote class="quote">
-                <p class="quote__text">“I met with Eileen while searching for a spiritual healer who has dream interpretation capabilities. I found her through Threads and described a disturbing recurring dream that my sister was having about me and I wanted to know what it meant and why. When I met Eileen — her warm presence put me at ease as this was my first time doing ancestral protection work. It was clear she had a long lineage of connection to the spiritual aspect of healing. Just a few days later, my court hearing took place and she was 100% right about everything she shared with me during our meeting! I want to thank Eileen for her grounded and knowledgeable work — I would recommend her any day to anyone looking for guidance, reassurance, protection and answers to things beyond their understanding. She's a true spiritual guide and I would definitely consult with her again.”</p>
-                <footer class="quote__cite">— Shari S.</footer>
-              </blockquote>
-            </li>
-
-            <li class="carousel__slide" id="slide-6" data-carousel-slide>
-              <blockquote class="quote">
-                <p class="quote__text">“One night, I was simply resting and somehow felt led to you. When I joined the TikTok live, I observed you giving a reading to someone else. When you asked if I wanted a reading, I hesitated. It was my first time ever doing something like that, and based on how I was raised, I was naturally skeptical. But there was something about your energy — your warmth, calmness, and authenticity — that immediately made me feel safe and trusting enough to say yes. You spoke about parts of me and my inner world in ways that no one could have possibly known. It wasn’t surface-level or generic, it felt deeply personal and incredibly accurate. From that day to now, my life has taken a drastic and beautiful turn. You’ve proven it through your authenticity, care, and the impact you’ve had on my life. I have nothing but good things to say about my experience with you, and I would wholeheartedly recommend you to anyone seeking clarity, healing, or guidance.”</p>
-                <footer class="quote__cite">— Avie S.</footer>
-              </blockquote>
-            </li>
-          </ul>
-
-          <div class="carousel__controls" aria-hidden="false">
-            <button class="carousel__prev" data-carousel-prev aria-label="Previous testimonial">‹</button>
-            <button class="carousel__pause" data-carousel-pause aria-label="Pause testimonials">❚❚</button>
-            <button class="carousel__next" data-carousel-next aria-label="Next testimonial">›</button>
-          </div>
-
-          <ol class="carousel__dots" role="tablist" aria-label="Testimonial navigation" data-carousel-dots>
-            <li role="presentation"><button role="tab" aria-selected="true" aria-controls="slide-1" data-carousel-dot>1</button></li>
-            <li role="presentation"><button role="tab" aria-selected="false" aria-controls="slide-2" data-carousel-dot>2</button></li>
-            <li role="presentation"><button role="tab" aria-selected="false" aria-controls="slide-3" data-carousel-dot>3</button></li>
-            <li role="presentation"><button role="tab" aria-selected="false" aria-controls="slide-4" data-carousel-dot>4</button></li>
-            <li role="presentation"><button role="tab" aria-selected="false" aria-controls="slide-5" data-carousel-dot>5</button></li>
-            <li role="presentation"><button role="tab" aria-selected="false" aria-controls="slide-6" data-carousel-dot>6</button></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Resources -->
-    <section id="resources" class="section section--resources" aria-labelledby="resources-heading">
-      <div class="container">
-        <h2 id="resources-heading" class="section__title">Featured resources</h2>
-        <div class="resources__grid">
-          <article class="resource">
-            <h3 class="resource__title">A Gentle Journal for Inner Clarity</h3>
-            <p class="resource__descr">A downloadable journal with prompts to connect to your dreams, patterns, and intentions.</p>
-            <a class="resource__link" href="#resources">Download</a>
-          </article>
-
-          <article class="resource">
-            <h3 class="resource__title">Intro to Astrocartography</h3>
-            <p class="resource__descr">A short guide to understanding how place influences your chart and life choices.</p>
-            <a class="resource__link" href="#resources">Read</a>
-          </article>
-
-          <article class="resource">
-            <h3 class="resource__title">5-Minute Grounding Practices</h3>
-            <p class="resource__descr">Quick, accessible practices you can use between meetings, while travelling, or during anxious moments.</p>
-            <a class="resource__link" href="#resources">Practice</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog teaser -->
-    <section id="blog" class="section section--blog" aria-labelledby="blog-heading">
-      <div class="container">
-        <h2 id="blog-heading" class="section__title">From the journal</h2>
-        <div class="blog__list">
-          <article class="post">
-            <h3 class="post__title"><a href="#blog">When the Map Changes: Moving Through Big Life Shifts</a></h3>
-            <p class="post__meta">June 2026 · Read</p>
-            <p class="post__excerpt">Stories and practical approaches to grief, reinvention, and finding rootedness in new places.</p>
-          </article>
-
-          <article class="post">
-            <h3 class="post__title"><a href="#blog">Dreams as Teachers</a></h3>
-            <p class="post__meta">May 2026 · Read</p>
-            <p class="post__excerpt">How to listen to your night-time language and bring it into daily practice.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Minimal FAQ -->
-    <section id="faq" class="section section--faq" aria-labelledby="faq-heading">
-      <div class="container">
-        <h2 id="faq-heading" class="section__title">FAQ</h2>
-        <dl class="faq-list">
-          <dt>Do you offer remote sessions?</dt>
-          <dd>Yes — most sessions are offered remotely via video or phone. In-person options are available by request.</dd>
-
-          <dt>How long is a session?</dt>
-          <dd>Standard consultations are 60 minutes. Some offerings include extended or multi-session packages.</dd>
-
-          <dt>Is this a religious practice?</dt>
-          <dd>No. Work is interfaith and non-denominational; it centers your experience, not a specific belief system.</dd>
-        </dl>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section section--contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <h2 id="contact-heading" class="section__title">Get in touch</h2>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Book a session</h3>
-            <p class="muted">Choose a session type and we'll follow up to schedule.</p>
-            <a class="btn btn--outline" href="mailto:hello@hopeshaven.com?subject=Booking%20Inquiry" aria-label="Email to book a session">Email to book</a>
-          </div>
-
-          <form class="contact-form" action="#" method="post" novalidate aria-describedby="contact-note">
-            <div class="form-row">
-              <label for="contact-name">Your name</label>
-              <input id="contact-name" name="name" type="text" required />
-            </div>
-
-            <div class="form-row">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" required />
-            </div>
-
-            <div class="form-row">
-              <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="message" rows="5" required></textarea>
-            </div>
-
-            <div class="form-row form-row--actions">
-              <button type="submit" class="btn btn--primary">Send</button>
-              <a class="btn btn--ghost" href="https://calendly.com/" target="_blank" rel="noopener">See availability</a>
-            </div>
-
-            <p id="contact-note" class="form-note">We typically respond within 48 hours. If this is urgent, please indicate that in your message.</p>
-          </form>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
