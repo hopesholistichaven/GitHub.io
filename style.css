@@ -1,12 +1,20 @@
-/* style.css — Hope's Holistic Haven (updated)
-   Appended thumbnail + heart styles at the end
+/* style.css — Hope's Holistic Haven (color variables + updated thumbnail styles)
+   Updated to use the supplied Flyer color palette.
 */
 
-/* (original style.css content kept earlier in repo) */
+:root{
+  /* Flyer Colors */
+  --light-orange: #f7f2f0; /* background soft */
+  --light-red: #eed4d2;    /* softer red */
+  --dark-gray: #3c3b3b;    /* text & charcoal */
+  --gray: #978f8d;         /* muted text */
+  --pastel-red: #e6a9af;   /* accent */
+  --peach: #ffbd59;        /* highlight */
+}
 
 /* Heart thumbnails (pop-out) */
 .heart-thumbs{position:absolute;left:50%;top:50%;width:340px;height:340px;transform:translate(-50%,-50%);pointer-events:none}
-.thumb{position:absolute;width:72px;height:72px;border-radius:8px;object-fit:cover;border:3px solid rgba(255,255,255,0.9);box-shadow:0 8px 20px rgba(0,0,0,0.12);transform:translate(-50%,-50%) scale(0.75) translateY(0);opacity:0;transition:transform 420ms cubic-bezier(.16,.9,.3,1),opacity 320ms ease}
+.thumb{position:absolute;width:72px;height:72px;border-radius:8px;object-fit:cover;border:3px solid var(--light-orange);box-shadow:0 8px 20px rgba(60,59,59,0.12);transform:translate(-50%,-50%) scale(0.75) translateY(0);opacity:0;transition:transform 420ms cubic-bezier(.16,.9,.3,1),opacity 320ms ease}
 
 /* initial positions centered */
 .thumb--1{left:50%;top:50%}
@@ -34,7 +42,10 @@
 .hero__art.thumbs-active .thumb{pointer-events:auto}
 
 /* thumbs toggle button styling */
-.thumbs-toggle{margin-top:1rem;padding:.45rem .75rem;border-radius:999px;background:transparent;border:1px solid rgba(47,45,43,0.06);font-weight:600}
+.thumbs-toggle{margin-top:1rem;padding:.45rem .75rem;border-radius:999px;background:transparent;border:1px solid rgba(60,59,59,0.06);font-weight:600;color:var(--dark-gray)}
+
+/* adjust particle color to match palette */
+.hero__particles .particle{background:rgba(230,169,175,0.14)}
 
 /* Mobile: larger tap targets and prefer toggle (no hover) */
 @media (hover:none){
