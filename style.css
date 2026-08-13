@@ -14,7 +14,7 @@
 
 /* Heart thumbnails (pop-out) */
 .heart-thumbs{position:absolute;left:50%;top:50%;width:340px;height:340px;transform:translate(-50%,-50%);pointer-events:none}
-.thumb{position:absolute;width:72px;height:72px;border-radius:8px;object-fit:cover;border:3px solid var(--light-orange);box-shadow:0 8px 20px rgba(60,59,59,0.12);transform:translate(-50%,-50%) scale(0.75) translateY(0);opacity:0;transition:transform 420ms cubic-bezier(.16,.9,.3,1),opacity 320ms ease}
+.thumb{position:absolute;width:72px;height:72px;border-radius:8px;object-fit:cover;border:3px solid var(--light-orange);box-shadow:0 8px 20px rgba(60,59,59,0.12);transform:translate(-50%,-50%) scale(.9);opacity:0;transition:transform .45s cubic-bezier(.2,.9,.2,1),opacity .35s ease;will-change:transform,opacity}
 
 /* initial positions centered */
 .thumb--1{left:50%;top:50%}
@@ -67,7 +67,7 @@
 .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
 
 /* Primary button explicit rule (ensures accessible contrast with dark text on pastel background) */
-.btn--primary{display:inline-block;background:var(--pastel-red);color:var(--dark-gray);padding:.9rem 1.6rem;border-radius:40px;text-decoration:none;font-weight:700;border:none;box-shadow:0 6px 18px rgba(230,169,175,0.18)}
+.btn--primary{display:inline-block;background:var(--pastel-red);color:var(--dark-gray);padding:.9rem 1.6rem;border-radius:40px;text-decoration:none;font-weight:700;border:none;box-shadow:0 6px 18px rgba(60,59,59,0.08)}
 .btn--primary:focus{outline:3px solid rgba(60,59,59,0.12);outline-offset:4px}
 
 /* Ensure anchor-link in hero is visible */
