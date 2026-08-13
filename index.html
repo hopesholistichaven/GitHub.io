@@ -33,40 +33,21 @@
   <!-- Skip link for keyboard users -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" role="banner">
-    <div class="header-inner container">
-      <a class="brand" href="/" aria-label="Hope's Holistic Haven home">
-        <img src="assets/logo.svg" alt="Hope's Holistic Haven — logo" class="brand__logo" />
-        <span class="visually-hidden">Hope's Holistic Haven</span>
-      </a>
-
-      <nav class="nav" role="navigation" aria-label="Primary navigation">
-        <button class="nav__toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Open menu">
-          <span class="hamburger" aria-hidden="true"></span>
-        </button>
-
-        <ul id="primary-menu" class="nav__list" data-nav-list>
-          <li class="nav__item"><a class="nav__link" href="#about">About</a></li>
-          <li class="nav__item"><a class="nav__link" href="#ways">Ways We Can Work Together</a></li>
-          <li class="nav__item"><a class="nav__link" href="#testimonials">Testimonials</a></li>
-          <li class="nav__item"><a class="nav__link" href="#resources">Featured</a></li>
-          <li class="nav__item"><a class="nav__link" href="#blog">Blog</a></li>
-          <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a class="btn btn--primary" href="#contact" aria-label="Book a session">Book a Session</a>
-      </div>
-    </div>
-  </header>
+  <!-- Header removed as requested -->
 
   <main id="main" class="main" role="main">
     <!-- Hero -->
     <section id="hero" class="hero" aria-labelledby="hero-heading">
       <div class="hero__inner container">
-        <!-- Inline SVG heart — styled/animated in CSS/JS -->
-        <div class="hero__art" aria-hidden="true">
+
+        <!-- Large brand/title behind the heart; will "open" when icons pop out -->
+        <div class="hero__brand" aria-hidden="true">
+          <span class="brand-top">HOPE'S HOLISTIC HAVEN</span>
+          <span class="brand-bottom">HOPE'S HOLISTIC HAVEN</span>
+        </div>
+
+        <!-- Inline SVG heart — enlarged and centered -->
+        <div class="hero__art" aria-hidden="false">
           <!-- heart.svg (inline for accessibility & animation hooks) -->
           <svg class="heart-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
             <defs>
@@ -84,37 +65,47 @@
             <path class="heart-icon__line" d="M256 480s-168-86-168-235c0-78 64-140 140-140 38 0 64 15 84 36 20-21 46-36 84-36 76 0 140 62 140 140 0 149-168 235-280 235z" fill="none" stroke="rgba(0,0,0,0.08)" />
           </svg>
 
-          <!-- Thumbnails pop-out (placeholder images). Trigger on hover (desktop) or toggle button on mobile/keyboard -->
-          <div class="heart-thumbs" aria-hidden="true">
-            <img src="assets/thumb-1.svg" class="thumb thumb--1" alt="" />
-            <img src="assets/thumb-2.svg" class="thumb thumb--2" alt="" />
-            <img src="assets/thumb-3.svg" class="thumb thumb--3" alt="" />
-            <img src="assets/thumb-4.svg" class="thumb thumb--4" alt="" />
-            <img src="assets/thumb-5.svg" class="thumb thumb--5" alt="" />
+          <!-- Icon popouts: ABOUT (photo), SERVICES, BLOG, DONATE, CONTACT -->
+          <div class="icon-popouts" aria-hidden="false">
+            <button class="icon-card icon--about" aria-label="About">
+              <img src="assets/eileen.svg" alt="Eileen" />
+              <span class="icon-label">About</span>
+            </button>
+
+            <button class="icon-card icon--services" aria-label="Services">
+              <img src="assets/thumb-1.svg" alt="Services icon" />
+              <span class="icon-label">Services</span>
+            </button>
+
+            <button class="icon-card icon--blog" aria-label="Blog">
+              <img src="assets/thumb-2.svg" alt="Blog icon" />
+              <span class="icon-label">Blog</span>
+            </button>
+
+            <button class="icon-card icon--donate" aria-label="Donate">
+              <img src="assets/thumb-3.svg" alt="Donate icon" />
+              <span class="icon-label">Donate</span>
+            </button>
+
+            <button class="icon-card icon--contact" aria-label="Contact">
+              <img src="assets/thumb-4.svg" alt="Contact icon" />
+              <span class="icon-label">Contact</span>
+            </button>
           </div>
 
-          <ul class="hero__particles" aria-hidden="true">
-            <li class="particle"></li><li class="particle"></li><li class="particle"></li>
-            <li class="particle"></li><li class="particle"></li>
-          </ul>
         </div>
 
-        <div class="hero__content">
-          <h1 id="hero-heading" class="hero__title">
-            <span class="stack">HOPE'S</span>
-            <span class="stack">HOLISTIC</span>
-            <span class="stack">HAVEN</span>
-          </h1>
-
+        <div class="hero__content" aria-hidden="true">
+          <h1 id="hero-heading" class="hero__title visually-hidden">HOPE'S HOLISTIC HAVEN</h1>
           <p class="hero__lead">Healing begins within — personalized astrology, spiritual guidance, and transformational support.</p>
 
           <p class="hero__cta">
             <a class="anchor-link" href="#about" aria-label="Scroll to about">↓ Scroll to About</a>
           </p>
 
-          <!-- Toggle button for keyboard & mobile users to reveal thumbnails -->
+          <!-- Toggle button for keyboard & mobile users to reveal thumbnails & icons -->
           <button id="thumbsToggle" class="thumbs-toggle btn" aria-pressed="false" aria-controls="hero">
-            Show photos
+            Show options
           </button>
         </div>
       </div>
