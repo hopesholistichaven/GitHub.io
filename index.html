@@ -71,8 +71,9 @@
           <svg class="heart-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
             <defs>
               <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
-                <stop offset="0%" stop-color="#b71c1c"/>
-                <stop offset="100%" stop-color="#d62839"/>
+                <stop offset="0%" stop-color="var(--pastel-red)"/>
+                <stop offset="60%" stop-color="var(--dark-gray)"/>
+                <stop offset="100%" stop-color="var(--peach)"/>
               </linearGradient>
               <filter id="f-soft" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="6" result="blur"/>
@@ -80,7 +81,7 @@
               </filter>
             </defs>
             <path class="heart-icon__fill" d="M256 480s-168-86-168-235c0-78 64-140 140-140 38 0 64 15 84 36 20-21 46-36 84-36 76 0 140 62 140 140 0 149-168 235-280 235z" fill="url(#g1)" filter="url(#f-soft)"></path>
-            <path class="heart-icon__line" d="M256 480s-168-86-168-235c0-78 64-140 140-140 38 0 64 15 84 36 20-21 46-36 84-36 76 0 140 62 140 140 0 149-168 235-280 235z" fill="none" stroke="#7a1212" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.25"></path>
+            <path class="heart-icon__line" d="M256 480s-168-86-168-235c0-78 64-140 140-140 38 0 64 15 84 36 20-21 46-36 84-36 76 0 140 62 140 140 0 149-168 235-280 235z" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.25"></path>
           </svg>
 
           <!-- Thumbnails pop-out (placeholder images). Trigger on hover (desktop) or toggle button on mobile/keyboard -->
