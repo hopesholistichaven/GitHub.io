@@ -1,5 +1,6 @@
-// script.js — consolidated, HTML-aware site interactions: menu, hero heart nav, smooth scroll,
-// thumbnails toggle, carousel, newsletter/contact handling, reduced-motion & a11y safeguards
+// script.js — consolidated, HTML-aware site interactions with selector fallbacks:
+// supports both the Canva-style markup (#menu-button, #mobile-menu, #hero-heart)
+// and the original repo markup (.nav__toggle, .nav__list, .hero__art, #thumbsToggle).
 (function(){
   'use strict';
   document.addEventListener('DOMContentLoaded', function(){
@@ -12,22 +13,22 @@
     // Helper to mark an element so we don't attach duplicate listeners
     const markInit = (el, key='hhhInited') => { if(!el) return false; if(el.dataset[key]) return false; el.dataset[key] = '1'; return true; };
 
-    // Mobile menu (matches your HTML: #menu-button, #mobile-menu)
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    // --- Mobile menu: support multiple markup variants ---
+    const menuButton = document.getElementById('menu-button') || document.querySelector('.nav__toggle');
+    const mobileMenu = document.getElementById('mobile-menu') || document.querySelector('.nav__list');
     if(menuButton && mobileMenu && markInit(menuButton, 'menu')){
       const setOpen = (isOpen) => {
         mobileMenu.classList.toggle('is-open', isOpen);
-        menuButton.setAttribute('aria-expanded', String(!!isOpen));
+        try { menuButton.setAttribute('aria-expanded', String(!!isOpen)); } catch(e){/* ignore */}
       };
 
       menuButton.addEventListener('click', function(){
         const isOpen = mobileMenu.classList.toggle('is-open');
-        menuButton.setAttribute('aria-expanded', String(isOpen));
+        try { menuButton.setAttribute('aria-expanded', String(isOpen)); } catch(e){}
       });
 
       // Close when a mobile link is activated
-      mobileMenu.querySelectorAll('a').forEach(link => {
+      Array.from(mobileMenu.querySelectorAll('a')).forEach(link => {
         link.addEventListener('click', () => setOpen(false));
       });
 
@@ -37,13 +38,16 @@
       });
     }
 
-    // Hero heart nav (hover/focus and touch-safe)
-    const heroHeart = document.getElementById('hero-heart');
+    // --- Hero heart / thumbnails ---
+    // Support an explicit hero-heart + heart-nav (Canva output) OR the repo's hero__art + thumbsToggle
+    const heroHeart = document.getElementById('hero-heart') || document.querySelector('.heart-icon');
     const heartNav = document.getElementById('heart-nav');
+    const heroArt = document.querySelector('.hero__art');
+    const thumbsToggle = document.getElementById('thumbsToggle');
+
     if(heroHeart && heartNav && markInit(heroHeart, 'heart')){
       const setHeartNav = (visible) => heartNav.classList.toggle('is-visible', visible);
 
-      // Pointer/keyboard interactions
       heroHeart.addEventListener('mouseenter', ()=> setHeartNav(true));
       heroHeart.addEventListener('mouseleave', ()=> setHeartNav(false));
       heroHeart.addEventListener('focus', ()=> setHeartNav(true));
@@ -52,7 +56,6 @@
       heartNav.addEventListener('mouseenter', ()=> setHeartNav(true));
       heartNav.addEventListener('mouseleave', ()=> setHeartNav(false));
 
-      // For touch devices, toggle on click (ignore clicks that come from interactive children)
       const isTouch = matchMedia('(hover: none)').matches;
       if(isTouch){
         heroHeart.addEventListener('click', (e)=>{
@@ -62,9 +65,26 @@
       }
     }
 
-    // Smooth scroll for same-page anchors (respect prefers-reduced-motion)
+    // Repo-style thumbnails toggle
+    if(thumbsToggle && heroArt && markInit(thumbsToggle, 'thumbs')){
+      thumbsToggle.addEventListener('click', function(){
+        const active = heroArt.classList.toggle('thumbs-active');
+        thumbsToggle.setAttribute('aria-pressed', String(active));
+      });
+
+      const touchCapable = matchMedia('(hover: none)').matches;
+      if(touchCapable){
+        heroArt.addEventListener('click', function(e){
+          if(e.target.tagName && e.target.tagName.toLowerCase() === 'a') return;
+          if(e.target.closest && e.target.closest('button')) return;
+          const active = heroArt.classList.toggle('thumbs-active');
+          if(thumbsToggle) thumbsToggle.setAttribute('aria-pressed', String(active));
+        });
+      }
+    }
+
+    // --- Smooth scroll for same-page anchors (respect prefers-reduced-motion) ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      // avoid attaching many times
       if(!markInit(anchor, 'smoothScroll')) return;
       anchor.addEventListener('click', function(e){
         const href = anchor.getAttribute('href');
@@ -78,39 +98,21 @@
             // close mobile menu if open
             if(mobileMenu && mobileMenu.classList.contains('is-open')){
               mobileMenu.classList.remove('is-open');
-              if(menuButton) menuButton.setAttribute('aria-expanded','false');
+              try{ menuButton && menuButton.setAttribute('aria-expanded','false'); }catch(e){}
             }
             // move focus for accessibility
-            target.setAttribute('tabindex','-1');
-            target.focus({preventScroll: true});
-            // remove the tabindex if it wasn't focusable before
-            window.setTimeout(()=>{ if(target.getAttribute('tabindex') === '-1') target.removeAttribute('tabindex'); }, 1200);
+            try{
+              const hadTab = target.hasAttribute('tabindex');
+              target.setAttribute('tabindex','-1');
+              target.focus({preventScroll: true});
+              window.setTimeout(()=>{ if(!hadTab && target.getAttribute('tabindex') === '-1') target.removeAttribute('tabindex'); }, 1200);
+            }catch(e){}
           }
         }
       });
     });
 
-    // Thumbnails toggle (optional, no-op if missing)
-    const thumbsToggle = document.getElementById('thumbsToggle');
-    const heroArt = document.querySelector('.hero__art');
-    if(thumbsToggle && heroArt && markInit(thumbsToggle, 'thumbs')){
-      thumbsToggle.addEventListener('click', function(){
-        const active = heroArt.classList.toggle('thumbs-active');
-        thumbsToggle.setAttribute('aria-pressed', String(active));
-      });
-
-      // touch tapping on heroArt toggles
-      const touchCapable = matchMedia('(hover: none)').matches;
-      if(touchCapable){
-        heroArt.addEventListener('click', function(e){
-          if(e.target.tagName.toLowerCase() === 'a' || e.target.closest('button')) return;
-          const active = heroArt.classList.toggle('thumbs-active');
-          if(thumbsToggle) thumbsToggle.setAttribute('aria-pressed', String(active));
-        });
-      }
-    }
-
-    // Carousel (optional)
+    // --- Carousel (optional) ---
     (function initCarousel(){
       const carousel = document.querySelector('[data-carousel]');
       if(!carousel || !markInit(carousel, 'carousel')) return;
@@ -164,7 +166,7 @@
       update(); startTimer();
     })();
 
-    // Newsletter form (matches #newsletter-form)
+    // --- Newsletter form (optional) ---
     const newsletterForm = document.getElementById('newsletter-form');
     if(newsletterForm && markInit(newsletterForm, 'newsletter')){
       const input = document.getElementById('newsletter-email');
@@ -182,7 +184,7 @@
       });
     }
 
-    // Generic contact form fallback (.contact-form) to match original script
+    // --- Generic contact form fallback (.contact-form) ---
     const contactForm = document.querySelector('.contact-form');
     if(contactForm && markInit(contactForm, 'contact')){
       contactForm.addEventListener('submit', function(e){
