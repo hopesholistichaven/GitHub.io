@@ -28,7 +28,15 @@
     .hero-orbit::after { width:1rem; height:1rem; right:12%; bottom:20%; background:#3b3937; }
     .hero-wordmark { text-wrap:balance; }
     .eyebrow { letter-spacing:.16em; text-transform:uppercase; }
-    .services-page { display:none; background:#f7f2f0; }
+    .services-page, .blog-page, .about-subpage { display:none; background:#f7f2f0; }
+    .routed-page-inner { max-width:1200px; margin:0 auto; }
+    .about-dropdown { position:relative; }
+    .about-dropdown-menu { display:none; position:absolute; left:0; top:calc(100% + .75rem); min-width:15rem; padding:.5rem; border:1px solid var(--line); border-radius:1rem; background:#faf9f5; box-shadow:0 18px 35px rgba(59,57,55,.14); }
+    .about-dropdown:hover .about-dropdown-menu, .about-dropdown:focus-within .about-dropdown-menu, .about-dropdown.is-open .about-dropdown-menu { display:block; }
+    .about-dropdown-menu a { display:block; padding:.75rem .85rem; border-radius:.6rem; }
+    .about-dropdown-menu a:hover, .about-dropdown-menu a:focus-visible { background:#f1e8e4; }
+    body.route-blog main > section:not(#blog-page), body.route-about-who main > section:not(#about-who-page), body.route-about-founder main > section:not(#about-founder-page), body.route-about-hope main > section:not(#about-hope-page) { display:none; }
+    body.route-blog #blog-page, body.route-about-who #about-who-page, body.route-about-founder #about-founder-page, body.route-about-hope #about-hope-page { display:block; }
     .services-page-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1rem; }
     .service-page-card { border:1px solid var(--line); border-radius:1.25rem; padding:1.5rem; background:#faf9f5; min-height:15rem; transition:transform .28s ease, box-shadow .28s ease; }
     .service-page-card:hover { transform:translateY(-6px); box-shadow:0 18px 35px rgba(59,57,55,.14); }
@@ -66,16 +74,19 @@
   <div class="site-shell">
    <header class="sticky top-0 z-50 w-full">
     <nav data-template-id="navbar-section" class="canva-header site-nav relative w-full" aria-label="Primary navigation" style="background: transparent;">
-     <div class="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 lg:px-10">
-      <a href="#top" class="focus-ring flex items-center gap-3 rounded-sm" aria-label="Hope's Holistic Haven home"> <span class="brand-mark" aria-hidden="true"><img data-template-id="header-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHSSDwNrWg/1" alt="Hope's Holistic Haven HH logo"></span> <span data-template-id="brand-name" class="canva-text text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 14px; letter-spacing: 0.08rem;">Hope's Holistic Haven</span> </a>
+     <div class="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 lg:px-10"><a href="#top" class="focus-ring flex items-center gap-3 rounded-sm" aria-label="Hope's Holistic Haven home"> <span class="brand-mark" aria-hidden="true"><img data-template-id="header-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHSSDwNrWg/1" alt="Hope's Holistic Haven HH logo"></span> <span data-template-id="brand-name" class="canva-text text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 14px; letter-spacing: 0.08rem;">Hope's Holistic Haven</span> </a>
       <div class="hidden items-center gap-8 md:flex">
-       <a data-template-id="nav-about" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#about" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</a> <a data-template-id="nav-services" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="nav-blog" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#resources" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="nav-donate" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#contact" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="nav-contact" class="canva-button focus-ring rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">CONTACT</a>
+       <div class="about-dropdown">
+        <button data-template-id="nav-about" class="canva-button focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" type="button" aria-expanded="false" aria-haspopup="true" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</button>
+        <div class="about-dropdown-menu" role="menu">
+         <a data-template-id="nav-about-who" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about-who" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">WHO WE ARE</a><a data-template-id="nav-about-founder" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about-founder" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT THE FOUNDER</a><a data-template-id="nav-about-hope" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about-hope" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">HONORING EMMANUEL "HOPE" LANG</a>
+        </div>
+       </div><a data-template-id="nav-services" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="nav-blog" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#blog" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="nav-donate" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#contact" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="nav-contact" class="canva-button focus-ring rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">CONTACT</a>
       </div><button id="menu-button" class="focus-ring rounded-sm p-2 md:hidden" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"> <i data-lucide="menu" aria-hidden="true"></i> </button>
      </div>
      <div id="mobile-menu" class="mobile-menu md:hidden">
       <div class="border-t border-black/10 px-5 py-4">
-       <div class="flex flex-col gap-1">
-        <a data-template-id="mobile-nav-about" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#about" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</a> <a data-template-id="mobile-nav-services" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="mobile-nav-blog" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#resources" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="mobile-nav-donate" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#contact" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="mobile-nav-contact" class="canva-button focus-ring mt-2 rounded-sm px-3 py-3 text-sm font-bold" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">CONTACT</a>
+       <div class="flex flex-col gap-1"><a data-template-id="mobile-nav-about" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#about" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</a> <a data-template-id="mobile-nav-services" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="mobile-nav-blog" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#blog" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="mobile-nav-donate" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#contact" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="mobile-nav-contact" class="canva-button focus-ring mt-2 rounded-sm px-3 py-3 text-sm font-bold" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">CONTACT</a>
        </div>
       </div>
      </div>
@@ -83,8 +94,7 @@
    </header>
    <main>
     <section id="top" data-template-id="hero-section" class="canva-section hero-section" style="background: rgb(248, 223, 228);">
-     <video class="hero-video" autoplay="" muted="" loop="" playsinline="" aria-hidden="true" tabindex="-1">
-      <source src="https://videos.pexels.com/video-files/3129595/3129595-hd_1920_1080_25fps.mp4" type="video/mp4">
+     <video class="hero-video" autoplay="" muted="" loop="" playsinline="" aria-hidden="true" tabindex="-1"><source src="https://videos.pexels.com/video-files/3129595/3129595-hd_1920_1080_25fps.mp4" type="video/mp4">
      </video>
      <div class="hero-overlay" aria-hidden="true"></div>
      <div class="hero-orbit" aria-hidden="true"></div>
@@ -106,7 +116,8 @@
       </div>
       <div class="mt-10 grid gap-10 md:grid-cols-3">
        <article data-template-id="resource-card-1" class="canva-card feature-card" style="background: rgb(243, 240, 233);">
-        <div class="feature-image-wrap aspect-[4/3]"><img data-template-id="resource-image-1" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5480193/pexels-photo-5480193.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Close-up of hands preparing herbal ingredients in a mortar and pestle, top view.">
+        <div class="feature-image-wrap aspect-[4/3]">
+         <img data-template-id="resource-image-1" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5480193/pexels-photo-5480193.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Close-up of hands preparing herbal ingredients in a mortar and pestle, top view.">
         </div>
         <div class="py-5">
          <p data-template-id="resource-index-1" class="canva-text text-xs font-bold uppercase tracking-[.13em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">01 / Natural remedies</p>
@@ -115,7 +126,8 @@
         </div>
        </article>
        <article data-template-id="resource-card-2" class="canva-card feature-card" style="background: rgb(243, 240, 233);">
-        <div class="feature-image-wrap aspect-[4/3]"><img data-template-id="resource-image-2" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/8455474/pexels-photo-8455474.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A serene woman practicing meditation outdoors near a lake, promoting wellness and relaxation.">
+        <div class="feature-image-wrap aspect-[4/3]">
+         <img data-template-id="resource-image-2" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/8455474/pexels-photo-8455474.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A serene woman practicing meditation outdoors near a lake, promoting wellness and relaxation.">
         </div>
         <div class="py-5">
          <p data-template-id="resource-index-2" class="canva-text text-xs font-bold uppercase tracking-[.13em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">02 / Mindfulness</p>
@@ -124,7 +136,8 @@
         </div>
        </article>
        <article data-template-id="resource-card-3" class="canva-card feature-card" style="background: rgb(243, 240, 233);">
-        <div class="feature-image-wrap aspect-[4/3]"><img data-template-id="resource-image-3" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/17890682/pexels-photo-17890682.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Serene Zen setup with healing crystals and a candle on a wooden table, promoting tranquility.">
+        <div class="feature-image-wrap aspect-[4/3]">
+         <img data-template-id="resource-image-3" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/17890682/pexels-photo-17890682.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Serene Zen setup with healing crystals and a candle on a wooden table, promoting tranquility.">
         </div>
         <div class="py-5">
          <p data-template-id="resource-index-3" class="canva-text text-xs font-bold uppercase tracking-[.13em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">03 / Holistic living</p>
@@ -137,7 +150,8 @@
     </section>
     <section id="about" data-template-id="about-section" class="canva-section px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(250, 249, 245);">
      <div class="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
-      <div class="overflow-hidden bg-[#d8d4ca]"><img data-template-id="about-image" class="canva-image h-full min-h-[28rem] w-full object-cover" loading="lazy" src="canva://MAHRh4KeI30/1" alt="Portrait of Hope, founder of Hope's Holistic Haven">
+      <div class="overflow-hidden bg-[#d8d4ca]">
+       <img data-template-id="about-image" class="canva-image h-full min-h-[28rem] w-full object-cover" loading="lazy" src="canva://MAHRh4KeI30/1" alt="Portrait of Hope, founder of Hope's Holistic Haven">
       </div>
       <div class="flex flex-col justify-center">
        <p data-template-id="about-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">meet the foundeR</p>
@@ -151,8 +165,41 @@ Guided by a passion for healing, education, and transformation, Eileen's mission
       </div>
      </div>
     </section>
+    <section id="blog-page" data-template-id="blog-page-section" class="canva-section blog-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="blog-page-title" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner">
+      <a data-template-id="blog-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="blog-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Journal</p>
+      <h1 id="blog-page-title" data-template-id="blog-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Thoughts for a softer life.</h1>
+      <p data-template-id="blog-page-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Notes, practices, and reflections for tending to your mind, body, and spirit.</p>
+     </div>
+    </section>
+    <section id="about-who-page" data-template-id="about-who-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner">
+      <a data-template-id="about-who-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="about-who-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Our story</p>
+      <h1 data-template-id="about-who-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">Who We Are</h1>
+      <p data-template-id="about-who-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Hope's Holistic Haven is a welcoming space for practical tools, ancestral wisdom, and whole-person care.</p>
+     </div>
+    </section>
+    <section id="about-founder-page" data-template-id="about-founder-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner">
+      <a data-template-id="about-founder-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="about-founder-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Meet the founder</p>
+      <h1 data-template-id="about-founder-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">About the Founder</h1>
+      <p data-template-id="about-founder-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Eileen Lang brings together holistic health, clinical hypnotherapy, integrative medicine, and intuitive guidance to support meaningful transformation.</p>
+     </div>
+    </section>
+    <section id="about-hope-page" data-template-id="about-hope-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner">
+      <a data-template-id="about-hope-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="about-hope-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">In loving honor</p>
+      <h1 data-template-id="about-hope-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">Honoring Emmanuel "Hope" Lang</h1>
+      <p data-template-id="about-hope-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">A dedicated space to honor Emmanuel "Hope" Lang and the legacy of love, resilience, and care that continues through this work.</p>
+     </div>
+    </section>
     <section id="services-page" data-template-id="services-page-section" class="canva-section services-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="services-page-title" style="background: rgb(247, 242, 240);">
-     <div class="mx-auto max-w-[1200px]"><a data-template-id="services-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+     <div class="mx-auto max-w-[1200px]">
+      <a data-template-id="services-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
       <p data-template-id="services-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Ways we support you</p>
       <h1 id="services-page-title" data-template-id="services-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Support that feels real, useful, and human.</h1>
       <div class="services-page-grid mt-12">
@@ -246,7 +293,8 @@ Guided by a passion for healing, education, and transformation, Eileen's mission
         <p data-template-id="testimonials-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Kind words</p>
         <h2 id="testimonials-title" data-template-id="testimonials-title" class="canva-text brand-serif mt-4 leading-none" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Testimonials</h2>
        </div>
-       <div class="flex items-center gap-3" aria-label="Testimonial controls"><button id="testimonial-prev" class="focus-ring rounded-full border border-black/30 p-3 transition hover:bg-black hover:text-white" type="button" aria-label="Previous testimonial"><i data-lucide="arrow-left" aria-hidden="true"></i></button> <button id="testimonial-next" class="focus-ring rounded-full border border-black/30 p-3 transition hover:bg-black hover:text-white" type="button" aria-label="Next testimonial"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+       <div class="flex items-center gap-3" aria-label="Testimonial controls">
+        <button id="testimonial-prev" class="focus-ring rounded-full border border-black/30 p-3 transition hover:bg-black hover:text-white" type="button" aria-label="Previous testimonial"><i data-lucide="arrow-left" aria-hidden="true"></i></button> <button id="testimonial-next" class="focus-ring rounded-full border border-black/30 p-3 transition hover:bg-black hover:text-white" type="button" aria-label="Next testimonial"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
        </div>
       </div>
       <div class="testimonial-grid relative mt-10 min-h-[14rem]" aria-live="polite">
@@ -275,7 +323,8 @@ Guided by a passion for healing, education, and transformation, Eileen's mission
         <p data-template-id="testimonial-author-6" class="canva-text mt-8 text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">— Avie S.</p><button data-template-id="testimonial-read-6" data-read-testimonial="5" class="canva-button focus-ring mt-6 rounded-sm border-b-2 border-black pb-2 text-sm font-bold uppercase tracking-[.1em]" type="button" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Read full</button>
        </article>
       </div>
-      <div class="mt-8 flex gap-2" aria-label="Testimonial slides"><button data-testimonial-dot="" type="button" class="testimonial-dot is-active" aria-label="Show testimonial 1"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 2"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 3"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 4"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 5"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 6"></button>
+      <div class="mt-8 flex gap-2" aria-label="Testimonial slides">
+       <button data-testimonial-dot="" type="button" class="testimonial-dot is-active" aria-label="Show testimonial 1"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 2"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 3"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 4"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 5"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 6"></button>
       </div>
      </div>
     </section>
@@ -332,13 +381,11 @@ Saturday–Sunday: 10 AM–4 PM</p>
    </main>
    <footer data-template-id="footer-section" class="canva-footer px-5 py-10 lg:px-10" style="background: rgb(17, 17, 17);">
     <div class="mx-auto flex max-w-[1500px] flex-col justify-between gap-8 border-t border-white/25 pt-8 md:flex-row md:items-end">
-     <div>
-      <span class="footer-logo-badge" aria-hidden="true"><img data-template-id="footer-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHSSDwNrWg/1" alt="Hope's Holistic Haven HH logo"></span>
+     <div><span class="footer-logo-badge" aria-hidden="true"><img data-template-id="footer-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHSSDwNrWg/1" alt="Hope's Holistic Haven HH logo"></span>
       <h2 data-template-id="footer-brand" class="canva-text brand-serif" style="color: rgb(250, 249, 245); font-weight: 400; font-style: normal; font-size: 28px;">Hope's Holistic Haven</h2>
       <p data-template-id="footer-copy" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(200, 196, 188); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Nourish thy mind, body, and soul.</p>
      </div>
-     <div class="flex flex-wrap gap-x-6 gap-y-3">
-      <a data-template-id="footer-about-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#about" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</a> <a data-template-id="footer-services-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#services" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="footer-blog-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#resources" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="footer-donate-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="footer-contact-link" class="canva-link focus-ring rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Contact</a>
+     <div class="flex flex-wrap gap-x-6 gap-y-3"><a data-template-id="footer-about-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#about" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</a> <a data-template-id="footer-services-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#services" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="footer-blog-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#resources" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="footer-donate-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="footer-contact-link" class="canva-link focus-ring rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Contact</a>
      </div>
     </div>
     <div class="mx-auto mt-10 max-w-[1500px]">
@@ -350,9 +397,13 @@ Saturday–Sunday: 10 AM–4 PM</p>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
-      const syncRoute = () => document.body.classList.toggle("route-services", window.location.hash === "#services-page");
+      const syncRoute = () => { const hash = window.location.hash; document.body.classList.toggle("route-services", hash === "#services-page"); document.body.classList.toggle("route-blog", hash === "#blog"); document.body.classList.toggle("route-about-who", hash === "#about-who"); document.body.classList.toggle("route-about-founder", hash === "#about-founder"); document.body.classList.toggle("route-about-hope", hash === "#about-hope"); };
       syncRoute();
       window.addEventListener("hashchange", syncRoute);
+      const aboutDropdown = document.querySelector(".about-dropdown");
+      const aboutButton = aboutDropdown?.querySelector("button");
+      aboutButton?.addEventListener("click", () => { const open = aboutDropdown.classList.toggle("is-open"); aboutButton.setAttribute("aria-expanded", String(open)); });
+      aboutDropdown?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => { aboutDropdown.classList.remove("is-open"); aboutButton.setAttribute("aria-expanded", "false"); }));
       const menuButton = document.getElementById("menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
       const siteNav = document.querySelector(".site-nav");
