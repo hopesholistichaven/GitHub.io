@@ -1,0 +1,5 @@
+Triggering GitHub Pages rebuild (2)
+
+This file was created to force another Pages rebuild at the user's request.
+
+Timestamp: 2026-08-14T00:00:00Z
