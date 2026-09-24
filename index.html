@@ -47,6 +47,24 @@
     body.route-blog #blog-page, body.route-about-who #about-who-page, body.route-about-founder #about-founder-page, body.route-about-hope #about-hope-page, body.route-about-eileen #about-eileen-page, body.route-the-haven #the-haven { display:block; }
     .bio-page-copy { max-width:48rem; margin:2.5rem auto 0; }
     .bio-page-copy p { margin:0 0 1.5rem; }
+    .shop-filter-bar { display:flex; flex-wrap:wrap; gap:.75rem; }
+    .shop-filter-btn { border:1px solid rgba(17,17,17,.15); border-radius:999px; background:transparent; padding:.7rem 1rem; font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#3b3937; transition:all .2s ease; }
+    .shop-filter-btn.is-active { background:#111111; color:#faf9f5; border-color:#111111; }
+    .shop-product-card { display:flex; flex-direction:column; height:100%; border:1px solid rgba(17,17,17,.1); border-radius:1.5rem; background:#faf9f5; overflow:hidden; box-shadow:0 12px 32px rgba(17,17,17,.04); transition:transform .2s ease, box-shadow .2s ease; }
+    .shop-product-card:hover { transform:translateY(-4px); box-shadow:0 18px 38px rgba(17,17,17,.08); }
+    .shop-product-card.is-hidden { display:none; }
+    .shop-product-badge { display:inline-flex; align-items:center; gap:.4rem; border-radius:999px; background:#f3e9e2; color:#3b3937; font-size:.62rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; padding:.45rem .7rem; }
+    .shop-cart-panel { position:fixed; right:1rem; bottom:4.8rem; z-index:80; width:min(22rem, calc(100vw - 1.5rem)); background:#faf9f5; border:1px solid rgba(17,17,17,.12); border-radius:1.25rem; box-shadow:0 20px 40px rgba(17,17,17,.12); padding:1rem; display:none; }
+    .shop-cart-panel.is-open { display:block; }
+    .shop-cart-item { display:flex; align-items:center; justify-content:space-between; gap:1rem; border-bottom:1px solid rgba(17,17,17,.08); padding:.7rem 0; }
+    .shop-cart-item:last-child { border-bottom:none; }
+    .shop-product-modal { position:fixed; inset:0; background:rgba(17,17,17,.62); display:none; align-items:center; justify-content:center; padding:1rem; z-index:90; }
+    .shop-product-modal.is-open { display:flex; }
+    .shop-product-modal-card { background:#faf9f5; width:min(52rem, 100%); border-radius:1.35rem; display:grid; gap:1rem; overflow:hidden; border:1px solid rgba(17,17,17,.08); }
+    @media (min-width:768px) { .shop-product-modal-card { grid-template-columns:1fr 1fr; } }
+    .shop-qty-button { border:1px solid rgba(17,17,17,.15); background:#fff; width:2rem; height:2rem; border-radius:999px; font-size:1.1rem; }
+    .shop-checkout-form { display:grid; gap:1rem; }
+    .shop-checkout-form input, .shop-checkout-form textarea { width:100%; border:1px solid rgba(17,17,17,.14); border-radius:.8rem; padding:.8rem .9rem; background:transparent; }
     .services-page-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1rem; }
     .service-page-card { border:1px solid var(--line); border-radius:1.25rem; padding:1.5rem; background:#faf9f5; min-height:15rem; transition:transform .28s ease, box-shadow .28s ease; }
     .service-page-card:hover { transform:translateY(-6px); box-shadow:0 18px 35px rgba(59,57,55,.14); }
@@ -91,7 +109,7 @@
    <header class="relative z-50 w-full">
     <nav data-template-id="navbar-section" class="canva-header site-nav relative w-full" aria-label="Primary navigation" style="background: rgb(248, 223, 228);">
      <div class="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 lg:px-10">
-      <a href="#top" class="focus-ring flex items-center gap-3 rounded-sm" aria-label="Hope's Holistic Haven home"> <span class="brand-mark" aria-hidden="true"><img data-template-id="header-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHTPFTmrec/1" alt="Hope's Holistic Haven HH logo"></span> <span data-template-id="brand-name" class="canva-text text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 14px; letter-spacing: 0.08rem;">Hope's Holistic Haven</span> </a>
+      <a href="#top" class="focus-ring flex items-center gap-3 rounded-sm" aria-label="Hope's Holistic Haven home"> <span class="brand-mark" aria-hidden="true"><img data-template-id="header-logo" class="canva-image logo-badge-image" loading="lazy" src="HHLogo.png" alt="Hope's Holistic Haven HH logo"></span> <span data-template-id="brand-name" class="canva-text text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 14px; letter-spacing: 0.08rem;">Hope's Holistic Haven</span> </a>
       <div class="hidden items-center gap-8 md:flex">
        <div class="about-dropdown"><button data-template-id="nav-about" class="canva-button focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" type="button" aria-expanded="false" aria-haspopup="true" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</button>
         <div class="about-dropdown-menu" role="menu"><a data-template-id="nav-about-who" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about-who" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">WHO WE ARE</a><a data-template-id="nav-about-founder" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT THE FOUNDER</a><a data-template-id="nav-about-hope" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about-hope" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">HONORING EMMANUEL "HOPE" LANG</a>
@@ -223,7 +241,7 @@
     </section>
     <section id="about" data-template-id="about-section" class="canva-section px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(250, 249, 245);">
      <div class="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
-      <div class="overflow-hidden bg-[#d8d4ca]"><img data-template-id="about-image" class="canva-image h-full min-h-[28rem] w-full object-cover" loading="lazy" src="canva://MAHTPcQvhss/1" alt="Portrait of Eileen Lang, founder of Hope's Holistic Haven">
+      <div class="overflow-hidden bg-[#d8d4ca]"><img data-template-id="about-image" class="canva-image h-full min-h-[28rem] w-full object-cover" loading="lazy" src="HeadShot.png" alt="Portrait of Eileen Lang, founder of Hope's Holistic Haven">
       </div>
       <div class="flex flex-col justify-center">
        <p data-template-id="about-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">meet the foundeR</p>
@@ -237,6 +255,87 @@
       <p data-template-id="blog-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Journal</p>
       <h1 id="blog-page-title" data-template-id="blog-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Thoughts for a softer life.</h1>
       <p data-template-id="blog-page-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Notes, practices, and reflections for tending to your mind, body, and spirit.</p>
+      <div class="mt-10 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17);">
+       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Healing</span>
+       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Nervous system</span>
+       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Ritual</span>
+       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Self-trust</span>
+      </div>
+      <article class="mt-12 overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#faf9f5] shadow-[0_18px_45px_rgba(17,17,17,0.06)]">
+       <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+        <img class="h-full min-h-[20rem] w-full object-cover" src="https://images.pexels.com/photos/7689430/pexels-photo-7689430.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A woman creating a mindful reset ritual at home" loading="lazy">
+        <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+         <span class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Featured article</span>
+         <h2 class="brand-serif mt-4 text-3xl md:text-4xl" style="color: rgb(17, 17, 17);">How to create a gentle reset ritual that actually lasts</h2>
+         <p class="mt-4 text-sm uppercase tracking-[.12em]" style="color: rgb(105, 102, 95);">May 14 • 4 minute read</p>
+         <p class="mt-4 text-base leading-7" style="color: rgb(86, 83, 78);">A slow ritual can become your anchor in a noisy world — especially when it is simple, sensory, and grounded in what helps you feel safe again.</p>
+         <a class="focus-ring mt-6 inline-flex w-fit rounded-full bg-[#111111] px-5 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#faf9f5]" href="#top">Read story</a>
+        </div>
+       </div>
+      </article>
+      <div class="mt-16 grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
+       <div>
+        <div class="mb-6 flex items-center justify-between gap-4">
+         <h2 class="brand-serif text-3xl" style="color: rgb(17, 17, 17);">Latest journal entries</h2>
+         <span class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95);">Fresh reads</span>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2">
+         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/6627636/pexels-photo-6627636.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Open journal and pen on a cozy desk" loading="lazy">
+          <div class="p-5">
+           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Journaling</p>
+           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">What your journal is really asking for</h3>
+           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Five gentle prompts for processing grief, overwhelm, and the parts of you still learning how to be held.</p>
+           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+          </div>
+         </article>
+         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/4195797/pexels-photo-4195797.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tea leaves and a warm cup in a calming wellness ritual" loading="lazy">
+          <div class="p-5">
+           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Tea ritual</p>
+           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">A 10-minute evening ritual for deep rest</h3>
+           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Simple sensory steps that help your nervous system unhook from the day and settle into peace.</p>
+           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+          </div>
+         </article>
+         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/6942048/pexels-photo-6942048.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A calming candle and candlelight in a mindful home space" loading="lazy">
+          <div class="p-5">
+           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Home</p>
+           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Designing a room that helps you exhale</h3>
+           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Create a softer environment by choosing textures, scents, and lighting that welcome calm instead of stimulation.</p>
+           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+          </div>
+         </article>
+         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A peaceful and reflective morning routine with natural light" loading="lazy">
+          <div class="p-5">
+           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Mindset</p>
+           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Rebuilding trust with your own rhythms</h3>
+           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Healing often begins with giving yourself permission to move differently, more gently, and with more grace.</p>
+           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+          </div>
+         </article>
+        </div>
+       </div>
+       <aside class="space-y-6">
+        <div class="rounded-[1.5rem] border border-black/10 bg-[#f3e9e2] p-6">
+         <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Popular topics</p>
+         <ul class="mt-4 space-y-3 text-sm" style="color: rgb(17, 17, 17);">
+          <li class="border-b border-black/10 pb-2">Nervous system regulation</li>
+          <li class="border-b border-black/10 pb-2">Rituals for grief and renewal</li>
+          <li class="border-b border-black/10 pb-2">Gentle self-care rituals</li>
+          <li>Emotional healing practices</li>
+         </ul>
+        </div>
+        <div class="rounded-[1.5rem] border border-black/10 bg-[#111111] p-6 text-[#faf9f5]">
+         <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(244, 208, 180);">Journal notes</p>
+         <h3 class="brand-serif mt-3 text-3xl">New reflections, delivered gently.</h3>
+         <p class="mt-4 text-base leading-7" style="color: rgba(250,249,245,0.82);">Get a little encouragement in your inbox with the latest words, practices, and seasonal rituals from The Haven.</p>
+         <button class="mt-6 rounded-full bg-[#faf9f5] px-5 py-3 text-[10px] font-bold uppercase tracking-[.12em] text-[#111111]" type="button">Join the list</button>
+        </div>
+       </aside>
+      </div>
      </div>
     </section>
     <section id="about-who-page" data-template-id="about-who-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
@@ -248,7 +347,7 @@
     </section>
     <section id="about-founder-page" data-template-id="about-founder-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
      <div class="routed-page-inner"><a data-template-id="about-founder-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
-      <div class="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center"><img data-template-id="about-founder-image" class="canva-image h-full min-h-[24rem] w-full object-cover" loading="lazy" src="canva://MAHTPcQvhss/1" alt="Portrait of Eileen Lang, founder of Hope's Holistic Haven">
+      <div class="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center"><img data-template-id="about-founder-image" class="canva-image h-full min-h-[24rem] w-full object-cover" loading="lazy" src="HeadShot.png" alt="Portrait of Eileen Lang, founder of Hope's Holistic Haven">
        <div>
         <p data-template-id="about-founder-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Meet the founder</p>
         <h1 data-template-id="about-founder-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">About the Founder</h1>
@@ -268,7 +367,10 @@
      <div class="routed-page-inner">
       <a data-template-id="about-eileen-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
       <h1 id="about-eileen-title" data-template-id="about-eileen-title" class="canva-text brand-serif text-center leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">ABOUT EILEEN LANG</h1>
-      <div class="bio-page-copy text-lg leading-8">
+      <div class="mx-auto mt-8 max-w-[420px]">
+       <img src="HeadShot.png" alt="Portrait of Eileen Lang, founder of Hope's Holistic Haven" class="mx-auto block h-auto w-full rounded-[1.25rem] object-cover shadow-[0_18px_45px_rgba(17,17,17,0.08)]" loading="lazy">
+      </div>
+      <div class="bio-page-copy mt-10 text-lg leading-8">
        <p data-template-id="about-eileen-bio-1" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Eileen Lang is the Founder of Hope's Holistic Haven, a wellness-centered organization dedicated to holistic health, healing, self-discovery, and personal transformation. Named in honor of her late father, Hope's Holistic Haven reflects Eileen's commitment to carrying forward the wisdom, values, and traditions passed down through generations while building a legacy of empowerment and compassionate care.</p>
        <p data-template-id="about-eileen-bio-2" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Born in Brooklyn, New York, and deeply connected to her Caribbean heritage, Eileen is a fourth-generation Afro-Caribbean Spiritualist and multidisciplinary practitioner. Her diverse educational and professional background spans Culinary Arts, Holistic Health and Nutrition, Clinical Hypnotherapy, Thanatology, and Integrative Medicine and Health Sciences, allowing her to approach wellness through a comprehensive and integrative lens.</p>
        <p data-template-id="about-eileen-bio-3" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Eileen combines evidence-informed holistic practices with ancestral wisdom and intuitive guidance, incorporating modalities such as Storytelling, Energy Readings, Cardology, Lenormand, Astrology, just to name a few. Through her work, she helps individuals cultivate self-awareness, personal growth, and a deeper connection to themselves.</p>
@@ -280,7 +382,175 @@
      <div class="routed-page-inner"><a data-template-id="the-haven-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
       <p data-template-id="the-haven-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Shop</p>
       <h1 id="the-haven-title" data-template-id="the-haven-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">The Haven</h1>
-      <p data-template-id="the-haven-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">A thoughtful collection of offerings and resources to support your wellness journey.</p>
+      <p data-template-id="the-haven-copy" class="canva-text mt-8 max-w-3xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Thoughtful tools, rituals, and resources designed to help you rest deeper, heal gently, and return to yourself.</p>
+      <div class="mt-12 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+       <article class="rounded-[1.5rem] border border-black/10 bg-[#faf9f5] p-6 shadow-[0_12px_35px_rgba(17,17,17,0.05)] md:p-8">
+        <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Featured collection</p>
+        <h2 class="brand-serif mt-3 text-3xl md:text-4xl" style="color: rgb(17, 17, 17);">Gentle rituals for everyday healing</h2>
+        <p class="mt-4 max-w-xl text-base leading-7" style="color: rgb(86, 83, 78);">Curated essentials that support your nervous system, spiritual practice, and daily reset — from grounding tools to comfort rituals that make your space feel softer.</p>
+        <div class="mt-6 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17);">
+         <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Hearth &amp; home</span>
+         <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Mindful self-care</span>
+         <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Herbal support</span>
+        </div>
+       </article>
+       <div class="rounded-[1.5rem] border border-black/10 bg-[#f3e9e2] p-6 md:p-8">
+        <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">New arrival</p>
+        <h3 class="brand-serif mt-3 text-3xl" style="color: rgb(17, 17, 17);">Grounding Ritual Kit</h3>
+        <p class="mt-4 text-3xl font-bold" style="color: rgb(17, 17, 17);">$48</p>
+        <p class="mt-4 text-base leading-7" style="color: rgb(86, 83, 78);">A set of calming tools for breathwork, meditative resets, and gentle centering throughout the day.</p>
+        <button class="mt-6 rounded-full bg-[#111111] px-5 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#faf9f5] shop-add-to-cart" type="button" data-name="Grounding Ritual Kit" data-price="48" data-image="https://images.pexels.com/photos/7689430/pexels-photo-7689430.jpeg?auto=compress&cs=tinysrgb&w=800" data-description="A set of calming tools for breathwork, meditative resets, and gentle centering throughout the day.">Add to cart</button>
+       </div>
+      </div>
+      <div class="mt-12 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+       <div class="shop-filter-bar" aria-label="Shop categories">
+        <button class="shop-filter-btn is-active" type="button" data-shop-filter="all">All</button>
+        <button class="shop-filter-btn" type="button" data-shop-filter="rituals">Rituals</button>
+        <button class="shop-filter-btn" type="button" data-shop-filter="journaling">Journaling</button>
+        <button class="shop-filter-btn" type="button" data-shop-filter="tea">Tea &amp; Botanicals</button>
+        <button class="shop-filter-btn" type="button" data-shop-filter="home">Home &amp; Atmosphere</button>
+       </div>
+       <div class="flex w-full max-w-xl items-center gap-3 lg:justify-end">
+        <label class="sr-only" for="shop-search">Search our shop</label>
+        <input id="shop-search" class="w-full rounded-full border border-black/15 bg-[#faf9f5] px-4 py-3 text-sm" type="search" placeholder="Search the Haven" aria-label="Search shop products">
+        <select id="shop-sort" class="rounded-full border border-black/15 bg-[#faf9f5] px-4 py-3 text-sm" aria-label="Sort products">
+         <option value="featured">Featured</option>
+         <option value="low-high">Price: Low to High</option>
+         <option value="high-low">Price: High to Low</option>
+         <option value="name">Name</option>
+        </select>
+        <button id="shop-cart-toggle" class="focus-ring inline-flex items-center gap-3 rounded-full bg-[#111111] px-4 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]" type="button" aria-expanded="false" aria-controls="shop-cart-panel">
+         <span>Cart</span>
+         <span id="shop-cart-count" class="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-[#ef4f32] px-2 text-[10px] text-white">0</span>
+        </button>
+       </div>
+      </div>
+      <div id="shop-cart-panel" class="shop-cart-panel" aria-live="polite">
+       <div class="flex items-center justify-between gap-3 border-b border-black/10 pb-3">
+        <h3 class="brand-serif text-2xl" style="color: rgb(17, 17, 17);">Your cart</h3>
+        <button id="shop-cart-close" class="focus-ring rounded-full border border-black/15 px-2 py-1 text-xs font-bold uppercase tracking-[.12em]" type="button">Close</button>
+       </div>
+       <div id="shop-cart-items" class="mt-3 space-y-2">
+        <p class="text-sm" style="color: rgb(86, 83, 78);">Your cart is empty.</p>
+       </div>
+       <div class="mt-4 border-t border-black/10 pt-3">
+        <div class="flex items-center justify-between text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17);">
+         <span>Total</span>
+         <span id="shop-cart-total">$0</span>
+        </div>
+        <button id="shop-checkout-button" class="mt-4 w-full rounded-full bg-[#111111] px-4 py-3 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]" type="button">Checkout</button>
+       </div>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+       <article class="shop-product-card" data-category="rituals" data-name="Grounding Ritual Kit" data-price="48" data-image="https://images.pexels.com/photos/7689430/pexels-photo-7689430.jpeg?auto=compress&cs=tinysrgb&w=800" data-description="A calming set for breathwork, intention-setting, and morning resets.">
+        <img class="h-72 w-full object-cover" src="https://images.pexels.com/photos/7689430/pexels-photo-7689430.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wellness ritual kit on a woven tray">
+        <div class="flex flex-1 flex-col p-5">
+         <div class="flex items-center justify-between gap-3">
+          <span class="shop-product-badge">Best seller</span>
+          <span class="text-sm font-bold" style="color: rgb(239, 79, 50);">$48</span>
+         </div>
+         <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Grounding Ritual Kit</h3>
+         <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">A calming set for breathwork, intention-setting, and morning resets.</p>
+         <div class="mt-5 flex gap-2">
+          <button class="shop-view-details rounded-full border border-black/15 px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em]" type="button">View details</button>
+          <button class="shop-add-to-cart rounded-full bg-[#111111] px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]" type="button">Add to cart</button>
+         </div>
+        </div>
+       </article>
+       <article class="shop-product-card" data-category="journaling" data-name="Daily Journal Set" data-price="26" data-image="https://images.pexels.com/photos/6627636/pexels-photo-6627636.jpeg?auto=compress&cs=tinysrgb&w=800" data-description="A guided reflection notebook designed for intention, gratitude, and gentle processing.">
+        <img class="h-72 w-full object-cover" src="https://images.pexels.com/photos/6627636/pexels-photo-6627636.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Journal and pen on a cozy table">
+        <div class="flex flex-1 flex-col p-5">
+         <div class="flex items-center justify-between gap-3">
+          <span class="shop-product-badge">New</span>
+          <span class="text-sm font-bold" style="color: rgb(239, 79, 50);">$26</span>
+         </div>
+         <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Daily Journal Set</h3>
+         <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">A guided reflection notebook designed for intention, gratitude, and gentle processing.</p>
+         <div class="mt-5 flex gap-2">
+          <button class="shop-view-details rounded-full border border-black/15 px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em]" type="button">View details</button>
+          <button class="shop-add-to-cart rounded-full bg-[#111111] px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]" type="button">Add to cart</button>
+         </div>
+        </div>
+       </article>
+       <article class="shop-product-card" data-category="tea" data-name="Herbal Tea Blend" data-price="18" data-image="https://images.pexels.com/photos/4195797/pexels-photo-4195797.jpeg?auto=compress&cs=tinysrgb&w=800" data-description="A soothing blend of calming botanicals for unwinding, grounding, and rest.">
+        <img class="h-72 w-full object-cover" src="https://images.pexels.com/photos/4195797/pexels-photo-4195797.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tea leaves and herbal blend in a bowl">
+        <div class="flex flex-1 flex-col p-5">
+         <div class="flex items-center justify-between gap-3">
+          <span class="shop-product-badge">Tea ritual</span>
+          <span class="text-sm font-bold" style="color: rgb(239, 79, 50);">$18</span>
+         </div>
+         <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Herbal Tea Blend</h3>
+         <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">A soothing blend of calming botanicals for unwinding, grounding, and rest.</p>
+         <div class="mt-5 flex gap-2">
+          <button class="shop-view-details rounded-full border border-black/15 px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em]" type="button">View details</button>
+          <button class="shop-add-to-cart rounded-full bg-[#111111] px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]" type="button">Add to cart</button>
+         </div>
+        </div>
+       </article>
+       <article class="shop-product-card" data-category="home" data-name="Moon Candle" data-price="22" data-image="https://images.pexels.com/photos/6942048/pexels-photo-6942048.jpeg?auto=compress&cs=tinysrgb&w=800" data-description="A warm, grounding scent made for soft evenings, intention-setting, and reflection.">
+        <img class="h-72 w-full object-cover" src="https://images.pexels.com/photos/6942048/pexels-photo-6942048.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Candle and incense arranged in a wellness space">
+        <div class="flex flex-1 flex-col p-5">
+         <div class="flex items-center justify-between gap-3">
+          <span class="shop-product-badge">Home glow</span>
+          <span class="text-sm font-bold" style="color: rgb(239, 79, 50);">$22</span>
+         </div>
+         <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Moon Candle</h3>
+         <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">A warm, grounding scent made for soft evenings, intention-setting, and reflection.</p>
+         <div class="mt-5 flex gap-2">
+          <button class="shop-view-details rounded-full border border-black/15 px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em]" type="button">View details</button>
+          <button class="shop-add-to-cart rounded-full bg-[#111111] px-3 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]" type="button">Add to cart</button>
+         </div>
+        </div>
+       </article>
+      </div>
+      <div id="shop-product-modal" class="shop-product-modal" aria-hidden="true">
+       <div class="shop-product-modal-card">
+        <div class="bg-[#f3e9e2]">
+         <img id="shop-modal-image" class="h-full w-full object-cover" src="" alt="">
+        </div>
+        <div class="p-6 md:p-8">
+         <div class="flex items-start justify-between gap-4">
+          <div>
+           <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">The Haven</p>
+           <h3 id="shop-modal-title" class="brand-serif mt-3 text-3xl" style="color: rgb(17, 17, 17);">Product</h3>
+          </div>
+          <button id="shop-modal-close" class="focus-ring rounded-full border border-black/15 px-3 py-2 text-xs font-bold uppercase tracking-[.12em]" type="button">Close</button>
+         </div>
+         <p id="shop-modal-price" class="mt-4 text-2xl font-bold" style="color: rgb(17, 17, 17);">$0</p>
+         <p id="shop-modal-description" class="mt-4 text-base leading-7" style="color: rgb(86, 83, 78);">Product detail</p>
+         <div class="mt-6 flex items-center gap-3">
+          <button id="shop-modal-minus" class="shop-qty-button" type="button" aria-label="Decrease quantity">−</button>
+          <span id="shop-modal-qty" class="min-w-8 text-center text-lg font-bold">1</span>
+          <button id="shop-modal-plus" class="shop-qty-button" type="button" aria-label="Increase quantity">+</button>
+         </div>
+         <button id="shop-modal-add" class="mt-6 rounded-full bg-[#111111] px-5 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#faf9f5]" type="button">Add to cart</button>
+        </div>
+       </div>
+      </div>
+      <div class="mt-16 rounded-[1.75rem] border border-black/10 bg-[#f3e9e2] p-6 md:p-8 lg:p-10">
+       <div class="grid gap-6 lg:grid-cols-3">
+        <div>
+         <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">01</p>
+         <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Supportive ingredients</h3>
+         <p class="mt-3 text-base leading-7" style="color: rgb(86, 83, 78);">Earth-based, thoughtfully sourced materials chosen with comfort and clarity in mind.</p>
+        </div>
+        <div>
+         <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">02</p>
+         <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Purposeful rituals</h3>
+         <p class="mt-3 text-base leading-7" style="color: rgb(86, 83, 78);">Every item is designed to help you slow down, reconnect, and tend to your own rhythm.</p>
+        </div>
+        <div>
+         <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">03</p>
+         <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Made for daily life</h3>
+         <p class="mt-3 text-base leading-7" style="color: rgb(86, 83, 78);">Simple essentials for home rituals, self-care practices, and moments of nourishment.</p>
+        </div>
+       </div>
+      </div>
+      <div class="mt-16 flex flex-col items-center justify-center text-center">
+       <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Need a personal recommendation?</p>
+       <h2 class="brand-serif mt-3 text-4xl" style="color: rgb(17, 17, 17);">Let’s build your ritual together.</h2>
+       <a data-template-id="the-haven-contact" class="canva-link focus-ring mt-6 inline-block rounded-full bg-[#111111] px-6 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#faf9f5]" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245);">Contact the Haven</a>
+      </div>
      </div>
     </section>
     <section id="services-page" data-template-id="services-page-section" class="canva-section services-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="services-page-title" style="background: rgb(247, 242, 240);">
@@ -425,7 +695,7 @@
    <footer data-template-id="footer-section" class="canva-footer px-5 py-10 lg:px-10" style="background: rgb(17, 17, 17);">
     <div class="mx-auto flex max-w-[1500px] flex-col justify-between gap-8 border-t border-white/25 pt-8 md:flex-row md:items-end">
      <div>
-      <span class="footer-logo-badge" aria-hidden="true"><img data-template-id="footer-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHTPFTmrec/1" alt="Hope's Holistic Haven HH logo"></span>
+      <span class="footer-logo-badge" aria-hidden="true"><img data-template-id="footer-logo" class="canva-image logo-badge-image" loading="lazy" src="HHLogo.png" alt="Hope's Holistic Haven HH logo"></span>
       <h2 data-template-id="footer-brand" class="canva-text brand-serif" style="color: rgb(250, 249, 245); font-weight: 400; font-style: normal; font-size: 28px;">Hope's Holistic Haven</h2>
       <p data-template-id="footer-copy" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(200, 196, 188); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Nourish thy mind, body, and soul.</p>
      </div>
@@ -532,6 +802,219 @@
       showServices(0);
       window.addEventListener("resize", () => showServices(serviceIndex), { passive: true });
 
+      const shopFilterButtons = [...document.querySelectorAll("[data-shop-filter]")];
+      const shopCards = [...document.querySelectorAll(".shop-product-card")];
+      const cartToggle = document.getElementById("shop-cart-toggle");
+      const cartPanel = document.getElementById("shop-cart-panel");
+      const cartCount = document.getElementById("shop-cart-count");
+      const cartItemsRoot = document.getElementById("shop-cart-items");
+      const cartTotal = document.getElementById("shop-cart-total");
+      const shopSearch = document.getElementById("shop-search");
+      const shopSort = document.getElementById("shop-sort");
+      const shopProductModal = document.getElementById("shop-product-modal");
+      const shopModalTitle = document.getElementById("shop-modal-title");
+      const shopModalPrice = document.getElementById("shop-modal-price");
+      const shopModalDescription = document.getElementById("shop-modal-description");
+      const shopModalImage = document.getElementById("shop-modal-image");
+      const shopModalAdd = document.getElementById("shop-modal-add");
+      const shopModalQty = document.getElementById("shop-modal-qty");
+      const shopModalMinus = document.getElementById("shop-modal-minus");
+      const shopModalPlus = document.getElementById("shop-modal-plus");
+      const shopCheckoutButton = document.getElementById("shop-checkout-button");
+      const shopCartState = [];
+      let activeModalProduct = null;
+      let modalQty = 1;
+
+      const updateShopCart = () => {
+        const total = shopCartState.reduce((sum, item) => sum + item.price * item.qty, 0);
+        const count = shopCartState.reduce((sum, item) => sum + item.qty, 0);
+        cartCount.textContent = String(count);
+        cartTotal.textContent = `$${total}`;
+
+        if (!shopCartState.length) {
+          cartItemsRoot.innerHTML = '<p class="text-sm" style="color: rgb(86, 83, 78);">Your cart is empty.</p>';
+          return;
+        }
+
+        cartItemsRoot.innerHTML = shopCartState.map((item, index) => `
+          <div class="shop-cart-item">
+            <div>
+              <p class="text-sm font-bold" style="color: rgb(17, 17, 17);">${item.name}</p>
+              <p class="text-xs uppercase tracking-[.12em]" style="color: rgb(105, 102, 95);">Qty: ${item.qty}</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-sm font-bold" style="color: rgb(17, 17, 17);">$${item.price * item.qty}</span>
+              <button class="shop-cart-remove focus-ring text-[10px] font-bold uppercase tracking-[.12em]" type="button" data-remove-index="${index}">Remove</button>
+            </div>
+          </div>
+        `).join('');
+
+        cartItemsRoot.querySelectorAll(".shop-cart-remove").forEach((button) => {
+          button.addEventListener("click", () => {
+            const removeIndex = Number(button.dataset.removeIndex);
+            shopCartState.splice(removeIndex, 1);
+            updateShopCart();
+          });
+        });
+      };
+
+      const addToCart = (product, qty = 1) => {
+        const existing = shopCartState.find((item) => item.name === product.name);
+        if (existing) {
+          existing.qty += qty;
+        } else {
+          shopCartState.push({ name: product.name, price: Number(product.price), qty, image: product.image, description: product.description });
+        }
+        updateShopCart();
+        cartPanel.classList.add("is-open");
+        cartToggle.setAttribute("aria-expanded", "true");
+      };
+
+      const setShopFilter = (filter) => {
+        shopFilterButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.shopFilter === filter);
+        });
+        applyShopFilters();
+      };
+
+      const applyShopFilters = () => {
+        const filter = shopFilterButtons.find((button) => button.classList.contains("is-active"))?.dataset.shopFilter || "all";
+        const searchTerm = shopSearch.value.trim().toLowerCase();
+        const sortValue = shopSort.value;
+
+        const filtered = shopCards.filter((card) => {
+          const categoryMatch = filter === "all" || card.dataset.category === filter;
+          const text = `${card.dataset.name} ${card.dataset.description}`.toLowerCase();
+          const searchMatch = !searchTerm || text.includes(searchTerm);
+          return categoryMatch && searchMatch;
+        });
+
+        const sorted = [...filtered].sort((a, b) => {
+          if (sortValue === "low-high") return Number(a.dataset.price) - Number(b.dataset.price);
+          if (sortValue === "high-low") return Number(b.dataset.price) - Number(a.dataset.price);
+          if (sortValue === "name") return a.dataset.name.localeCompare(b.dataset.name);
+          return 0;
+        });
+
+        shopCards.forEach((card) => {
+          const visible = sorted.includes(card);
+          card.classList.toggle("is-hidden", !visible);
+        });
+      };
+
+      shopFilterButtons.forEach((button) => {
+        button.addEventListener("click", () => setShopFilter(button.dataset.shopFilter));
+      });
+      shopSearch.addEventListener("input", applyShopFilters);
+      shopSort.addEventListener("change", applyShopFilters);
+
+      cartToggle.addEventListener("click", () => {
+        const isOpen = cartPanel.classList.toggle("is-open");
+        cartToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.getElementById("shop-cart-close").addEventListener("click", () => {
+        cartPanel.classList.remove("is-open");
+        cartToggle.setAttribute("aria-expanded", "false");
+      });
+
+      const openShopModal = (card) => {
+        activeModalProduct = card;
+        modalQty = 1;
+        shopModalTitle.textContent = card.dataset.name;
+        shopModalPrice.textContent = `$${card.dataset.price}`;
+        shopModalDescription.textContent = card.dataset.description;
+        shopModalImage.src = card.dataset.image;
+        shopModalImage.alt = card.dataset.name;
+        shopModalQty.textContent = String(modalQty);
+        shopModalAdd.dataset.productName = card.dataset.name;
+        shopModalAdd.dataset.productPrice = card.dataset.price;
+        shopProductModal.classList.add("is-open");
+        shopProductModal.setAttribute("aria-hidden", "false");
+      };
+
+      const closeShopModal = () => {
+        shopProductModal.classList.remove("is-open");
+        shopProductModal.setAttribute("aria-hidden", "true");
+      };
+
+      document.querySelectorAll(".shop-view-details").forEach((button) => {
+        button.addEventListener("click", () => {
+          const card = button.closest(".shop-product-card");
+          openShopModal(card);
+        });
+      });
+
+      document.querySelectorAll(".shop-add-to-cart").forEach((button) => {
+        button.addEventListener("click", () => {
+          const card = button.closest(".shop-product-card");
+          addToCart({ name: card.dataset.name, price: Number(card.dataset.price), image: card.dataset.image, description: card.dataset.description }, 1);
+        });
+      });
+
+      const buttonProduct = document.querySelector('.shop-add-to-cart[data-name="Grounding Ritual Kit"]');
+      buttonProduct?.addEventListener("click", () => {
+        addToCart({ name: buttonProduct.dataset.name, price: Number(buttonProduct.dataset.price), image: buttonProduct.dataset.image, description: buttonProduct.dataset.description }, 1);
+      });
+
+      shopModalMinus.addEventListener("click", () => {
+        modalQty = Math.max(1, modalQty - 1);
+        shopModalQty.textContent = String(modalQty);
+      });
+      shopModalPlus.addEventListener("click", () => {
+        modalQty += 1;
+        shopModalQty.textContent = String(modalQty);
+      });
+
+      shopModalAdd.addEventListener("click", () => {
+        if (activeModalProduct) {
+          addToCart({ name: activeModalProduct.dataset.name, price: Number(activeModalProduct.dataset.price), image: activeModalProduct.dataset.image, description: activeModalProduct.dataset.description }, modalQty);
+          closeShopModal();
+        }
+      });
+
+      document.getElementById("shop-modal-close").addEventListener("click", closeShopModal);
+      shopProductModal.addEventListener("click", (event) => {
+        if (event.target === shopProductModal) closeShopModal();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && shopProductModal.classList.contains("is-open")) closeShopModal();
+      });
+      shopCheckoutButton.addEventListener("click", () => {
+        if (!shopCartState.length) {
+          cartItemsRoot.innerHTML = '<p class="text-sm" style="color: rgb(86, 83, 78);">Your cart is empty. Add a few favorites first.</p>';
+          return;
+        }
+        const checkoutPanel = document.createElement("div");
+        checkoutPanel.className = "mt-4 rounded-2xl border border-black/10 bg-[#f3e9e2] p-3";
+        checkoutPanel.innerHTML = `
+          <p class="text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Checkout</p>
+          <form class="shop-checkout-form mt-3">
+            <input type="text" placeholder="Full name" aria-label="Full name" required>
+            <input type="email" placeholder="Email address" aria-label="Email address" required>
+            <textarea rows="3" placeholder="Shipping address" aria-label="Shipping address" required></textarea>
+            <button type="submit" class="rounded-full bg-[#111111] px-4 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]">Place order</button>
+          </form>
+        `;
+        const existingCheckout = cartItemsRoot.parentElement.querySelector('.shop-checkout-panel');
+        if (existingCheckout) existingCheckout.remove();
+        checkoutPanel.classList.add('shop-checkout-panel');
+        cartItemsRoot.parentElement.appendChild(checkoutPanel);
+        checkoutPanel.querySelector("form").addEventListener("submit", (event) => {
+          event.preventDefault();
+          const button = event.currentTarget.querySelector('button[type="submit"]');
+          button.textContent = 'Order placed';
+          button.disabled = true;
+          button.classList.add('opacity-70');
+          setTimeout(() => {
+            shopCartState.length = 0;
+            updateShopCart();
+            checkoutPanel.remove();
+          }, 1200);
+        });
+      });
+      setShopFilter("all");
+      updateShopCart();
+
       const fullTestimonials = [
         `“I had been searching for an astrologer who specializes in astrocartography for relocation and career purposes. I found Eileen via Threads and instantly connected to her warm and generous spirit. She helped me locate the best timeframe for my relocation and overall growth and elevation by breaking down the monthly transits for the most favorable conditions. The goal has always been to work with astrology as a tool to move through life with grace and ease. I am so grateful to have been aligned with Eileen and cannot wait to see what this new adventure has in store for me.”`,
         `“Eileen offered me a reading based on her astrological birth chart recently and I took her up on the offer. Eileen scheduled a meeting and prepared different important talking points about my birth chart. I previously had known basic meanings of my astrology as it related to my personality, but Eileen included details I found very relevant to my life right now. It was an interactive experience, in which I asked many questions. She addressed my doubts while creating a document with all the information we had gone over in the meeting. After the meeting I felt refreshed and ready to continue to learn about myself. Eileen provided a very objective perspective. She is not one to sugarcoat things. This once again exposes her genuine personality and trustworthiness. She is real and honest, but in an endearing way. I am blessed to have met Eileen and shared in her energy and experiences. I attest to her character with gusto.”`,
@@ -584,3 +1067,4 @@
   </script>
  
 </body></html>
+
