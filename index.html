@@ -253,88 +253,187 @@
     <section id="blog-page" data-template-id="blog-page-section" class="canva-section blog-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="blog-page-title" style="background: rgb(247, 242, 240);">
      <div class="routed-page-inner"><a data-template-id="blog-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
       <p data-template-id="blog-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Journal</p>
-      <h1 id="blog-page-title" data-template-id="blog-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Thoughts for a softer life.</h1>
-      <p data-template-id="blog-page-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Notes, practices, and reflections for tending to your mind, body, and spirit.</p>
-      <div class="mt-10 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17);">
-       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Healing</span>
-       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Nervous system</span>
-       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Ritual</span>
-       <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Self-trust</span>
+      <h1 id="blog-page-title" data-template-id="blog-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Medicinal Messages</h1>
+      <p data-template-id="blog-page-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Stories, wellness wisdom, and the rituals that keep us rooted in healing.</p>
+      <div class="mt-8 max-w-md">
+       <label for="blog-collection-select" class="mb-2 block text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Browse by blog</label>
+       <select id="blog-collection-select" aria-label="Choose a blog collection" class="w-full rounded-full border border-black/15 bg-[#faf9f5] px-4 py-3 text-sm" style="color: rgb(17, 17, 17);">
+        <option value="medicinal">Medicinal Messages</option>
+        <option value="kitchen">Cindy's Kitchen</option>
+       </select>
       </div>
-      <article class="mt-12 overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#faf9f5] shadow-[0_18px_45px_rgba(17,17,17,0.06)]">
-       <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
-        <img class="h-full min-h-[20rem] w-full object-cover" src="https://images.pexels.com/photos/7689430/pexels-photo-7689430.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A woman creating a mindful reset ritual at home" loading="lazy">
-        <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
-         <span class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Featured article</span>
-         <h2 class="brand-serif mt-4 text-3xl md:text-4xl" style="color: rgb(17, 17, 17);">How to create a gentle reset ritual that actually lasts</h2>
-         <p class="mt-4 text-sm uppercase tracking-[.12em]" style="color: rgb(105, 102, 95);">May 14 • 4 minute read</p>
-         <p class="mt-4 text-base leading-7" style="color: rgb(86, 83, 78);">A slow ritual can become your anchor in a noisy world — especially when it is simple, sensory, and grounded in what helps you feel safe again.</p>
-         <a class="focus-ring mt-6 inline-flex w-fit rounded-full bg-[#111111] px-5 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#faf9f5]" href="#top">Read story</a>
-        </div>
+      <div data-blog-collection="medicinal" class="blog-collection-panel mt-10">
+       <div class="mt-10 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17);">
+        <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Healing</span>
+        <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Nervous system</span>
+        <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Ritual</span>
+        <span class="rounded-full border border-black/10 bg-[#f5eee8] px-3 py-2">Self-trust</span>
        </div>
-      </article>
-      <div class="mt-16 grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
-       <div>
-        <div class="mb-6 flex items-center justify-between gap-4">
-         <h2 class="brand-serif text-3xl" style="color: rgb(17, 17, 17);">Latest journal entries</h2>
-         <span class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95);">Fresh reads</span>
+       <article class="mt-12 overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#faf9f5] shadow-[0_18px_45px_rgba(17,17,17,0.06)]">
+        <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+         <img class="h-full min-h-[20rem] w-full object-cover" src="https://images.pexels.com/photos/7689430/pexels-photo-7689430.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="A woman creating a mindful reset ritual at home" loading="lazy">
+         <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+          <span class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Featured article</span>
+          <h2 class="brand-serif mt-4 text-3xl md:text-4xl" style="color: rgb(17, 17, 17);">How to create a gentle reset ritual that actually lasts</h2>
+          <p class="mt-4 text-sm uppercase tracking-[.12em]" style="color: rgb(105, 102, 95);">May 14 • 4 minute read</p>
+          <p class="mt-4 text-base leading-7" style="color: rgb(86, 83, 78);">A slow ritual can become your anchor in a noisy world — especially when it is simple, sensory, and grounded in what helps you feel safe again.</p>
+          <a class="focus-ring mt-6 inline-flex w-fit rounded-full bg-[#111111] px-5 py-3 text-xs font-bold uppercase tracking-[.12em] text-[#faf9f5]" href="#top">Read story</a>
+         </div>
         </div>
-        <div class="grid gap-6 md:grid-cols-2">
-         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
-          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/6627636/pexels-photo-6627636.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Open journal and pen on a cozy desk" loading="lazy">
-          <div class="p-5">
-           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Journaling</p>
-           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">What your journal is really asking for</h3>
-           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Five gentle prompts for processing grief, overwhelm, and the parts of you still learning how to be held.</p>
-           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
-          </div>
-         </article>
-         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
-          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/4195797/pexels-photo-4195797.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tea leaves and a warm cup in a calming wellness ritual" loading="lazy">
-          <div class="p-5">
-           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Tea ritual</p>
-           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">A 10-minute evening ritual for deep rest</h3>
-           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Simple sensory steps that help your nervous system unhook from the day and settle into peace.</p>
-           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
-          </div>
-         </article>
-         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
-          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/6942048/pexels-photo-6942048.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A calming candle and candlelight in a mindful home space" loading="lazy">
-          <div class="p-5">
-           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Home</p>
-           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Designing a room that helps you exhale</h3>
-           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Create a softer environment by choosing textures, scents, and lighting that welcome calm instead of stimulation.</p>
-           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
-          </div>
-         </article>
-         <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
-          <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A peaceful and reflective morning routine with natural light" loading="lazy">
-          <div class="p-5">
-           <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Mindset</p>
-           <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Rebuilding trust with your own rhythms</h3>
-           <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Healing often begins with giving yourself permission to move differently, more gently, and with more grace.</p>
-           <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
-          </div>
-         </article>
+       </article>
+       <div class="mt-16 grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
+        <div>
+         <div class="mb-6 flex items-center justify-between gap-4">
+          <h2 class="brand-serif text-3xl" style="color: rgb(17, 17, 17);">Latest journal entries</h2>
+          <span class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95);">Fresh reads</span>
+         </div>
+         <div class="grid gap-6 md:grid-cols-2">
+          <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+           <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/6627636/pexels-photo-6627636.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Open journal and pen on a cozy desk" loading="lazy">
+           <div class="p-5">
+            <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Journaling</p>
+            <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">What your journal is really asking for</h3>
+            <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Five gentle prompts for processing grief, overwhelm, and the parts of you still learning how to be held.</p>
+            <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+           </div>
+          </article>
+          <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+           <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/4195797/pexels-photo-4195797.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tea leaves and a warm cup in a calming wellness ritual" loading="lazy">
+           <div class="p-5">
+            <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Tea ritual</p>
+            <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">A 10-minute evening ritual for deep rest</h3>
+            <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Simple sensory steps that help your nervous system unhook from the day and settle into peace.</p>
+            <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+           </div>
+          </article>
+          <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+           <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/6942048/pexels-photo-6942048.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A calming candle and candlelight in a mindful home space" loading="lazy">
+           <div class="p-5">
+            <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Home</p>
+            <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Designing a room that helps you exhale</h3>
+            <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Create a softer environment by choosing textures, scents, and lighting that welcome calm instead of stimulation.</p>
+            <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+           </div>
+          </article>
+          <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+           <img class="h-56 w-full object-cover" src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=900" alt="A peaceful and reflective morning routine with natural light" loading="lazy">
+           <div class="p-5">
+            <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Mindset</p>
+            <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Rebuilding trust with your own rhythms</h3>
+            <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Healing often begins with giving yourself permission to move differently, more gently, and with more grace.</p>
+            <a class="mt-4 inline-flex text-xs font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17);">Read more</a>
+           </div>
+          </article>
+         </div>
         </div>
+        <aside class="space-y-6">
+         <div class="rounded-[1.5rem] border border-black/10 bg-[#f3e9e2] p-6">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Popular topics</p>
+          <ul class="mt-4 space-y-3 text-sm" style="color: rgb(17, 17, 17);">
+           <li class="border-b border-black/10 pb-2">Nervous system regulation</li>
+           <li class="border-b border-black/10 pb-2">Rituals for grief and renewal</li>
+           <li class="border-b border-black/10 pb-2">Gentle self-care rituals</li>
+           <li>Emotional healing practices</li>
+          </ul>
+         </div>
+         <div class="rounded-[1.5rem] border border-black/10 bg-[#111111] p-6 text-[#faf9f5]">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(244, 208, 180);">Journal notes</p>
+          <h3 class="brand-serif mt-3 text-3xl">New reflections, delivered gently.</h3>
+          <p class="mt-4 text-base leading-7" style="color: rgba(250,249,245,0.82);">Get a little encouragement in your inbox with the latest words, practices, and seasonal rituals from The Haven.</p>
+          <button class="mt-6 rounded-full bg-[#faf9f5] px-5 py-3 text-[10px] font-bold uppercase tracking-[.12em] text-[#111111]" type="button">Join the list</button>
+         </div>
+        </aside>
        </div>
-       <aside class="space-y-6">
-        <div class="rounded-[1.5rem] border border-black/10 bg-[#f3e9e2] p-6">
-         <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Popular topics</p>
-         <ul class="mt-4 space-y-3 text-sm" style="color: rgb(17, 17, 17);">
-          <li class="border-b border-black/10 pb-2">Nervous system regulation</li>
-          <li class="border-b border-black/10 pb-2">Rituals for grief and renewal</li>
-          <li class="border-b border-black/10 pb-2">Gentle self-care rituals</li>
-          <li>Emotional healing practices</li>
-         </ul>
+      </div>
+      <div data-blog-collection="kitchen" class="blog-collection-panel mt-10 hidden">
+       <article class="overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#faf9f5] shadow-[0_18px_45px_rgba(17,17,17,0.06)]">
+        <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
+         <img class="h-full min-h-[20rem] w-full object-cover" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80" alt="A home-cooked meal with fresh ingredients and warm family energy" loading="lazy">
+         <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+          <span class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Cindy's kitchen</span>
+          <h2 class="brand-serif mt-4 text-3xl md:text-4xl" style="color: rgb(17, 17, 17);">Recipes passed down with love, memory, and nourishment</h2>
+          <p class="mt-4 text-sm uppercase tracking-[.12em]" style="color: rgb(105, 102, 95);">Family kitchen stories • 5 minute read</p>
+          <p class="mt-4 text-base leading-7" style="color: rgb(86, 83, 78);">This is where the comfort begins: family recipes, handwritten wisdom, and meals that taste like home. My mother’s kitchen taught me that food is more than nourishment — it is prayer, celebration, and care served at the table.</p>
+         </div>
         </div>
-        <div class="rounded-[1.5rem] border border-black/10 bg-[#111111] p-6 text-[#faf9f5]">
-         <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(244, 208, 180);">Journal notes</p>
-         <h3 class="brand-serif mt-3 text-3xl">New reflections, delivered gently.</h3>
-         <p class="mt-4 text-base leading-7" style="color: rgba(250,249,245,0.82);">Get a little encouragement in your inbox with the latest words, practices, and seasonal rituals from The Haven.</p>
-         <button class="mt-6 rounded-full bg-[#faf9f5] px-5 py-3 text-[10px] font-bold uppercase tracking-[.12em] text-[#111111]" type="button">Join the list</button>
-        </div>
-       </aside>
+       </article>
+       <div class="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+        <article class="overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+         <img class="h-[22rem] w-full object-cover" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="A colorful Caribbean-inspired dish with fresh herbs and vegetables" loading="lazy">
+         <div class="p-6 md:p-8">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Featured family recipe</p>
+          <h3 class="brand-serif mt-3 text-3xl md:text-4xl" style="color: rgb(17, 17, 17);">Brown stew chicken</h3>
+          <p class="mt-4 text-sm uppercase tracking-[.12em]" style="color: rgb(105, 102, 95);">Sunday dinner • serves 4–6</p>
+          <p class="mt-5 text-base leading-7" style="color: rgb(86, 83, 78);">My mother made this dish when the whole family needed gathering, grounding, and a little extra comfort. The aroma would drift through the house before everyone arrived, and somehow the table always felt fuller before the food was even served.</p>
+          <div class="mt-8 grid gap-8 md:grid-cols-[0.9fr_1.1fr]">
+           <div class="rounded-[1.25rem] border border-black/10 bg-[#f3e9e2] p-5">
+            <h4 class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Ingredients</h4>
+            <ul class="mt-4 space-y-2 text-sm leading-6" style="color: rgb(17, 17, 17);">
+             <li>• 2 lbs chicken pieces</li>
+             <li>• 2 tbsp browning sauce</li>
+             <li>• 1 onion, sliced</li>
+             <li>• 3 scallions, chopped</li>
+             <li>• 1 bell pepper, sliced</li>
+             <li>• 2 sprigs thyme</li>
+             <li>• 1 tsp all-purpose seasoning</li>
+             <li>• 1 tsp garlic and ginger paste</li>
+             <li>• 1 cup stock or water</li>
+             <li>• Salt and pepper to taste</li>
+            </ul>
+           </div>
+           <div>
+            <h4 class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Method</h4>
+            <ol class="mt-4 space-y-3 text-sm leading-6" style="color: rgb(86, 83, 78);">
+             <li>1. Season the chicken generously with the spice blend, garlic, ginger, and a splash of browning sauce.</li>
+             <li>2. Sear the chicken until deep golden on both sides, then remove and set aside.</li>
+             <li>3. Sauté the onion, scallions, and peppers until fragrant and soft.</li>
+             <li>4. Return the chicken to the pot and add thyme, stock, and a little more seasoning.</li>
+             <li>5. Cover and simmer until the sauce thickens and the chicken is tender and richly coated.</li>
+             <li>6. Serve with rice, plantains, or your favorite side and share with family.</li>
+            </ol>
+           </div>
+          </div>
+         </div>
+        </article>
+        <aside class="space-y-6">
+         <div class="rounded-[1.5rem] border border-black/10 bg-[#f3e9e2] p-6">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Kitchen note</p>
+          <h4 class="brand-serif mt-3 text-3xl" style="color: rgb(17, 17, 17);">Food as a love language</h4>
+          <p class="mt-4 text-base leading-7" style="color: rgb(86, 83, 78);">My mother didn’t just cook — she created comfort. Every pot had a story, every ingredient had intention, and every meal said, “we are here, and we are cared for.”</p>
+         </div>
+         <div class="rounded-[1.5rem] border border-black/10 bg-[#111111] p-6 text-[#faf9f5]">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(244, 208, 180);">From the family table</p>
+          <h4 class="brand-serif mt-3 text-3xl">A little more love in every dish.</h4>
+          <p class="mt-4 text-base leading-7" style="color: rgba(250,249,245,0.82);">Whether it is a simple salad or a large stew, the lesson stays the same: cook slowly, share generously, and let nourishment be an act of care.</p>
+         </div>
+        </aside>
+       </div>
+       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+         <img class="h-56 w-full object-cover" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Fresh salad bowl with greens, fruit, and colorful vegetables" loading="lazy">
+         <div class="p-5">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Fresh &amp; bright</p>
+          <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Garden salad with lime dressing</h3>
+          <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">A simple mix of crisp greens, herbs, and citrus that brings life to the table and reminds us to nourish ourselves gently.</p>
+         </div>
+        </article>
+        <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+         <img class="h-56 w-full object-cover" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80" alt="A warm bowl of soup, herbs, and vegetables on a table" loading="lazy">
+         <div class="p-5">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Comfort bowl</p>
+          <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Healing vegetable soup</h3>
+          <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Slow-simmered with herbs, root vegetables, and a little patience, this is the kind of meal that soothes the body and settles the spirit.</p>
+         </div>
+        </article>
+        <article class="overflow-hidden rounded-[1.5rem] border border-black/10 bg-[#faf9f5] shadow-[0_12px_30px_rgba(17,17,17,0.04)]">
+         <img class="h-56 w-full object-cover" src="https://images.unsplash.com/photo-1604908556852-94f4f5f0f2a1?auto=format&fit=crop&w=900&q=80" alt="Sweet plantains on a plate with warm toppings and seasoning" loading="lazy">
+         <div class="p-5">
+          <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Weekend treat</p>
+          <h3 class="brand-serif mt-3 text-2xl" style="color: rgb(17, 17, 17);">Sweet plantains and cinnamon</h3>
+          <p class="mt-3 text-sm leading-6" style="color: rgb(86, 83, 78);">Golden, caramelized, and served with a little extra sweetness, this dish is pure joy from the first slice to the last bite.</p>
+         </div>
+        </article>
+       </div>
       </div>
      </div>
     </section>
@@ -360,7 +459,12 @@
      <div class="routed-page-inner"><a data-template-id="about-hope-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
       <p data-template-id="about-hope-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">In loving honor</p>
       <h1 data-template-id="about-hope-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">Honoring Emmanuel "Hope" Lang</h1>
-      <p data-template-id="about-hope-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">A dedicated space to honor Emmanuel "Hope" Lang and the legacy of love, resilience, and care that continues through this work.</p>
+      <div class="mx-auto mt-8 max-w-[440px]">
+       <img src="eileenhope.jpg" alt="A heartfelt family portrait honoring Emmanuel 'Hope' Lang" class="mx-auto block h-auto w-full rounded-[1.25rem] object-cover shadow-[0_18px_45px_rgba(17,17,17,0.08)]" loading="lazy">
+      </div>
+      <div class="bio-page-copy mt-8 max-w-4xl text-lg leading-8">
+       <p data-template-id="about-hope-copy" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;"><strong>Hope's Holistic Haven is named after my late father, Emmanuel “Hope” Lang. Hope's Holistic Haven is a sacred space created in honor of my father, Hope, whose unwavering faith and spiritual wisdom laid the foundation for my own journey.</strong> He lived a blessed 87 years, enduring both Hurricane Janet in the 1950s and Hurricane Beryl in 2024 with strength, grace, and an unshakable trust in God. A devoted husband, loving father and grandfather, singer, farmer, construction worker, spiritualist, and pillar of his community, he taught me that prayer is power, intentions carry purpose, and our spiritual gifts are meant to be used in service to others. Today, I carry his legacy forward by offering a space where faith, holistic healing, and divine guidance come together to nurture the mind, body, and spirit.</p>
+      </div>
      </div>
     </section>
     <section id="about-eileen-page" data-template-id="about-eileen-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="about-eileen-title" style="background: rgb(247, 242, 240);">
@@ -802,6 +906,19 @@
       showServices(0);
       window.addEventListener("resize", () => showServices(serviceIndex), { passive: true });
 
+      const blogCollectionSelect = document.getElementById("blog-collection-select");
+      const blogCollectionPanels = [...document.querySelectorAll(".blog-collection-panel")];
+      const syncBlogCollection = () => {
+        const selected = blogCollectionSelect?.value || "medicinal";
+        blogCollectionPanels.forEach((panel) => {
+          const visible = panel.dataset.blogCollection === selected;
+          panel.hidden = !visible;
+          panel.classList.toggle("hidden", !visible);
+        });
+      };
+      blogCollectionSelect?.addEventListener("change", syncBlogCollection);
+      syncBlogCollection();
+
       const shopFilterButtons = [...document.querySelectorAll("[data-shop-filter]")];
       const shopCards = [...document.querySelectorAll(".shop-product-card")];
       const cartToggle = document.getElementById("shop-cart-toggle");
@@ -822,6 +939,15 @@
       const shopModalPlus = document.getElementById("shop-modal-plus");
       const shopCheckoutButton = document.getElementById("shop-checkout-button");
       const shopCartState = [];
+      const buyerConfig = window.HavenCheckoutConfig || {};
+      const paymentConfig = {
+        liveEnabled: Boolean(buyerConfig.liveEnabled),
+        stripeCheckoutUrl: String(buyerConfig.stripeCheckoutUrl || "").trim(),
+        ...buyerConfig
+      };
+      if (!paymentConfig.stripeCheckoutUrl && paymentConfig.liveEnabled) {
+        paymentConfig.liveEnabled = false;
+      }
       let activeModalProduct = null;
       let modalQty = 1;
 
@@ -992,24 +1118,73 @@
             <input type="text" placeholder="Full name" aria-label="Full name" required>
             <input type="email" placeholder="Email address" aria-label="Email address" required>
             <textarea rows="3" placeholder="Shipping address" aria-label="Shipping address" required></textarea>
-            <button type="submit" class="rounded-full bg-[#111111] px-4 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]">Place order</button>
+            <div class="rounded-xl border border-black/10 bg-[#faf9f5] p-3">
+             <p class="text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Payment</p>
+             <div class="mt-3 grid gap-3 text-sm" style="color: rgb(17, 17, 17);">
+              <label class="flex items-center gap-2"><input type="radio" name="shop-payment-method" value="card" checked> Credit card</label>
+              <label class="flex items-center gap-2"><input type="radio" name="shop-payment-method" value="paypal"> PayPal</label>
+              <label class="flex items-center gap-2"><input type="radio" name="shop-payment-method" value="stripe"> Stripe checkout</label>
+             </div>
+             <div class="mt-4 grid gap-3 shop-payment-card-fields">
+              <input type="text" inputmode="numeric" placeholder="Card number" aria-label="Card number" required>
+              <div class="grid gap-3 sm:grid-cols-2">
+               <input type="text" inputmode="numeric" placeholder="MM/YY" aria-label="Expiry date" required>
+               <input type="text" inputmode="numeric" placeholder="CVV" aria-label="CVV" required>
+              </div>
+             </div>
+            </div>
+            <div class="rounded-xl border border-black/10 bg-[#faf9f5] p-3">
+             <div class="flex items-center justify-between text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17);">
+              <span>Order total</span>
+              <span>$${shopCartState.reduce((sum, item) => sum + item.price * item.qty, 0)}</span>
+             </div>
+            </div>
+            <button type="submit" class="rounded-full bg-[#111111] px-4 py-2 text-[10px] font-bold uppercase tracking-[.12em] text-[#faf9f5]">Pay now</button>
           </form>
         `;
         const existingCheckout = cartItemsRoot.parentElement.querySelector('.shop-checkout-panel');
         if (existingCheckout) existingCheckout.remove();
         checkoutPanel.classList.add('shop-checkout-panel');
         cartItemsRoot.parentElement.appendChild(checkoutPanel);
+
+        const paymentMethodInputs = checkoutPanel.querySelectorAll('input[name="shop-payment-method"]');
+        const cardFields = checkoutPanel.querySelectorAll('.shop-payment-card-fields input');
+        const syncPaymentFields = () => {
+          const selectedMethod = checkoutPanel.querySelector('input[name="shop-payment-method"]:checked')?.value || 'card';
+          const isCardMethod = selectedMethod === 'card';
+          cardFields.forEach((field) => {
+            field.disabled = !isCardMethod;
+            field.required = isCardMethod;
+          });
+        };
+        paymentMethodInputs.forEach((input) => input.addEventListener('change', syncPaymentFields));
+        syncPaymentFields();
+
         checkoutPanel.querySelector("form").addEventListener("submit", (event) => {
           event.preventDefault();
-          const button = event.currentTarget.querySelector('button[type="submit"]');
-          button.textContent = 'Order placed';
+          const form = event.currentTarget;
+          const selectedMethod = form.querySelector('input[name="shop-payment-method"]:checked')?.value || 'card';
+          const button = form.querySelector('button[type="submit"]');
+          if (selectedMethod === 'stripe' || paymentConfig.liveEnabled) {
+            const targetUrl = paymentConfig.stripeCheckoutUrl;
+            if (!targetUrl) {
+              button.textContent = 'Add live Stripe link';
+              button.disabled = false;
+              return;
+            }
+            button.textContent = 'Redirecting...';
+            button.disabled = true;
+            window.open(targetUrl, '_blank', 'noopener,noreferrer');
+            return;
+          }
+          button.textContent = 'Payment sent';
           button.disabled = true;
           button.classList.add('opacity-70');
           setTimeout(() => {
             shopCartState.length = 0;
             updateShopCart();
             checkoutPanel.remove();
-          }, 1200);
+          }, 1400);
         });
       });
       setShopFilter("all");
@@ -1067,4 +1242,5 @@
   </script>
  
 </body></html>
+
 
