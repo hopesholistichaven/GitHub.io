@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
-  <rect width="100%" height="100%" fill="#f4f3f3" />
-  <circle cx="400" cy="320" r="200" fill="#d62839" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 923" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid slice">
+  <title id="title">Portrait of Eileen Lang</title>
+  <desc id="desc">Portrait of Eileen Lang, founder of Hope's Holistic Haven.</desc>
+  <image href="../HeadShot.png" x="0" y="0" width="740" height="923" preserveAspectRatio="xMidYMid slice" />
 </svg>
