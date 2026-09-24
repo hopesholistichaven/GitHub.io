@@ -1,307 +1,586 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260924-05-f84ad47","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/83d6dfdadcd4750a.telemetry_sdk.js" integrity="sha512-XS4Dvzp6vbagZS9vFErihvr8aO3S0tH78KWUefn06fmL4WYqryBtZj/IOLITYj7dFA4gPVvPg1W/JB1DK3uLNQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hope's Holistic Haven</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #3b3937;
-      --cream: #f4f3f3;
-      --paper: #f7f2f0;
-      --signal: #e6a9af;
-      --line: rgba(59,57,55,.16);
-      --rose: #f8dfe4;
-      --coral: #ef4f32;
-      --white: #ffffff;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.6;
-    }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1200px, calc(100% - 32px)); margin: 0 auto; }
-    header {
-      background: var(--rose);
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .brand-mark {
-      width: 38px; height: 38px; border-radius: 50%;
-      overflow: hidden; background: var(--white); display: grid; place-items: center;
-      border: 1px solid var(--line);
-    }
-    .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      text-transform: uppercase;
-      font-size: .74rem;
-      letter-spacing: .14em;
-      font-weight: 700;
-    }
-    .hero {
-      background: var(--rose);
-      padding: 70px 0 40px;
-      border-bottom: 1px solid var(--line);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 48px;
-    }
-    .eyebrow {
-      font-size: .76rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--coral);
-      margin-bottom: 12px;
-    }
-    h1, h2, h3 {
-      margin: 0 0 18px;
-      line-height: 1.08;
-      font-weight: 700;
-    }
-    h1 {
-      font-size: clamp(2.8rem, 5vw, 6rem);
-      letter-spacing: -.05em;
-    }
-    .lead {
-      max-width: 52ch;
-      font-size: 1.1rem;
-      margin-bottom: 28px;
-    }
-    .button-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .button {
-      background: var(--ink);
-      color: var(--white);
-      border: none;
-      border-radius: 999px;
-      padding: 14px 26px;
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-    .button.secondary {
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid var(--ink);
-    }
-    .hero-card {
-      background: rgba(255,255,255,.45);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 18px;
-      box-shadow: 0 20px 48px rgba(59,57,55,0.08);
-    }
-    .hero-card img {
-      width: 100%;
-      border-radius: 20px;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-    }
-    section {
-      padding: 88px 0;
-    }
-    .section-header {
-      max-width: 720px;
-      margin-bottom: 28px;
-    }
-    .section-header h2 {
-      font-size: clamp(2.1rem, 4vw, 3.5rem);
-      letter-spacing: -.05em;
-    }
-    .split {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 42px;
-      align-items: center;
-    }
-    .portrait {
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      overflow: hidden;
-      background: var(--white);
-      box-shadow: 0 18px 38px rgba(59,57,55,.08);
-    }
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      min-height: 520px;
-      object-fit: cover;
-    }
-    .bio {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 28px;
-    }
-    .bio p {
-      margin: 0 0 16px;
-      font-size: 1.04rem;
-    }
-    .bio-page {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      padding: 28px;
-      margin-top: 28px;
-    }
-    .bio-page h3 {
-      font-size: 1.5rem;
-      margin-top: 20px;
-    }
-    footer {
-      background: #f3ece8;
-      border-top: 1px solid var(--line);
-      padding: 42px 0;
-      text-align: center;
-    }
-    @media (max-width: 800px) {
-      .hero-grid, .split {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
-      .hero {
-        padding-top: 36px;
-      }
-      .portrait img {
-        min-height: 420px;
-      }
-    }
+    :root { --ink:#3b3937; --cream:#f4f3f3; --paper:#f7f2f0; --signal:#e6a9af; --line:rgba(59,57,55,.16); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:"DM Sans",sans-serif; overflow-x:hidden; }
+    .site-shell { width:100%; overflow-x:hidden; }
+    .brand-serif { font-family:"Fraunces",serif; }
+    .focus-ring:focus-visible { outline:3px solid var(--signal); outline-offset:4px; }
+    .site-nav { border-bottom:1px solid transparent; background:#f8dfe4 !important; backdrop-filter:none; border-radius:0 0 1.25rem 1.25rem; transition:background .3s ease, border-color .3s ease, box-shadow .3s ease, backdrop-filter .3s ease; }
+    .site-nav:hover, .site-nav.is-scrolled { border-bottom-color:var(--line); background:rgba(250,249,245,.78) !important; backdrop-filter:blur(14px) saturate(1.08); box-shadow:0 10px 30px rgba(59,57,55,.06); }
+    .brand-mark { width:2.15rem; height:2.15rem; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; padding:.2rem; background:#f4f3f3; overflow:hidden; box-shadow:0 0 0 1px rgba(59,57,55,.16); }
+    .footer-logo-badge { width:4.5rem; height:4.5rem; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; padding:.35rem; margin-bottom:1rem; background:#f4f3f3; overflow:hidden; box-shadow:0 0 0 1px rgba(250,249,245,.25); }
+    .logo-badge-image { width:100%; height:100%; object-fit:cover; border-radius:inherit; }
+    .hero-section { min-height:calc(100 * min(var(--vh, 1vh), 1vh)); background:#f8dfe4; position:relative; overflow:hidden; isolation:isolate; }
+    .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+    .hero-overlay { position:absolute; inset:0; background:rgba(248,223,228,.42); z-index:1; pointer-events:none; }
+    .hero-orbit { position:absolute; width:min(78rem,115vw); aspect-ratio:1; border:1px solid rgba(59,57,55,.18); border-radius:999px; left:50%; top:54%; transform:translate(-50%,-50%); z-index:2; pointer-events:none; }
+    .hero-orbit::before, .hero-orbit::after { content:""; position:absolute; border-radius:999px; background:#ef4f32; }
+    .hero-orbit::before { width:.8rem; height:.8rem; top:12%; left:18%; }
+    .hero-orbit::after { width:1rem; height:1rem; right:12%; bottom:20%; background:#3b3937; }
+    .hero-wordmark { text-wrap:balance; }
+    .affirmation-ticker { position:absolute; right:0; bottom:0; left:0; z-index:3; overflow:hidden; border-top:1px solid rgba(59,57,55,.16); background:rgba(248,223,228,.58); backdrop-filter:blur(8px); }
+    .affirmation-track { display:flex; width:max-content; animation:affirmation-scroll 30s linear infinite; }
+    .affirmation-group { display:flex; flex-shrink:0; align-items:center; }
+    .affirmation-item { display:inline-flex; align-items:center; gap:1.5rem; padding:.8rem 2.5rem; color:#3b3937; font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; }
+    .affirmation-item::after { content:"✦"; color:#ef4f32; font-size:.7rem; }
+    @keyframes affirmation-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    @media (prefers-reduced-motion:reduce) { .affirmation-track { animation-play-state:paused; } }
+    .eyebrow { letter-spacing:.16em; text-transform:uppercase; }
+    .services-page, .blog-page, .about-subpage { display:none; background:#f7f2f0; }
+    .services-page { display:none !important; }
+    .routed-page-inner { max-width:1200px; margin:0 auto; }
+    .about-dropdown { position:relative; }
+    .about-dropdown-menu { display:none; position:absolute; left:0; top:calc(100% + .75rem); min-width:15rem; padding:.5rem; border:1px solid var(--line); border-radius:1rem; background:#faf9f5; box-shadow:0 18px 35px rgba(59,57,55,.14); }
+    .about-dropdown:hover .about-dropdown-menu, .about-dropdown:focus-within .about-dropdown-menu, .about-dropdown.is-open .about-dropdown-menu { display:block; }
+    .about-dropdown-menu a { display:block; padding:.75rem .85rem; border-radius:.6rem; }
+    .about-dropdown-menu a:hover, .about-dropdown-menu a:focus-visible { background:#f1e8e4; }
+    body.route-blog main > section:not(#blog-page), body.route-about-who main > section:not(#about-who-page), body.route-about-founder main > section:not(#about-founder-page), body.route-about-hope main > section:not(#about-hope-page), body.route-about-eileen main > section:not(#about-eileen-page), body.route-the-haven main > section:not(#the-haven) { display:none; }
+    body.route-blog #blog-page, body.route-about-who #about-who-page, body.route-about-founder #about-founder-page, body.route-about-hope #about-hope-page, body.route-about-eileen #about-eileen-page, body.route-the-haven #the-haven { display:block; }
+    .bio-page-copy { max-width:48rem; margin:2.5rem auto 0; }
+    .bio-page-copy p { margin:0 0 1.5rem; }
+    .services-page-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1rem; }
+    .service-page-card { border:1px solid var(--line); border-radius:1.25rem; padding:1.5rem; background:#faf9f5; min-height:15rem; transition:transform .28s ease, box-shadow .28s ease; }
+    .service-page-card:hover { transform:translateY(-6px); box-shadow:0 18px 35px rgba(59,57,55,.14); }
+    body.route-services main > section:not(#services-page) { display:none; }
+    body.route-services #services-page { display:block; }
+    @media (min-width:768px) { .services-page-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (min-width:1100px) { .services-page-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    .service-carousel { overflow:hidden; }
+    .service-carousel-track { display:flex; gap:2.5rem; transition:transform .65s cubic-bezier(.22,.61,.36,1); will-change:transform; }
+    .service-carousel-card { flex:0 0 calc((100% - 5rem) / 3); }
+    @media (max-width:767px) { .service-carousel-card { flex-basis:100%; } }
+    .feature-card { border:1px solid var(--line); border-radius:1.25rem; background:#f3f0e9; overflow:hidden; box-shadow:0 8px 20px rgba(59,57,55,.06); transition:box-shadow .35s ease, border-color .35s ease; }
+    .feature-card:hover, .feature-card:focus-within { border-color:var(--line); box-shadow:0 8px 20px rgba(59,57,55,.06); }
+    .feature-card h3, .feature-card p { width:fit-content; max-width:100%; background:#fff; transition:transform .25s ease; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+    .feature-card:hover h3, .feature-card:hover p, .feature-card:focus-within h3, .feature-card:focus-within p { transform:scale(1.025); }
+    .feature-image-wrap { overflow:hidden; background:#ddd8cf; }
+    .feature-image-wrap img { transition:transform .55s ease; }
+    .feature-card:hover img { transform:scale(1.05); }
+    .numbered-list article { border-top:1px solid var(--line); }
+    .numbered-list article:last-child { border-bottom:1px solid var(--line); }
+    .mobile-menu { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+    .mobile-menu.is-open { max-height:22rem; }
+    .testimonials-section { background:#f7f2f0; }
+    .testimonial-slide { animation:testimonial-in .45s ease both; border:1px solid rgba(59,57,55,.18); border-radius:1.25rem; padding:1.5rem; background:#faf9f5; box-shadow:0 8px 20px rgba(59,57,55,.08); transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease; cursor:pointer; min-height:18rem; width:100%; display:flex; flex-direction:column; align-items:flex-start; }
+      .testimonial-grid { display:grid; grid-template-columns:1fr; align-items:stretch; gap:1.25rem; }
+      .testimonial-grid .testimonial-slide[hidden] { display:none; }
+      @media (min-width:768px) { .testimonial-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    .testimonial-slide:hover { transform:translateY(-6px); border-color:rgba(239,79,50,.7); background:#fffdf9; box-shadow:0 20px 42px rgba(59,57,55,.18), 0 0 0 4px rgba(239,79,50,.14); }
+    .testimonial-slide:focus-visible { outline:3px solid var(--signal); outline-offset:4px; }
+    .testimonial-slide blockquote { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; }
+    .testimonial-dot { width:.55rem; height:.55rem; border-radius:999px; background:rgba(59,57,55,.25); transition:all .2s ease; }
+    .testimonial-dot.is-active { width:2rem; background:#ef4f32; }
+    @keyframes testimonial-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion:reduce) { .testimonial-slide { animation:none; } }
+    @media (min-width:768px) { .mobile-menu { display:none!important; } }
   </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <span class="brand-mark"><img src="HHLogo.png" alt="Hope's Holistic Haven logo" /></span>
-        <span>Hope's Holistic Haven</span>
+  <script src="/_sdk/8de366929c5f3b48.data_sdk.js" type="text/javascript" integrity="sha512-TyQ8k8cZj66xe/aENmn6RyZpdOFZXbAo5+KBG3PeFM+Q4qMTHU8xAqmq4ADClNfPrstgQYV6OzZHwLTnElzB2g=="></script>
+  <script src="/_sdk/765e1fea0cec97ce.resizing_sdk.js" type="text/javascript" integrity="sha512-IRTJnqww0+HQ5V/LlWEQrlD5SrYHaVvaeVoNe8HYQXoaguzUGheSd9+n9s6WOgaTcEH0g37DuINHZ9aqfzWjlw=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(244, 243, 243);">
+  <div class="site-shell">
+   <header class="relative z-50 w-full">
+    <nav data-template-id="navbar-section" class="canva-header site-nav relative w-full" aria-label="Primary navigation" style="background: rgb(248, 223, 228);">
+     <div class="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 lg:px-10">
+      <a href="#top" class="focus-ring flex items-center gap-3 rounded-sm" aria-label="Hope's Holistic Haven home"> <span class="brand-mark" aria-hidden="true"><img data-template-id="header-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHTPFTmrec/1" alt="Hope's Holistic Haven HH logo"></span> <span data-template-id="brand-name" class="canva-text text-sm font-bold uppercase tracking-[.12em]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 14px; letter-spacing: 0.08rem;">Hope's Holistic Haven</span> </a>
+      <div class="hidden items-center gap-8 md:flex">
+       <div class="about-dropdown"><button data-template-id="nav-about" class="canva-button focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" type="button" aria-expanded="false" aria-haspopup="true" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</button>
+        <div class="about-dropdown-menu" role="menu"><a data-template-id="nav-about-who" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about-who" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">WHO WE ARE</a><a data-template-id="nav-about-founder" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT THE FOUNDER</a><a data-template-id="nav-about-hope" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#about-hope" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">HONORING EMMANUEL "HOPE" LANG</a>
+        </div>
+       </div><a data-template-id="nav-services" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a>
+       <div class="about-dropdown shop-dropdown"><button data-template-id="nav-shop" class="canva-button focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" type="button" aria-expanded="false" aria-haspopup="true" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SHOP</button>
+        <div class="about-dropdown-menu" role="menu"><a data-template-id="nav-shop-haven" class="canva-link focus-ring text-xs font-bold uppercase tracking-[.1em]" href="#the-haven" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">THE HAVEN</a>
+        </div>
+       </div><a data-template-id="nav-blog" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#blog" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="nav-donate" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.15em]" href="#contact" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="nav-contact" class="canva-button focus-ring rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">CONTACT</a>
+      </div><button id="menu-button" class="focus-ring rounded-sm p-2 md:hidden" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"> <i data-lucide="menu" aria-hidden="true"></i> </button>
+     </div>
+     <div id="mobile-menu" class="mobile-menu md:hidden">
+      <div class="border-t border-black/10 px-5 py-4">
+       <div class="flex flex-col gap-1">
+        <a data-template-id="mobile-nav-about" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#about" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</a>
+        <div class="about-dropdown shop-dropdown">
+         <button data-template-id="mobile-nav-shop" class="canva-button focus-ring w-full rounded-sm px-3 py-3 text-left text-sm font-bold" type="button" aria-expanded="false" aria-haspopup="true" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SHOP</button>
+         <div class="about-dropdown-menu static min-w-0 border-0 p-0 pl-3 shadow-none" role="menu">
+          <a data-template-id="mobile-nav-shop-haven" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#the-haven" role="menuitem" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">THE HAVEN</a>
+         </div>
+        </div><a data-template-id="mobile-nav-services" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="mobile-nav-blog" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#blog" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="mobile-nav-donate" class="canva-link focus-ring rounded-sm px-3 py-3 text-sm font-bold" href="#contact" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="mobile-nav-contact" class="canva-button focus-ring mt-2 rounded-sm px-3 py-3 text-sm font-bold" href="#contact" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">CONTACT</a>
+       </div>
       </div>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
+     </div>
+    </nav>
+   </header>
+   <main>
+    <section id="top" data-template-id="hero-section" class="canva-section hero-section" style="background: rgb(248, 223, 228);">
+     <video class="hero-video" autoplay="" muted="" loop="" playsinline="" aria-hidden="true" tabindex="-1">
+      <source src="https://videos.pexels.com/video-files/3129595/3129595-hd_1920_1080_25fps.mp4" type="video/mp4">
+     </video>
+     <div class="hero-overlay" aria-hidden="true"></div>
+     <div class="hero-orbit" aria-hidden="true"></div>
+     <div class="relative z-10 mx-auto flex min-h-[inherit] w-full max-w-[1500px] items-center px-5 py-20 lg:px-10 lg:py-24">
+      <div class="w-full py-8 text-center">
+       <h1 data-template-id="hero-background-title" class="canva-text hero-wordmark brand-serif hero-serif mx-auto max-w-6xl leading-[.82]" style="color: rgb(59, 57, 55); font-weight: 700; font-style: normal; font-size: 133px; letter-spacing: -0.06rem; line-height: 0.82;">HOPE'S HOLISTIC HAVEN</h1>
+       <p data-template-id="hero-copy" class="canva-text mx-auto mt-10 max-w-xl text-base leading-7 md:text-lg md:leading-8" style="color: rgb(59, 57, 55); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Nourish thy mind, body, and soul.</p><a data-template-id="hero-link" class="canva-link focus-ring mt-8 inline-block rounded-sm border-b-2 border-black pb-2 text-sm font-bold uppercase tracking-[.1em]" href="#about" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Start where you are →</a>
+      </div>
+     </div>
+     <div class="affirmation-ticker" aria-label="Daily affirmations">
+      <div class="affirmation-track">
+       <div class="affirmation-group" aria-hidden="true"><span class="affirmation-item">I am grounded.</span><span class="affirmation-item">I trust my healing.</span><span class="affirmation-item">I am aligned with my purpose.</span><span class="affirmation-item">Peace flows through me.</span>
+       </div>
+       <div class="affirmation-group" aria-hidden="true"><span class="affirmation-item">I am grounded.</span><span class="affirmation-item">I trust my healing.</span><span class="affirmation-item">I am aligned with my purpose.</span><span class="affirmation-item">Peace flows through me.</span>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="resources" data-template-id="resources-section" class="canva-section px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="mx-auto max-w-[1500px]">
+      <div class="flex flex-col justify-between gap-7 border-b border-black pb-8 md:flex-row md:items-end">
+       <div class="max-w-2xl">
+        <h2 data-template-id="resources-title" class="canva-text brand-serif mt-4 leading-none" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Our Services</h2>
+       </div><a data-template-id="resources-link" class="canva-link focus-ring rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Explore all resources →</a>
+      </div>
+      <div class="service-carousel mt-10" aria-label="Our services carousel">
+       <div class="service-carousel-track">
+        <article data-template-id="resource-card-1" class="canva-card feature-card service-carousel-card" style="background: rgb(243, 240, 233);">
+         <div class="feature-image-wrap aspect-[4/3]">
+          <img data-template-id="resource-image-1" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/3865680/pexels-photo-3865680.jpeg" alt="A flat lay displaying essential oils, dried lavender, and other aromatherapy items on a woven mat.">
+         </div>
+         <div class="mx-auto max-w-[88%] px-5 py-8">
+          <h3 data-template-id="resource-title-1" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Mind-Body Medicine</h3>
+          <p data-template-id="resource-copy-1" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Grounded, approachable ways to bring herbal wisdom into your everyday rhythm.</p>
+         </div>
+        </article>
+        <article data-template-id="resource-card-2" class="canva-card feature-card service-carousel-card" style="background: rgb(243, 240, 233);">
+         <div class="feature-image-wrap aspect-[4/3]">
+          <img data-template-id="resource-image-2" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/8349085/pexels-photo-8349085.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A Black man with closed eyes concentrates and meditates indoors wearing gray long sleeves.">
+         </div>
+         <div class="mx-auto max-w-[88%] px-5 py-8">
+          <h3 data-template-id="resource-title-2" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Clinical Hypnosis</h3>
+          <p data-template-id="resource-copy-2" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Simple practices for finding calm, creating space, and returning to the present.</p>
+         </div>
+        </article>
+        <article data-template-id="resource-card-3" class="canva-card feature-card service-carousel-card" style="background: rgb(243, 240, 233);">
+         <div class="feature-image-wrap aspect-[4/3]">
+          <img data-template-id="resource-image-3" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/6997978/pexels-photo-6997978.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Woman meditating indoors with Tibetan singing bowls, promoting relaxation and mindfulness.">
+         </div>
+         <div class="mx-auto max-w-[88%] px-5 py-8">
+          <h3 data-template-id="resource-title-3" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Sound Healing</h3>
+          <p data-template-id="resource-copy-3" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Ideas for making your home, habits, and personal rituals feel more intentional.</p>
+         </div>
+        </article>
+        <article data-template-id="resource-card-4" class="canva-card feature-card service-carousel-card" style="background: rgb(243, 240, 233);">
+         <div class="feature-image-wrap aspect-[4/3]">
+          <img data-template-id="resource-image-4" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5163838/pexels-photo-5163838.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A woman practicing yoga and meditation in a sunny park, surrounded by greenery.">
+         </div>
+         <div class="mx-auto max-w-[88%] px-5 py-8">
+          <h3 data-template-id="resource-title-4" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Yoga &amp; Meditation</h3>
+          <p data-template-id="resource-copy-4" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Move, breathe, and connect to your inner wisdom.</p>
+         </div>
+        </article>
+        <article data-template-id="resource-card-5" class="canva-card feature-card service-carousel-card" style="background: rgb(243, 240, 233);">
+         <div class="feature-image-wrap aspect-[4/3]">
+          <img data-template-id="resource-image-5" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5480158/pexels-photo-5480158.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Hands using a mortar and pestle to grind colorful dried herbs on a wooden table.">
+         </div>
+         <div class="mx-auto max-w-[88%] px-5 py-8">
+          <h3 data-template-id="resource-title-5" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Herbal Wellness</h3>
+          <p data-template-id="resource-copy-5" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Natural remedies and guidance for vibrant health and vitality.</p>
+         </div>
+        </article>
+        <article data-template-id="resource-card-6" class="canva-card feature-card service-carousel-card" style="background: rgb(243, 240, 233);">
+         <div class="feature-image-wrap aspect-[4/3]">
+          <img data-template-id="resource-image-6" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/4584663/pexels-photo-4584663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Two women share a comforting hug symbolizing empathy and support in a studio setting.">
+         </div>
+         <div class="mx-auto max-w-[88%] px-5 py-8">
+          <h3 data-template-id="resource-title-6" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Grief &amp; End-Of-Life Support</h3>
+          <p data-template-id="resource-copy-6" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Compassionate care for life's transitions and sacred goodbyes.</p>
+         </div>
+        </article>
+        <article data-template-id="resource-card-7" class="canva-card feature-card service-carousel-card" style="background: rgb(243, 240, 233);">
+         <div class="feature-image-wrap aspect-[4/3]">
+          <img data-template-id="resource-image-7" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/7596882/pexels-photo-7596882.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Diverse group meditating in a sunlit room, promoting peace and relaxation.">
+         </div>
+         <div class="mx-auto max-w-[88%] px-5 py-8">
+          <h3 data-template-id="resource-title-7" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Workshops &amp; Retreats</h3>
+          <p data-template-id="resource-copy-7" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Transformative experiences to learn, heal, and grow.</p>
+         </div>
+        </article>
+       </div>
+       <div class="mt-8 flex justify-end">
+        <div class="flex gap-2">
+         <button id="services-prev" class="focus-ring rounded-full border border-black/30 p-3" type="button" aria-label="Previous service"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button id="services-next" class="focus-ring rounded-full border border-black/30 p-3" type="button" aria-label="Next service"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="about" data-template-id="about-section" class="canva-section px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(250, 249, 245);">
+     <div class="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
+      <div class="overflow-hidden bg-[#d8d4ca]"><img data-template-id="about-image" class="canva-image h-full min-h-[28rem] w-full object-cover" loading="lazy" src="canva://MAHTPcQvhss/1" alt="Portrait of Eileen Lang, founder of Hope's Holistic Haven">
+      </div>
+      <div class="flex flex-col justify-center">
+       <p data-template-id="about-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">meet the foundeR</p>
+       <h2 data-template-id="about-title" class="canva-text brand-serif mt-5 max-w-3xl leading-[.98]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 47px; letter-spacing: -0.04rem; line-height: 0.96;">EILEEN LANG</h2>
+       <p data-template-id="about-copy-2" class="canva-text mt-5 max-w-2xl leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.7;">Born in Brooklyn, New York, and deeply connected to her Caribbean heritage, Eileen is a fourth-generation Afro-Caribbean Spiritualist and multidisciplinary practitioner. Her diverse educational and professional background spans Culinary Arts, Holistic Health and Nutrition, Clinical Hypnotherapy, Thanatology, and Integrative Medicine and Health Sciences, allowing her to approach wellness through a comprehensive and integrative lens.</p><a data-template-id="about-copy-1" class="canva-button focus-ring mt-8 inline-block w-fit rounded-full px-6 py-3 text-sm font-bold uppercase tracking-[.1em]" href="#about-eileen" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Read Eileen's Full Bio</a>
+      </div>
+     </div>
+    </section>
+    <section id="blog-page" data-template-id="blog-page-section" class="canva-section blog-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="blog-page-title" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner"><a data-template-id="blog-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="blog-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Journal</p>
+      <h1 id="blog-page-title" data-template-id="blog-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Thoughts for a softer life.</h1>
+      <p data-template-id="blog-page-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Notes, practices, and reflections for tending to your mind, body, and spirit.</p>
+     </div>
+    </section>
+    <section id="about-who-page" data-template-id="about-who-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner"><a data-template-id="about-who-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="about-who-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Our story</p>
+      <h1 data-template-id="about-who-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">WHO WE ARE</h1>
+      <p data-template-id="about-who-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Hope's Holistic Haven, a wellness-centered organization dedicated to holistic health, healing, self-discovery, and personal transformation.</p>
+     </div>
+    </section>
+    <section id="about-founder-page" data-template-id="about-founder-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner"><a data-template-id="about-founder-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <div class="grid gap-10 lg:grid-cols-[.7fr_1.3fr] lg:items-center"><img data-template-id="about-founder-image" class="canva-image h-full min-h-[24rem] w-full object-cover" loading="lazy" src="canva://MAHTPcQvhss/1" alt="Portrait of Eileen Lang, founder of Hope's Holistic Haven">
+       <div>
+        <p data-template-id="about-founder-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Meet the founder</p>
+        <h1 data-template-id="about-founder-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">About the Founder</h1>
+        <p data-template-id="about-founder-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Eileen Lang brings together holistic health, clinical hypnotherapy, integrative medicine, and intuitive guidance to support meaningful transformation.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="about-hope-page" data-template-id="about-hope-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner"><a data-template-id="about-hope-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="about-hope-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">In loving honor</p>
+      <h1 data-template-id="about-hope-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">Honoring Emmanuel "Hope" Lang</h1>
+      <p data-template-id="about-hope-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">A dedicated space to honor Emmanuel "Hope" Lang and the legacy of love, resilience, and care that continues through this work.</p>
+     </div>
+    </section>
+    <section id="about-eileen-page" data-template-id="about-eileen-page-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="about-eileen-title" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner">
+      <a data-template-id="about-eileen-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <h1 id="about-eileen-title" data-template-id="about-eileen-title" class="canva-text brand-serif text-center leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">ABOUT EILEEN LANG</h1>
+      <div class="bio-page-copy text-lg leading-8">
+       <p data-template-id="about-eileen-bio-1" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Eileen Lang is the Founder of Hope's Holistic Haven, a wellness-centered organization dedicated to holistic health, healing, self-discovery, and personal transformation. Named in honor of her late father, Hope's Holistic Haven reflects Eileen's commitment to carrying forward the wisdom, values, and traditions passed down through generations while building a legacy of empowerment and compassionate care.</p>
+       <p data-template-id="about-eileen-bio-2" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Born in Brooklyn, New York, and deeply connected to her Caribbean heritage, Eileen is a fourth-generation Afro-Caribbean Spiritualist and multidisciplinary practitioner. Her diverse educational and professional background spans Culinary Arts, Holistic Health and Nutrition, Clinical Hypnotherapy, Thanatology, and Integrative Medicine and Health Sciences, allowing her to approach wellness through a comprehensive and integrative lens.</p>
+       <p data-template-id="about-eileen-bio-3" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Eileen combines evidence-informed holistic practices with ancestral wisdom and intuitive guidance, incorporating modalities such as Storytelling, Energy Readings, Cardology, Lenormand, Astrology, just to name a few. Through her work, she helps individuals cultivate self-awareness, personal growth, and a deeper connection to themselves.</p>
+       <p data-template-id="about-eileen-bio-4" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Guided by a passion for healing, education, and transformation, Eileen's mission is to empower others to live with greater purpose, balance, and fulfillment while honoring the legacy of those who came before them.</p>
+      </div>
+     </div>
+    </section>
+    <section id="the-haven" data-template-id="the-haven-section" class="canva-section about-subpage px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="the-haven-title" style="background: rgb(247, 242, 240);">
+     <div class="routed-page-inner"><a data-template-id="the-haven-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="the-haven-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Shop</p>
+      <h1 id="the-haven-title" data-template-id="the-haven-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">The Haven</h1>
+      <p data-template-id="the-haven-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">A thoughtful collection of offerings and resources to support your wellness journey.</p>
+     </div>
+    </section>
+    <section id="services-page" data-template-id="services-page-section" class="canva-section services-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="services-page-title" style="background: rgb(247, 242, 240);">
+     <div class="mx-auto max-w-[1200px]"><a data-template-id="services-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
+      <p data-template-id="services-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Ways we support you</p>
+      <h1 id="services-page-title" data-template-id="services-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Support that feels real, useful, and human.</h1>
+      <div class="services-page-grid mt-12">
+       <article data-template-id="services-page-card-1" class="canva-card service-page-card" style="background: rgb(250, 249, 245);">
+        <p data-template-id="services-page-number-1" class="canva-text text-sm font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">01</p>
+        <h2 data-template-id="services-page-title-1" class="canva-text brand-serif mt-6" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px;">Mind-Body Medicine</h2>
+        <p data-template-id="services-page-copy-1" class="canva-text mt-4 leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Integrative approaches for whole-person wellness.</p>
+       </article>
+       <article data-template-id="services-page-card-2" class="canva-card service-page-card" style="background: rgb(250, 249, 245);">
+        <p data-template-id="services-page-number-2" class="canva-text text-sm font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">02</p>
+        <h2 data-template-id="services-page-title-2" class="canva-text brand-serif mt-6" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px;">Clinical Hypnosis</h2>
+        <p data-template-id="services-page-copy-2" class="canva-text mt-4 leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Release, reframe, and renew your mind for lasting change.</p>
+       </article>
+       <article data-template-id="services-page-card-3" class="canva-card service-page-card" style="background: rgb(250, 249, 245);">
+        <p data-template-id="services-page-number-3" class="canva-text text-sm font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">03</p>
+        <h2 data-template-id="services-page-title-3" class="canva-text brand-serif mt-6" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px;">Sound Healing</h2>
+        <p data-template-id="services-page-copy-3" class="canva-text mt-4 leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Vibrational healing to restore balance, relaxation, and inner peace.</p>
+       </article>
+       <article data-template-id="services-page-card-4" class="canva-card service-page-card" style="background: rgb(250, 249, 245);">
+        <p data-template-id="services-page-number-4" class="canva-text text-sm font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">04</p>
+        <h2 data-template-id="services-page-title-4" class="canva-text brand-serif mt-6" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px;">Yoga &amp; Meditation</h2>
+        <p data-template-id="services-page-copy-4" class="canva-text mt-4 leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Move, breathe, and connect to your inner wisdom.</p>
+       </article>
+       <article data-template-id="services-page-card-5" class="canva-card service-page-card" style="background: rgb(250, 249, 245);">
+        <p data-template-id="services-page-number-5" class="canva-text text-sm font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">05</p>
+        <h2 data-template-id="services-page-title-5" class="canva-text brand-serif mt-6" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px;">Herbal Wellness</h2>
+        <p data-template-id="services-page-copy-5" class="canva-text mt-4 leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Natural remedies and guidance for vibrant health and vitality.</p>
+       </article>
+       <article data-template-id="services-page-card-6" class="canva-card service-page-card" style="background: rgb(250, 249, 245);">
+        <p data-template-id="services-page-number-6" class="canva-text text-sm font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">06</p>
+        <h2 data-template-id="services-page-title-6" class="canva-text brand-serif mt-6" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px;">Grief &amp; End-Of-Life Support</h2>
+        <p data-template-id="services-page-copy-6" class="canva-text mt-4 leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Compassionate care for life's transitions and sacred goodbyes.</p>
+       </article>
+       <article data-template-id="services-page-card-7" class="canva-card service-page-card" style="background: rgb(250, 249, 245);">
+        <p data-template-id="services-page-number-7" class="canva-text text-sm font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 16px;">07</p>
+        <h2 data-template-id="services-page-title-7" class="canva-text brand-serif mt-6" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 27px;">Workshops &amp; Retreats</h2>
+        <p data-template-id="services-page-copy-7" class="canva-text mt-4 leading-7" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Transformative experiences to learn, heal, and grow.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section data-template-id="testimonials-section" class="canva-section testimonials-section px-5 py-20 lg:px-10 lg:py-24" aria-labelledby="testimonials-title" style="background: rgb(247, 242, 240);">
+     <div class="mx-auto max-w-[1500px]">
+      <div class="flex flex-col justify-between gap-7 border-b border-black pb-8 md:flex-row md:items-end">
+       <div>
+        <h2 id="testimonials-title" data-template-id="testimonials-title" class="canva-text brand-serif mt-4 leading-none" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Testimonials</h2>
+       </div>
+       <div class="flex items-center gap-3" aria-label="Testimonial controls"><button id="testimonial-prev" class="focus-ring rounded-full border border-black/30 p-3 transition hover:bg-black hover:text-white" type="button" aria-label="Previous testimonial"><i data-lucide="arrow-left" aria-hidden="true"></i></button> <button id="testimonial-next" class="focus-ring rounded-full border border-black/30 p-3 transition hover:bg-black hover:text-white" type="button" aria-label="Next testimonial"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+       </div>
+      </div>
+      <div class="testimonial-grid relative mt-10 min-h-[14rem]" aria-live="polite">
+       <article data-testimonial-slide="" class="testimonial-slide is-active">
+        <blockquote data-template-id="testimonial-excerpt-1" class="canva-text brand-serif max-w-5xl text-xl leading-tight md:text-3xl" style="color: rgb(59, 57, 55); font-weight: 600; font-style: normal; font-size: 20px; line-height: 1.12;">“I had been searching for an astrologer who specializes in astrocartography for relocation and career purposes. I found Eileen via Threads and instantly connected to her warm and generous spirit. She helped me locate the best timeframe for my relocation and overall growth and elevation by breaking down the monthly transits for the most favorable conditions. The goal has always been to work with astrology as a tool to move through life with grace and ease. I am so grateful to have been aligned with Eileen and cannot wait to see what this new adventure has in store for me.”</blockquote>
+        <p data-template-id="testimonial-author-1" class="canva-text mt-8 text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">— Community member · Wellness coaching</p><button data-template-id="testimonial-read-1" data-read-testimonial="0" class="canva-button focus-ring mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] text-[#faf9f5] transition hover:bg-[#ef4f32]" type="button" aria-label="Read full testimonial" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245);"><i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+       </article>
+       <article data-testimonial-slide="" class="testimonial-slide" hidden="">
+        <blockquote data-template-id="testimonial-excerpt-2" class="canva-text brand-serif max-w-5xl text-2xl leading-tight md:text-4xl" style="color: rgb(59, 57, 55); font-weight: 600; font-style: normal; font-size: 22px; line-height: 1.12;">“Eileen offered me a reading based on my astrological birth chart recently and I took her up on the offer. Eileen scheduled a meeting and prepared different important talking points about my birth chart. I previously had known basic meanings of my astrology as it related to my personality, but Eileen included details I found very relevant to my life right now. It was an interactive experience, in which I asked many questions. She addressed my doubts while creating a document with all the information we had gone over in the meeting. After the meeting I felt refreshed and ready to continue to learn about myself. Eileen provided a very objective perspective. She is not one to sugarcoat things. This once again exposes her genuine personality and trustworthiness. She is real and honest, but in an endearing way. I am blessed to have met Eileen and shared in her energy and experiences. I attest to her character with gusto.”</blockquote>
+        <p data-template-id="testimonial-author-2" class="canva-text mt-8 text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">— Community member · Resource library</p><button data-template-id="testimonial-read-2" data-read-testimonial="1" class="canva-button focus-ring mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] text-[#faf9f5] transition hover:bg-[#ef4f32]" type="button" aria-label="Read full testimonial" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245);"><i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+       </article>
+       <article data-testimonial-slide="" class="testimonial-slide" hidden="">
+        <blockquote data-template-id="testimonial-excerpt-3" class="canva-text brand-serif max-w-5xl text-2xl leading-tight md:text-4xl" style="color: rgb(59, 57, 55); font-weight: 600; font-style: normal; font-size: 22px; line-height: 1.12;">“I have been knowing Eileen Lang for 10 years and had the pleasure of receiving assistance on my spiritual journey. She is very professional nurturing and compassionate. She has guided me through difficult parts of my journey with accuracy and spot on wisdom. She has helped me to heal from past traumas. She has very strong, spiritual gifts and very accurate readings which will provide profound guidance in your life so if you are looking for a powerful spiritual practitioner, try Eileen Lang you won’t be disappointed.”</blockquote>
+        <p data-template-id="testimonial-author-3" class="canva-text mt-8 text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">— Dominique B.</p><button data-template-id="testimonial-read-3" data-read-testimonial="2" class="canva-button focus-ring mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] text-[#faf9f5] transition hover:bg-[#ef4f32]" type="button" aria-label="Read full testimonial" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245);"><i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+       </article>
+       <article data-testimonial-slide="" class="testimonial-slide" hidden="">
+        <blockquote data-template-id="testimonial-excerpt-4" class="canva-text brand-serif max-w-5xl text-2xl leading-tight md:text-4xl" style="color: rgb(59, 57, 55); font-weight: 600; font-style: normal; font-size: 22px; line-height: 1.12;">“Eileen Lang’s services have had a profound impact on my life since beginning with her three years ago. Not only is she knowledgeable and experienced in the area of therapeutic services, but she’s also able to draw from a sincere place of empathy while connecting with clients like me who have complex needs. Eileen displays tremendous insight in the area of being a holistic practitioner. Through her services, I was able to improve several areas of my life, like daily practices for self-esteem building, strategies for time management, and techniques for high-stress environments, such as mindfulness and meditation. All of these tools have helped me to show up as a more effective caregiver as I care for my 80+ year old granddad. What I’ve benefited from the most through Eileen’s services is her knowledge of astrology, including astrocartography placement, and her explanation of birth chart readings. I wasn’t completely familiar with the workings of astrocartography placement prior, but she explained how it can assist clients in selecting the best place for relocation and aligning oneself with a more suitable career. These are also areas that I’ve frequently explained to her as my primary focus. I’ve greatly appreciated her responsible usage of astrocartography placement in helping me make more sound decisions. Most recently, Eileen examined my daily affirmations for 2026 and provided valuable suggestions in my rewrite, shifting the focus of these affirmations in a more intentional direction. I’ve also begun using her mechanism for tapping into one’s inner child, such as adult coloring books, painting, and journaling. I wasn’t expecting to pick up any new hobbies, but they’ve been essential to my growth and renewed happiness. Eileen is the light missing in our world, and I would highly recommend her services to anyone!”</blockquote>
+        <p data-template-id="testimonial-author-4" class="canva-text mt-8 text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">— Zaiditu P.</p><button data-template-id="testimonial-read-4" data-read-testimonial="3" class="canva-button focus-ring mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] text-[#faf9f5] transition hover:bg-[#ef4f32]" type="button" aria-label="Read full testimonial" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245);"><i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+       </article>
+       <article data-testimonial-slide="" class="testimonial-slide" hidden="">
+        <blockquote data-template-id="testimonial-excerpt-5" class="canva-text brand-serif max-w-5xl text-2xl leading-tight md:text-4xl" style="color: rgb(59, 57, 55); font-weight: 600; font-style: normal; font-size: 22px; line-height: 1.12;">“I met with Eileen while searching for a spiritual healer who has dream interpretation capabilities. I found her through Threads and described a disturbing recurring dream that my sister was having about me and I wanted to know what it meant and why. When I met Eileen - her warm presence put me at ease as this was my first time doing ancestral protection work. It was clear she had a long lineage of connection to the spiritual aspect of healing. Just a few days later, my court hearing took place and she was 100% right about everything she shared with me during our meeting! I want to thank Eileen for her grounded and knowledgeable work - I would recommend her any day to anyone looking for guidance, reassurance, protection and answers to things beyond their understanding. She's a true spiritual guide and I would definitely consult with her again.”</blockquote>
+        <p data-template-id="testimonial-author-5" class="canva-text mt-8 text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">— Shari S.</p><button data-template-id="testimonial-read-5" data-read-testimonial="4" class="canva-button focus-ring mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] text-[#faf9f5] transition hover:bg-[#ef4f32]" type="button" aria-label="Read full testimonial" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245);"><i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+       </article>
+       <article data-testimonial-slide="" class="testimonial-slide" hidden="">
+        <blockquote data-template-id="testimonial-excerpt-6" class="canva-text brand-serif max-w-5xl text-2xl leading-tight md:text-4xl" style="color: rgb(59, 57, 55); font-weight: 600; font-style: normal; font-size: 22px; line-height: 1.12;">“One night, I was simply resting and somehow felt led to you. When I joined the tikok live, I observed you giving a reading to someone else. When you asked if I wanted a reading, I hesitated. It was my first time ever doing something like that, and based on how I was raised, I was naturally skeptical. But there was something about your energy your warmth, calmness, and authenticity…that immediately made me feel safe and trusting enough to say yes. You spoke about parts of me and my inner world in ways that no one could have possibly known. It wasn’t surface-level or generic, couldn’t have been anyways…it felt deeply personal and incredibly accurate. From that day to now, my life has taken a drastic and beautiful turn. You’ve proven it through your authenticity, care, and the impact you’ve had on my life. I have nothing but good things to say about my experience with you, and I would wholeheartedly recommend you to anyone seeking clarity, healing, or guidance.”</blockquote>
+        <p data-template-id="testimonial-author-6" class="canva-text mt-8 text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">— Avie S.</p><button data-template-id="testimonial-read-6" data-read-testimonial="5" class="canva-button focus-ring mt-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#111111] text-[#faf9f5] transition hover:bg-[#ef4f32]" type="button" aria-label="Read full testimonial" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245);"><i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+       </article>
+      </div>
+      <div class="mt-8 flex gap-2" aria-label="Testimonial slides"><button data-testimonial-dot="" type="button" class="testimonial-dot is-active" aria-label="Show testimonial 1"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 2"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 3"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 4"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 5"></button> <button data-testimonial-dot="" type="button" class="testimonial-dot" aria-label="Show testimonial 6"></button>
+      </div>
+     </div>
+    </section>
+    <div id="testimonial-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 p-5" role="dialog" aria-modal="true" aria-labelledby="testimonial-modal-title">
+     <div class="max-h-[85vh] w-full max-w-3xl overflow-y-auto rounded-xl bg-[#faf9f5] p-7 shadow-2xl md:p-12">
+      <div class="flex items-start justify-between gap-6">
+       <h2 id="testimonial-modal-title" data-template-id="testimonial-modal-title" class="canva-text brand-serif text-3xl leading-tight" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 24px;">Full testimonial</h2><button id="testimonial-modal-close" data-template-id="testimonial-modal-close" class="canva-button focus-ring rounded-full border border-black/20 p-2" type="button" aria-label="Close full testimonial" style="color: rgb(17, 17, 17); font-weight: 700;"><span data-template-id="testimonial-modal-close-label" class="canva-text" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">×</span><i data-lucide="x" aria-hidden="true"></i></button>
+      </div>
+      <blockquote id="testimonial-modal-copy" class="mt-8 text-lg leading-8"></blockquote>
+     </div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
+    <section data-template-id="newsletter-section" class="canva-section px-5 py-20 lg:px-10 lg:py-24" style="background: rgb(241, 170, 185);">
+     <div class="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[1fr_.9fr] lg:items-end">
+      <div>
+       <p data-template-id="newsletter-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Stay close</p>
+       <h2 data-template-id="newsletter-title" class="canva-text brand-serif mt-5 max-w-3xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">A little goodness in your inbox.</h2>
+      </div>
+      <div>
+       <p data-template-id="newsletter-copy" class="canva-text max-w-xl text-lg leading-8" style="color: rgb(59, 57, 55); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.65;">Receive gentle inspiration, seasonal rituals, and mindful wellness notes from Hope's Haven.</p><a data-template-id="newsletter-link" class="canva-link focus-ring mt-7 inline-block rounded-none border-b-2 border-black pb-2 text-sm font-bold uppercase tracking-[.1em]" href="mailto:hello@hopeshaven.com" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Email us to stay connected →</a>
+      </div>
+     </div>
+    </section>
+    <section id="contact" data-template-id="contact-section" class="canva-section px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(250, 249, 245);">
+     <div class="mx-auto max-w-[1500px]">
+      <div class="grid gap-8 border-b border-black pb-10 lg:grid-cols-[.9fr_1.1fr]">
+       <div>
+        <p data-template-id="contact-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Say hello</p>
+        <h2 data-template-id="contact-title" class="canva-text brand-serif mt-5 leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 58px; letter-spacing: -0.04rem; line-height: 0.95;">Let’s talk.</h2>
+       </div>
+       <p data-template-id="contact-copy" class="canva-text max-w-xl self-end text-lg leading-8" style="color: rgb(51, 49, 46); font-size: 18px; line-height: 1.6;"></p>
+      </div>
+      <div class="mt-12 grid gap-12 lg:grid-cols-[.7fr_1.3fr]">
+       <aside class="space-y-8">
         <div>
-          <div class="eyebrow">Holistic care for mind, body, and spirit</div>
-          <h1>Rooted in care. Guided by hope.</h1>
-          <p class="lead">Hope's Holistic Haven is a welcoming space designed to support wellness, connection, and healing with warmth, intention, and personalized care.</p>
-          <div class="button-row">
-            <button class="button" type="button">Book a session</button>
-            <button class="button secondary" type="button">Learn more</button>
+         <h3 data-template-id="contact-email-label" class="canva-text text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Email</h3><a data-template-id="contact-email" class="canva-link focus-ring mt-2 inline-block rounded-sm text-lg font-semibold" href="mailto:hello@hopeshaven.com" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 18px;">hello@hopeshaven.com</a>
+        </div>
+       </aside>
+       <div class="border-t border-black pt-7">
+        <p data-template-id="contact-note" class="canva-text max-w-xl text-lg leading-8" style="color: rgb(51, 49, 46); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">For questions, collaborations, or thoughtful conversations about your wellness journey, send us an email and we will be in touch soon.</p>
+        <div data-template-id="contact-form-card" class="canva-card mt-10 rounded-2xl border border-black/10 bg-[#faf9f5] p-6 shadow-[0_8px_20px_rgba(59,57,55,.08)] md:p-8" style="background: rgb(250, 249, 245);">
+         <form id="contact-form" class="space-y-5" novalidate="">
+          <div><label data-template-id="contact-name-label" class="canva-text mb-2 block text-xs font-bold uppercase tracking-[.14em]" for="contact-name" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Name</label> <input id="contact-name" name="name" type="text" autocomplete="name" required="" class="canva-input focus-ring w-full rounded-sm border border-black/20 bg-transparent px-4 py-3" aria-describedby="contact-form-status">
           </div>
+          <div><label data-template-id="contact-email-form-label" class="canva-text mb-2 block text-xs font-bold uppercase tracking-[.14em]" for="contact-form-email" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Email</label> <input id="contact-form-email" name="email" type="email" autocomplete="email" required="" class="canva-input focus-ring w-full rounded-sm border border-black/20 bg-transparent px-4 py-3" aria-describedby="contact-form-status">
+          </div>
+          <fieldset class="border-0 p-0"><legend data-template-id="contact-services-label" class="canva-text mb-3 block text-xs font-bold uppercase tracking-[.14em]" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Select all services you're looking for</legend>
+           <div id="services-needed" class="grid gap-3" aria-describedby="contact-form-status">
+            <label class="flex items-center gap-3 text-sm"><input name="services_needed" value="Mind-Body Medicine" type="checkbox" class="canva-input focus-ring h-4 w-4" aria-describedby="contact-form-status"> <span>Mind-Body Medicine</span></label> <label class="flex items-center gap-3 text-sm"><input name="services_needed" value="Clinical Hypnosis" type="checkbox" class="canva-input focus-ring h-4 w-4" aria-describedby="contact-form-status"> <span>Clinical Hypnosis</span></label> <label class="flex items-center gap-3 text-sm"><input name="services_needed" value="Sound Healing" type="checkbox" class="canva-input focus-ring h-4 w-4" aria-describedby="contact-form-status"> <span>Sound Healing</span></label> <label class="flex items-center gap-3 text-sm"><input name="services_needed" value="Yoga &amp; Meditation" type="checkbox" class="canva-input focus-ring h-4 w-4" aria-describedby="contact-form-status"> <span>Yoga &amp; Meditation</span></label> <label class="flex items-center gap-3 text-sm"><input name="services_needed" value="Herbal Wellness" type="checkbox" class="canva-input focus-ring h-4 w-4" aria-describedby="contact-form-status"> <span>Herbal Wellness</span></label> <label class="flex items-center gap-3 text-sm"><input name="services_needed" value="Grief &amp; End-Of-Life Support" type="checkbox" class="canva-input focus-ring h-4 w-4" aria-describedby="contact-form-status"> <span>Grief &amp; End-Of-Life Support</span></label> <label class="flex items-center gap-3 text-sm"><input name="services_needed" value="Workshops &amp; Retreats" type="checkbox" class="canva-input focus-ring h-4 w-4" aria-describedby="contact-form-status"> <span>Workshops &amp; Retreats</span></label>
+           </div>
+          </fieldset>
+          <div><label data-template-id="contact-additional-info-label" class="canva-text mb-2 block text-xs font-bold uppercase tracking-[.14em]" for="contact-additional-info" style="color: rgb(105, 102, 95); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">Add Any Additional Information</label> <textarea id="contact-additional-info" name="additional_info" rows="6" class="canva-input focus-ring min-h-36 w-full resize-y rounded-sm border border-black/20 bg-transparent px-4 py-3" aria-describedby="contact-form-status"></textarea>
+          </div><button data-template-id="contact-form-submit" class="canva-button focus-ring rounded-full px-7 py-3 text-sm font-bold uppercase tracking-[.1em]" type="submit" style="background: rgb(17, 17, 17); color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">Send your note</button>
+          <p id="contact-form-status" class="text-sm leading-6" role="status" aria-live="polite"></p>
+         </form>
         </div>
-        <div class="hero-card">
-          <img src="eileenhope.jpg" alt="Hope and her team" />
-        </div>
+       </div>
       </div>
+     </div>
     </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">Meet the founder</div>
-          <h2>Support that feels personal, grounded, and hopeful.</h2>
-        </div>
-        <div class="split">
-          <div class="portrait">
-            <img src="HeadShot.png" alt="Eileen Lang, founder of Hope's Holistic Haven" />
-          </div>
-          <div class="bio">
-            <p>At Hope's Holistic Haven, wellness is not one-size-fits-all. It is a lived experience shaped by compassion, self-awareness, and a deep respect for each person's unique path.</p>
-            <p>I created this space to support women and families seeking rest, clarity, and practical tools to feel more connected to themselves and the life they are building.</p>
-            <p>Through mindful guidance, therapeutic support, and holistic care, we can move toward alignment, resilience, and healing—without pressure or perfection.</p>
-            <p><strong>Eileen Lang</strong><br />Founder • Holistic Practitioner • Wellness Advocate</p>
-          </div>
-        </div>
-
-        <div class="bio-page" id="about-founder-page">
-          <div class="eyebrow">About the founder</div>
-          <h3>Full bio</h3>
-          <div class="split" style="grid-template-columns: 0.7fr 1.3fr; margin-top: 18px;">
-            <div class="portrait" style="max-width: 400px; margin: 0 auto;">
-              <img src="HeadShot.png" alt="Eileen Lang headshot" />
-            </div>
-            <div>
-              <p>Hi, I’m Eileen—founder of Hope’s Holistic Haven and a passionate advocate for mindful, meaningful wellness. My journey into holistic care began with a desire to create deeper support for people navigating stress, change, and life transitions.</p>
-              <p>I believe healing happens in a space that is calm, compassionate, and grounded in real life. My work centers on helping individuals reconnect with their inner wisdom, build resilience, and cultivate habits that support emotional and physical well-being.</p>
-              <p>Whether guiding someone through a personal season of growth or supporting a family in need of practical encouragement, I aim to bring warmth, clarity, and confidence into every interaction. At Hope’s Holistic Haven, you are welcomed exactly as you are.</p>
-              <p>My approach blends empathy, education, and gentle structure so that each person can move toward a life that feels more balanced, supported, and aligned with what matters most.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">What we offer</div>
-          <h2>Thoughtful support for your healing journey.</h2>
-        </div>
-        <div class="split">
-          <div>
-            <p>We provide compassionate wellness experiences designed to help you slow down, reset, and reconnect with what brings you peace.</p>
-            <p>Services may include one-on-one support, tailored guidance, and intentional care plans for emotional balance, practical wellness habits, and everyday resilience.</p>
-          </div>
-          <div class="bio">
-            <p>• Wellness support</p>
-            <p>• Personalized guidance</p>
-            <p>• Emotional and spiritual support</p>
-            <p>• Gentle accountability and encouragement</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact">
-    <div class="container">
-      <div class="eyebrow">Contact</div>
-      <h3>Hope's Holistic Haven</h3>
-      <p>Compassionate care for everyday healing.</p>
+   </main>
+   <footer data-template-id="footer-section" class="canva-footer px-5 py-10 lg:px-10" style="background: rgb(17, 17, 17);">
+    <div class="mx-auto flex max-w-[1500px] flex-col justify-between gap-8 border-t border-white/25 pt-8 md:flex-row md:items-end">
+     <div>
+      <span class="footer-logo-badge" aria-hidden="true"><img data-template-id="footer-logo" class="canva-image logo-badge-image" loading="lazy" src="canva://MAHTPFTmrec/1" alt="Hope's Holistic Haven HH logo"></span>
+      <h2 data-template-id="footer-brand" class="canva-text brand-serif" style="color: rgb(250, 249, 245); font-weight: 400; font-style: normal; font-size: 28px;">Hope's Holistic Haven</h2>
+      <p data-template-id="footer-copy" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(200, 196, 188); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Nourish thy mind, body, and soul.</p>
+     </div>
+     <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+      <a data-template-id="footer-about-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#about" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">ABOUT</a> <a data-template-id="footer-services-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#services-page" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">SERVICES</a> <a data-template-id="footer-shop-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#the-haven" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">SHOP</a> <a data-template-id="footer-blog-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#resources" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">BLOG</a> <a data-template-id="footer-donate-link" class="canva-link focus-ring rounded-sm text-xs font-bold uppercase tracking-[.12em]" href="#contact" style="color: rgb(250, 249, 245); font-weight: 700; font-style: normal; font-size: 16px;">DONATE</a> <a data-template-id="footer-contact-link" class="canva-link focus-ring rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[.12em] text-black" href="#contact" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0); font-weight: 700; font-style: normal; font-size: 16px;">Contact</a>
+     </div>
     </div>
-  </footer>
-</body>
-</html>
+    <div class="mx-auto mt-10 max-w-[1500px]">
+     <p data-template-id="footer-copyright" class="canva-text text-center text-xs" style="color: rgb(167, 163, 155); font-weight: 400; font-style: normal; font-size: 12px;">© 2026 Hope's Holistic Haven. All rights reserved.</p>
+    </div>
+   </footer>
+  </div>
+  <script src="/_sdk/c90249f316bbe621.editing_sdk.js" integrity="sha512-cd4ICwG+3hl1AqLrCysr9GopLZ+2Cyjo2KMofj11Ys31LqLmkNEJhOQqYCwg6Nakgg+jlZ2JIdhM6PxWUR0zsg=="></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+      const syncRoute = () => { const hash = window.location.hash; document.body.classList.toggle("route-services", hash === "#services-page"); document.body.classList.toggle("route-blog", hash === "#blog"); document.body.classList.toggle("route-about-who", hash === "#about-who"); document.body.classList.toggle("route-about-founder", hash === "#about-founder"); document.body.classList.toggle("route-about-hope", hash === "#about-hope"); document.body.classList.toggle("route-about-eileen", hash === "#about-eileen"); document.body.classList.toggle("route-the-haven", hash === "#the-haven"); };
+      syncRoute();
+      window.addEventListener("hashchange", syncRoute);
+      const aboutDropdown = document.querySelector(".about-dropdown");
+      const aboutButton = aboutDropdown?.querySelector("button");
+      aboutButton?.addEventListener("click", () => { const open = aboutDropdown.classList.toggle("is-open"); aboutButton.setAttribute("aria-expanded", String(open)); });
+      aboutDropdown?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => { aboutDropdown.classList.remove("is-open"); aboutButton.setAttribute("aria-expanded", "false"); }));
+      document.querySelectorAll(".shop-dropdown").forEach((dropdown) => { const button = dropdown.querySelector("button"); button.addEventListener("click", () => { const open = dropdown.classList.toggle("is-open"); button.setAttribute("aria-expanded", String(open)); }); dropdown.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => { dropdown.classList.remove("is-open"); button.setAttribute("aria-expanded", "false"); })); });
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const siteNav = document.querySelector(".site-nav");
+      const updateNavState = () => siteNav.classList.toggle("is-scrolled", window.scrollY > 12);
+      updateNavState();
+      window.addEventListener("scroll", updateNavState, { passive: true });
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const slides = [...document.querySelectorAll("[data-testimonial-slide]")];
+      const dots = [...document.querySelectorAll("[data-testimonial-dot]")];
+      let currentSlide = 0;
+      let rotationTimer;
+      const getVisibleCount = () => window.innerWidth >= 768 ? 3 : 1;
+      const showSlide = (index) => {
+        currentSlide = (index + slides.length) % slides.length;
+        const visibleCount = getVisibleCount();
+        slides.forEach((slide, i) => {
+          const offset = (i - currentSlide + slides.length) % slides.length;
+          slide.hidden = offset >= visibleCount;
+          slide.classList.toggle("is-active", offset < visibleCount);
+        });
+        dots.forEach((dot, i) => dot.classList.toggle("is-active", i === currentSlide));
+      };
+      const carousel = document.querySelector("[data-testimonial-slide]").parentElement;
+      let isPaused = false;
+      const restartRotation = () => {
+        clearInterval(rotationTimer);
+        rotationTimer = setInterval(() => { if (!isPaused) showSlide(currentSlide + 1); }, 9000);
+      };
+      const pauseCarousel = () => { isPaused = true; };
+      const resumeCarousel = () => { isPaused = false; };
+      carousel.addEventListener("mouseenter", pauseCarousel);
+      carousel.addEventListener("mouseleave", resumeCarousel);
+      carousel.addEventListener("focusin", pauseCarousel);
+      carousel.addEventListener("focusout", resumeCarousel);
+      let touchStartX = 0;
+      carousel.addEventListener("touchstart", (event) => { touchStartX = event.changedTouches[0].screenX; pauseCarousel(); }, { passive: true });
+      carousel.addEventListener("touchend", (event) => {
+        const distance = event.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(distance) > 45) showSlide(currentSlide + (distance < 0 ? 1 : -1));
+        resumeCarousel();
+        restartRotation();
+      }, { passive: true });
+      document.getElementById("testimonial-prev").addEventListener("click", () => { showSlide(currentSlide - 1); restartRotation(); });
+      document.getElementById("testimonial-next").addEventListener("click", () => { showSlide(currentSlide + 1); restartRotation(); });
+      dots.forEach((dot, i) => dot.addEventListener("click", () => { showSlide(i); restartRotation(); }));
+      showSlide(currentSlide);
+      window.addEventListener("resize", () => showSlide(currentSlide), { passive: true });
+      restartRotation();
+
+      const serviceTrack = document.querySelector(".service-carousel-track");
+      const serviceCards = [...document.querySelectorAll(".service-carousel-card")];
+      let serviceIndex = 0;
+      const serviceVisible = () => window.innerWidth >= 768 ? 3 : 1;
+      const showServices = (index) => {
+        const visible = serviceVisible();
+        const max = Math.max(0, serviceCards.length - visible);
+        serviceIndex = Math.min(Math.max(index, 0), max);
+        const gap = 40;
+        const cardWidth = serviceCards[0].getBoundingClientRect().width + gap;
+        serviceTrack.style.transform = `translateX(-${serviceIndex * cardWidth}px)`;
+      };
+      const advanceServices = () => showServices(serviceIndex >= serviceCards.length - serviceVisible() ? 0 : serviceIndex + 1);
+      document.getElementById("services-prev").addEventListener("click", () => showServices(serviceIndex - 1));
+      document.getElementById("services-next").addEventListener("click", advanceServices);
+      let serviceTimer = setInterval(advanceServices, 6500);
+      serviceTrack.parentElement.addEventListener("mouseenter", () => clearInterval(serviceTimer));
+      serviceTrack.parentElement.addEventListener("mouseleave", () => { serviceTimer = setInterval(advanceServices, 6500); });
+      showServices(0);
+      window.addEventListener("resize", () => showServices(serviceIndex), { passive: true });
+
+      const fullTestimonials = [
+        `“I had been searching for an astrologer who specializes in astrocartography for relocation and career purposes. I found Eileen via Threads and instantly connected to her warm and generous spirit. She helped me locate the best timeframe for my relocation and overall growth and elevation by breaking down the monthly transits for the most favorable conditions. The goal has always been to work with astrology as a tool to move through life with grace and ease. I am so grateful to have been aligned with Eileen and cannot wait to see what this new adventure has in store for me.”`,
+        `“Eileen offered me a reading based on her astrological birth chart recently and I took her up on the offer. Eileen scheduled a meeting and prepared different important talking points about my birth chart. I previously had known basic meanings of my astrology as it related to my personality, but Eileen included details I found very relevant to my life right now. It was an interactive experience, in which I asked many questions. She addressed my doubts while creating a document with all the information we had gone over in the meeting. After the meeting I felt refreshed and ready to continue to learn about myself. Eileen provided a very objective perspective. She is not one to sugarcoat things. This once again exposes her genuine personality and trustworthiness. She is real and honest, but in an endearing way. I am blessed to have met Eileen and shared in her energy and experiences. I attest to her character with gusto.”`,
+        `“I have been knowing Eileen Lang for 10 years and had the pleasure of receiving assistance on my spiritual journey. She is very professional nurturing and compassionate. She has guided me through difficult parts of my journey with accuracy and spot on wisdom. She has helped me to heal from past traumas. She has very strong, spiritual gifts and very accurate readings which will provide profound guidance in your life so if you are looking for a powerful spiritual practitioner, try Eileen Lang you won’t be disappointed.”`,
+        `“Eileen Lang’s services have had a profound impact on my life since beginning with her three years ago. Not only is she knowledgeable and experienced in the area of therapeutic services, but she’s also able to draw from a sincere place of empathy while connecting with clients like me who have complex needs. Eileen displays tremendous insight in the area of being a holistic practitioner. Through her services, I was able to improve several areas of my life, like daily practices for self-esteem building, strategies for time management, and techniques for high-stress environments, such as mindfulness and meditation. All of these tools have helped me to show up as a more effective caregiver as I care for my 80+ year old granddad. What I’ve benefited from the most through Eileen’s services is her knowledge of astrology, including astrocartography placement, and her explanation of birth chart readings. I wasn’t completely familiar with the workings of astrocartography placement prior, but she explained how it can assist clients in selecting the best place for relocation and aligning oneself with a more suitable career. These are also areas that I’ve frequently explained to her as my primary focus. I’ve greatly appreciated her responsible usage of astrocartography placement in helping me make more sound decisions. Most recently, Eileen examined my daily affirmations for 2026 and provided valuable suggestions in my rewrite, shifting the focus of these affirmations in a more intentional direction. I’ve also begun using her mechanism for tapping into one’s inner child, such as adult coloring books, painting, and journaling. I wasn’t expecting to pick up any new hobbies, but they’ve been essential to my growth and renewed happiness. Eileen is the light missing in our world, and I would highly recommend her services to anyone!”`,
+        `“I met with Eileen while searching for a spiritual healer who has dream interpretation capabilities. I found her through Threads and described a disturbing recurring dream that my sister was having about me and I wanted to know what it meant and why. When I met Eileen - her warm presence put me at ease as this was my first time doing ancestral protection work. It was clear she had a long lineage of connection to the spiritual aspect of healing. Just a few days later, my court hearing took place and she was 100% right about everything she shared with me during our meeting! I want to thank Eileen for her grounded and knowledgeable work - I would recommend her any day to anyone looking for guidance, reassurance, protection and answers to things beyond their understanding. She's a true spiritual guide and I would definitely consult with her again.”`,
+        `“One night, I was simply resting and somehow felt led to you. When I joined the tikok live, I observed you giving a reading to someone else. When you asked if I wanted a reading, I hesitated. It was my first time ever doing something like that, and based on how I was raised, I was naturally skeptical. But there was something about your energy your warmth, calmness, and authenticity…that immediately made me feel safe and trusting enough to say yes. You spoke about parts of me and my inner world in ways that no one could have possibly known. It wasn’t surface-level or generic, couldn’t have been anyways…it felt deeply personal and incredibly accurate. From that day to now, my life has taken a drastic and beautiful turn. You’ve proven it through your authenticity, care, and the impact you’ve had on my life. I have nothing but good things to say about my experience with you, and I would wholeheartedly recommend you to anyone seeking clarity, healing, or guidance.”`
+      ];
+      const modal = document.getElementById("testimonial-modal");
+      const modalCopy = document.getElementById("testimonial-modal-copy");
+      const openTestimonial = (index) => { modalCopy.textContent = fullTestimonials[index]; modal.classList.remove("hidden"); modal.classList.add("flex"); document.getElementById("testimonial-modal-close").focus(); };
+      document.querySelectorAll("[data-read-testimonial]").forEach((button) => button.addEventListener("click", (event) => { event.stopPropagation(); openTestimonial(Number(button.dataset.readTestimonial)); }));
+      slides.forEach((slide, index) => { slide.addEventListener("click", () => openTestimonial(index)); slide.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openTestimonial(index); } }); });
+      const closeModal = () => { modal.classList.add("hidden"); modal.classList.remove("flex"); };
+      document.getElementById("testimonial-modal-close").addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeModal(); });
+
+      const contactForm = document.getElementById("contact-form");
+      const formStatus = document.getElementById("contact-form-status");
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const dataHandler = { onDataChanged() {} };
+      window.dataSdk.init(dataHandler);
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
+        const selectedServices = [...document.querySelectorAll('input[name="services_needed"]:checked')];
+        if (!selectedServices.length) {
+          formStatus.textContent = "Please select at least one service.";
+          return;
+        }
+        submitButton.disabled = true;
+        formStatus.textContent = "Sending your note…";
+        const result = await window.dataSdk.create({
+          name: document.getElementById("contact-name").value.trim(),
+          email: document.getElementById("contact-form-email").value.trim(),
+          services_needed: [...document.querySelectorAll('input[name="services_needed"]:checked')].map((input) => input.value).join(", "),
+          additional_info: document.getElementById("contact-additional-info").value.trim(),
+          submitted_at: new Date().toISOString()
+        });
+        submitButton.disabled = false;
+        if (result.isOk) {
+          formStatus.textContent = "Thank you — your note has been received.";
+          contactForm.reset();
+        } else {
+          formStatus.textContent = "We couldn't send that just now. Please try again or email us directly.";
+        }
+      });
+    });
+  </script>
+ 
+</body></html>
