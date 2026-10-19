@@ -72,10 +72,9 @@
     body.route-services #services-page { display:block; }
     @media (min-width:768px) { .services-page-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (min-width:1100px) { .services-page-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
-    .services-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1.25rem; }
-    @media (min-width:640px) { .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media (min-width:1024px) { .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    .services-grid { display:flex; gap:1.25rem; overflow-x:auto; overscroll-behavior-inline:contain; scroll-snap-type:x mandatory; scroll-padding-inline:.25rem; padding:.25rem .25rem 1rem; scrollbar-color:rgba(59,57,55,.38) transparent; scrollbar-width:thin; }
     .service-card-link { display:flex; flex-direction:column; min-width:0; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:1.25rem; background:#f3f0e9; overflow:hidden; box-shadow:0 8px 20px rgba(59,57,55,.06); transition:transform .25s ease, box-shadow .25s ease; }
+    .service-card-link { flex:0 0 min(84vw,23rem); scroll-snap-align:start; }
     .service-card-link:hover,.service-card-link:focus-visible { transform:translateY(-4px); box-shadow:0 18px 35px rgba(59,57,55,.14); }
     .service-card-link:focus-visible { outline:3px solid #3b3937; outline-offset:4px; }
     .service-card-link .feature-image-wrap { aspect-ratio:4 / 3; }
@@ -91,11 +90,17 @@
     .feature-image-wrap { overflow:hidden; background:#ddd8cf; }
     .feature-image-wrap img { transition:transform .55s ease; }
     .feature-card.service-card-link { transition:transform .25s ease, box-shadow .25s ease; }
+    .feature-card:hover img { transform:scale(1.05); }
+    .services-controls { display:flex; justify-content:flex-end; gap:.5rem; margin-top:1rem; }
+    .services-control { display:inline-flex; width:2.9rem; height:2.9rem; align-items:center; justify-content:center; border:1px solid rgba(59,57,55,.3); border-radius:50%; background:#f7f2f0; color:#3b3937; font-size:1.25rem; cursor:pointer; }
+    .services-control:hover { background:#e6a9af; }
+    .services-control:focus-visible { outline:3px solid #3b3937; outline-offset:3px; }
+    @media (min-width:768px) { .service-card-link { flex-basis:calc((100% - 2.5rem) / 3); } }
     @media (prefers-reduced-motion:reduce) {
+      .services-grid { scroll-behavior:auto; }
       .service-card-link, .service-card-link img { transition:none; }
       .service-card-link:hover, .service-card-link:focus-visible, .service-card-link:hover img { transform:none; }
     }
-    .feature-card:hover img { transform:scale(1.05); }
     .numbered-list article { border-top:1px solid var(--line); }
     .numbered-list article:last-child { border-bottom:1px solid var(--line); }
     .mobile-menu { max-height:0; overflow:hidden; transition:max-height .3s ease; }
@@ -179,7 +184,7 @@
          <h2 data-template-id="resources-title" class="canva-text brand-serif mt-4 leading-none" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Our Services</h2>
         </div><a data-template-id="resources-link" class="canva-link focus-ring rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#services-categories" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Explore service categories →</a>
        </div>
-       <div id="services-categories" class="services-grid mt-10">
+       <div id="services-categories" class="services-grid mt-10" role="region" aria-label="Our service categories" aria-roledescription="carousel" tabindex="0">
          <a href="mind-body-medicine.html" class="canva-card feature-card service-card-link">
           <div class="feature-image-wrap aspect-[4/3]">
            <img data-template-id="resource-image-1" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/3865680/pexels-photo-3865680.jpeg" alt="Hands holding a warm cup beside a journal and fresh herbs, representing mindful self-care.">
@@ -250,6 +255,10 @@
            <span class="service-card-action">Explore this category →</span>
           </div>
          </a>
+       </div>
+       <div class="services-controls" aria-label="Service category controls">
+        <button id="services-prev" class="services-control" type="button" aria-label="Previous service categories">←</button>
+        <button id="services-next" class="services-control" type="button" aria-label="Next service categories">→</button>
        </div>
       </div>
      </div>
@@ -919,6 +928,76 @@
       window.addEventListener("resize", () => showSlide(currentSlide), { passive: true });
       restartRotation();
 
+      const servicesTrack = document.getElementById("services-categories");
+      const serviceCards = [...(servicesTrack?.querySelectorAll(".service-card-link") || [])];
+      if (servicesTrack && serviceCards.length) {
+        const servicesSection = servicesTrack.parentElement;
+        const previousServicesButton = document.getElementById("services-prev");
+        const nextServicesButton = document.getElementById("services-next");
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const visibleServiceCount = () => window.matchMedia("(min-width: 768px)").matches ? 3 : 1;
+        const maxServiceIndex = () => Math.max(0, serviceCards.length - visibleServiceCount());
+        let serviceIndex = 0;
+        let serviceRotation;
+        let servicesPaused = false;
+        let serviceResumeTimer;
+        let programmaticScroll = false;
+
+        const stopServiceRotation = () => {
+          servicesPaused = true;
+          clearInterval(serviceRotation);
+        };
+        const startServiceRotation = () => {
+          servicesPaused = false;
+          clearInterval(serviceRotation);
+          if (!prefersReducedMotion) {
+            serviceRotation = setInterval(() => {
+              if (!document.hidden) showServiceCards(serviceIndex >= maxServiceIndex() ? 0 : serviceIndex + 1);
+            }, 6500);
+          }
+        };
+        const showServiceCards = (index) => {
+          serviceIndex = Math.min(Math.max(index, 0), maxServiceIndex());
+          const card = serviceCards[serviceIndex];
+          const left = servicesTrack.scrollLeft + card.getBoundingClientRect().left - servicesTrack.getBoundingClientRect().left;
+          programmaticScroll = true;
+          servicesTrack.scrollTo({ left, behavior: prefersReducedMotion ? "auto" : "smooth" });
+          window.setTimeout(() => { programmaticScroll = false; }, prefersReducedMotion ? 0 : 450);
+        };
+
+        servicesTrack.addEventListener("scroll", () => {
+          if (!programmaticScroll) {
+            const trackLeft = servicesTrack.getBoundingClientRect().left;
+            serviceIndex = serviceCards.reduce((nearest, card, index) => (
+              Math.abs(card.getBoundingClientRect().left - trackLeft) < Math.abs(serviceCards[nearest].getBoundingClientRect().left - trackLeft) ? index : nearest
+            ), 0);
+            serviceIndex = Math.min(serviceIndex, maxServiceIndex());
+            stopServiceRotation();
+            clearTimeout(serviceResumeTimer);
+            serviceResumeTimer = window.setTimeout(startServiceRotation, 8000);
+          }
+        }, { passive: true });
+        servicesTrack.addEventListener("pointerdown", stopServiceRotation);
+        servicesTrack.addEventListener("touchend", () => {
+          clearTimeout(serviceResumeTimer);
+          serviceResumeTimer = window.setTimeout(startServiceRotation, 8000);
+        }, { passive: true });
+        servicesSection.addEventListener("mouseenter", stopServiceRotation);
+        servicesSection.addEventListener("mouseleave", startServiceRotation);
+        servicesSection.addEventListener("focusin", stopServiceRotation);
+        servicesSection.addEventListener("focusout", (event) => {
+          if (!servicesSection.contains(event.relatedTarget)) startServiceRotation();
+        });
+        previousServicesButton?.addEventListener("click", () => {
+          showServiceCards(serviceIndex <= 0 ? maxServiceIndex() : serviceIndex - 1);
+        });
+        nextServicesButton?.addEventListener("click", () => {
+          showServiceCards(serviceIndex >= maxServiceIndex() ? 0 : serviceIndex + 1);
+        });
+        window.addEventListener("resize", () => showServiceCards(serviceIndex), { passive: true });
+        startServiceRotation();
+      }
+
       const blogCollectionSelect = document.getElementById("blog-collection-select");
       const blogCollectionPanels = [...document.querySelectorAll(".blog-collection-panel")];
       const syncBlogCollection = () => {
@@ -1255,11 +1334,3 @@
   </script>
  
 </body></html>
-
-        }
-      });
-    });
-  </script>
- 
-</body></html>
-
