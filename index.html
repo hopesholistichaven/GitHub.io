@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260924-05-f84ad47","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/83d6dfdadcd4750a.telemetry_sdk.js" integrity="sha512-XS4Dvzp6vbagZS9vFErihvr8aO3S0tH78KWUefn06fmL4WYqryBtZj/IOLITYj7dFA4gPVvPg1W/JB1DK3uLNQ=="></script>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hope's Holistic Haven</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
@@ -36,7 +36,7 @@
     @media (prefers-reduced-motion:reduce) { .affirmation-track { animation-play-state:paused; } }
     .eyebrow { letter-spacing:.16em; text-transform:uppercase; }
     .services-page, .blog-page, .about-subpage { display:none; background:#f7f2f0; }
-    .services-page { display:none !important; }
+    .services-page { display:none; }
     .routed-page-inner { max-width:1200px; margin:0 auto; }
     .about-dropdown { position:relative; }
     .about-dropdown-menu { display:none; position:absolute; left:0; top:calc(100% + .75rem); min-width:15rem; padding:.5rem; border:1px solid var(--line); border-radius:1rem; background:#faf9f5; box-shadow:0 18px 35px rgba(59,57,55,.14); }
@@ -72,16 +72,29 @@
     body.route-services #services-page { display:block; }
     @media (min-width:768px) { .services-page-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (min-width:1100px) { .services-page-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
-    .service-carousel { overflow:hidden; }
-    .service-carousel-track { display:flex; gap:2.5rem; transition:transform .65s cubic-bezier(.22,.61,.36,1); will-change:transform; }
-    .service-carousel-card { flex:0 0 calc((100% - 5rem) / 3); }
-    @media (max-width:767px) { .service-carousel-card { flex-basis:100%; } }
+    .services-grid { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1.25rem; }
+    @media (min-width:640px) { .services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (min-width:1024px) { .services-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    .service-card-link { display:flex; flex-direction:column; min-width:0; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:1.25rem; background:#f3f0e9; overflow:hidden; box-shadow:0 8px 20px rgba(59,57,55,.06); transition:transform .25s ease, box-shadow .25s ease; }
+    .service-card-link:hover,.service-card-link:focus-visible { transform:translateY(-4px); box-shadow:0 18px 35px rgba(59,57,55,.14); }
+    .service-card-link:focus-visible { outline:3px solid #3b3937; outline-offset:4px; }
+    .service-card-link .feature-image-wrap { aspect-ratio:4 / 3; }
+    .service-card-link .feature-image-wrap img { display:block; width:100%; height:100%; object-fit:cover; }
+    .service-card-content { display:flex; flex:1; flex-direction:column; padding:1.4rem 1.4rem 1.5rem; }
+    .service-card-link h3 { width:auto; max-width:100%; margin:.1rem 0 0; background:none; color:#111; font-family:"Fraunces",serif; font-size:clamp(1.35rem,2vw,1.65rem); font-weight:700; line-height:1.1; }
+    .service-card-link p { width:auto; max-width:100%; margin:.7rem 0 1.25rem; background:none; color:#56534e; font-size:.95rem; line-height:1.65; }
+    .service-card-action { margin-top:auto; color:#3b3937; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
     .feature-card { border:1px solid var(--line); border-radius:1.25rem; background:#f3f0e9; overflow:hidden; box-shadow:0 8px 20px rgba(59,57,55,.06); transition:box-shadow .35s ease, border-color .35s ease; }
-    .feature-card:hover, .feature-card:focus-within { border-color:var(--line); box-shadow:0 8px 20px rgba(59,57,55,.06); }
-    .feature-card h3, .feature-card p { width:fit-content; max-width:100%; background:#fff; transition:transform .25s ease; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
-    .feature-card:hover h3, .feature-card:hover p, .feature-card:focus-within h3, .feature-card:focus-within p { transform:scale(1.025); }
+    .feature-card:not(.service-card-link):hover, .feature-card:not(.service-card-link):focus-within { border-color:var(--line); box-shadow:0 8px 20px rgba(59,57,55,.06); }
+    .feature-card:not(.service-card-link) h3, .feature-card:not(.service-card-link) p { width:fit-content; max-width:100%; background:#fff; transition:transform .25s ease; box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+    .feature-card:not(.service-card-link):hover h3, .feature-card:not(.service-card-link):hover p, .feature-card:not(.service-card-link):focus-within h3, .feature-card:not(.service-card-link):focus-within p { transform:scale(1.025); }
     .feature-image-wrap { overflow:hidden; background:#ddd8cf; }
     .feature-image-wrap img { transition:transform .55s ease; }
+    .feature-card.service-card-link { transition:transform .25s ease, box-shadow .25s ease; }
+    @media (prefers-reduced-motion:reduce) {
+      .service-card-link, .service-card-link img { transition:none; }
+      .service-card-link:hover, .service-card-link:focus-visible, .service-card-link:hover img { transform:none; }
+    }
     .feature-card:hover img { transform:scale(1.05); }
     .numbered-list article { border-top:1px solid var(--line); }
     .numbered-list article:last-child { border-bottom:1px solid var(--line); }
@@ -160,82 +173,83 @@
      </div>
     </section>
     <section id="resources" data-template-id="resources-section" class="canva-section px-5 py-20 lg:px-10 lg:py-28" style="background: rgb(247, 242, 240);">
-     <div class="mx-auto max-w-[1500px]">
-      <div class="flex flex-col justify-between gap-7 border-b border-black pb-8 md:flex-row md:items-end">
-       <div class="max-w-2xl">
-        <h2 data-template-id="resources-title" class="canva-text brand-serif mt-4 leading-none" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Our Services</h2>
-       </div><a data-template-id="resources-link" class="canva-link focus-ring rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#services-page" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Explore all resources →</a>
-      </div>
-      <div class="service-carousel mt-10" aria-label="Our services carousel">
-       <div class="service-carousel-track">
-        <a href="mind-body-medicine.html" class="canva-card feature-card service-carousel-card service-card-link" style="background: rgb(243, 240, 233);" aria-label="Read more about Mind-Body Medicine">
-         <div class="feature-image-wrap aspect-[4/3]">
-          <img data-template-id="resource-image-1" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/3865680/pexels-photo-3865680.jpeg" alt="Hands holding a warm cup beside a journal and fresh herbs, representing mindful self-care.">
-         </div>
-         <div class="mx-auto max-w-[88%] px-5 py-8">
-          <h3 data-template-id="resource-title-1" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Mind-Body Medicine</h3>
-          <p data-template-id="resource-copy-1" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Supportive guidance for ritual, reflection, and emotional well-being.</p>
-         </div>
-        </a>
-        <a href="clinical-hypnosis.html" class="canva-card feature-card service-carousel-card service-card-link" style="background: rgb(243, 240, 233);" aria-label="Read more about Clinical Hypnosis">
-         <div class="feature-image-wrap aspect-[4/3]">
-          <img data-template-id="resource-image-2" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/8349085/pexels-photo-8349085.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A person in meditation with eyes closed, resting in a quiet indoor space.">
-         </div>
-         <div class="mx-auto max-w-[88%] px-5 py-8">
-          <h3 data-template-id="resource-title-2" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Clinical Hypnosis</h3>
-          <p data-template-id="resource-copy-2" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Calm-focused sessions designed to support nervous system regulation and inner steadiness.</p>
-         </div>
-        </a>
-        <a href="sound-healing.html" class="canva-card feature-card service-carousel-card service-card-link" style="background: rgb(243, 240, 233);" aria-label="Read more about Sound Healing">
-         <div class="feature-image-wrap aspect-[4/3]">
-          <img data-template-id="resource-image-3" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/6997978/pexels-photo-6997978.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A meditative session with singing bowls creating a soothing sound-healing experience.">
-         </div>
-         <div class="mx-auto max-w-[88%] px-5 py-8">
-          <h3 data-template-id="resource-title-3" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Sound Healing</h3>
-          <p data-template-id="resource-copy-3" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Immersive sound sessions to help you settle, restore, and reconnect with calm.</p>
-         </div>
-        </a>
-        <a href="yoga-meditation.html" class="canva-card feature-card service-carousel-card service-card-link" style="background: rgb(243, 240, 233);" aria-label="Read more about Yoga and Meditation">
-         <div class="feature-image-wrap aspect-[4/3]">
-          <img data-template-id="resource-image-4" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5163838/pexels-photo-5163838.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A woman practicing yoga and meditation outdoors in a peaceful green setting.">
-         </div>
-         <div class="mx-auto max-w-[88%] px-5 py-8">
-          <h3 data-template-id="resource-title-4" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Yoga &amp; Meditation</h3>
-          <p data-template-id="resource-copy-4" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Breath, movement, and mindful presence for gentle grounding.</p>
-         </div>
-        </a>
-        <a href="herbal-wellness.html" class="canva-card feature-card service-carousel-card service-card-link" style="background: rgb(243, 240, 233);" aria-label="Read more about Herbal Wellness">
-         <div class="feature-image-wrap aspect-[4/3]">
-          <img data-template-id="resource-image-5" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5480158/pexels-photo-5480158.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Fresh herbs and natural botanicals being prepared for holistic wellness use.">
-         </div>
-         <div class="mx-auto max-w-[88%] px-5 py-8">
-          <h3 data-template-id="resource-title-5" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Herbal Wellness</h3>
-          <p data-template-id="resource-copy-5" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Traditional herbal wisdom for everyday vitality and gentle care.</p>
-         </div>
-        </a>
-        <a href="grief-end-of-life-support.html" class="canva-card feature-card service-carousel-card service-card-link" style="background: rgb(243, 240, 233);" aria-label="Read more about Grief and End-of-Life Support">
-         <div class="feature-image-wrap aspect-[4/3]">
-          <img data-template-id="resource-image-6" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/4584663/pexels-photo-4584663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A comforting support moment between two people during a difficult life transition.">
-         </div>
-         <div class="mx-auto max-w-[88%] px-5 py-8">
-          <h3 data-template-id="resource-title-6" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Grief &amp; End-Of-Life Support</h3>
-          <p data-template-id="resource-copy-6" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Compassionate care for transitions, remembrance, and sacred endings.</p>
-         </div>
-        </a>
-        <a href="workshops-retreats.html" class="canva-card feature-card service-carousel-card service-card-link" style="background: rgb(243, 240, 233);" aria-label="Read more about Workshops and Retreats">
-         <div class="feature-image-wrap aspect-[4/3]">
-          <img data-template-id="resource-image-7" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/7596882/pexels-photo-7596882.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A group meditation in a bright room, celebrating shared practice and reflection.">
-         </div>
-         <div class="mx-auto max-w-[88%] px-5 py-8">
-          <h3 data-template-id="resource-title-7" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Workshops &amp; Retreats</h3>
-          <p data-template-id="resource-copy-7" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Gathering, learning, and restorative experiences designed to support meaningful growth.</p>
-         </div>
-        </a>
+      <div class="mx-auto max-w-[1500px]">
+       <div class="flex flex-col justify-between gap-7 border-b border-black pb-8 md:flex-row md:items-end">
+        <div class="max-w-2xl">
+         <h2 data-template-id="resources-title" class="canva-text brand-serif mt-4 leading-none" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Our Services</h2>
+        </div><a data-template-id="resources-link" class="canva-link focus-ring rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#services-categories" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">Explore service categories →</a>
        </div>
-       <div class="mt-8 flex justify-end">
-        <div class="flex gap-2">
-         <button id="services-prev" class="focus-ring rounded-full border border-black/30 p-3" type="button" aria-label="Previous service"><i data-lucide="arrow-left" aria-hidden="true"></i></button><button id="services-next" class="focus-ring rounded-full border border-black/30 p-3" type="button" aria-label="Next service"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
-        </div>
+       <div id="services-categories" class="services-grid mt-10">
+         <a href="mind-body-medicine.html" class="canva-card feature-card service-card-link">
+          <div class="feature-image-wrap aspect-[4/3]">
+           <img data-template-id="resource-image-1" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/3865680/pexels-photo-3865680.jpeg" alt="Hands holding a warm cup beside a journal and fresh herbs, representing mindful self-care.">
+          </div>
+          <div class="service-card-content">
+           <h3 data-template-id="resource-title-1" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Mind-Body Medicine</h3>
+           <p data-template-id="resource-copy-1" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Supportive guidance for ritual, reflection, and emotional well-being.</p>
+           <span class="service-card-action">Explore this category →</span>
+          </div>
+         </a>
+         <a href="clinical-hypnosis.html" class="canva-card feature-card service-card-link">
+          <div class="feature-image-wrap aspect-[4/3]">
+           <img data-template-id="resource-image-2" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/8349085/pexels-photo-8349085.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A person in meditation with eyes closed, resting in a quiet indoor space.">
+          </div>
+          <div class="service-card-content">
+           <h3 data-template-id="resource-title-2" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Clinical Hypnosis</h3>
+           <p data-template-id="resource-copy-2" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">A focused setting for guided reflection and supportive personal exploration.</p>
+           <span class="service-card-action">Explore this category →</span>
+          </div>
+         </a>
+         <a href="sound-healing.html" class="canva-card feature-card service-card-link">
+          <div class="feature-image-wrap aspect-[4/3]">
+           <img data-template-id="resource-image-3" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/6997978/pexels-photo-6997978.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A meditative session with singing bowls creating a soothing sound-healing experience.">
+          </div>
+          <div class="service-card-content">
+           <h3 data-template-id="resource-title-3" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Sound Healing</h3>
+           <p data-template-id="resource-copy-3" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Sound Bowl Therapy offered in a calm, sound-centered experience.</p>
+           <span class="service-card-action">Explore this category →</span>
+          </div>
+         </a>
+         <a href="yoga-meditation.html" class="canva-card feature-card service-card-link">
+          <div class="feature-image-wrap aspect-[4/3]">
+           <img data-template-id="resource-image-4" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5163838/pexels-photo-5163838.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A woman practicing yoga and meditation outdoors in a peaceful green setting.">
+          </div>
+          <div class="service-card-content">
+           <h3 data-template-id="resource-title-4" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Yoga &amp; Meditation</h3>
+           <p data-template-id="resource-copy-4" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">No yoga or meditation services are confirmed in the current offering list.</p>
+           <span class="service-card-action">View category details →</span>
+          </div>
+         </a>
+         <a href="herbal-wellness.html" class="canva-card feature-card service-card-link">
+          <div class="feature-image-wrap aspect-[4/3]">
+           <img data-template-id="resource-image-5" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/5480158/pexels-photo-5480158.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Fresh herbs and natural botanicals being prepared for holistic wellness use.">
+          </div>
+          <div class="service-card-content">
+           <h3 data-template-id="resource-title-5" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Herbal Wellness</h3>
+           <p data-template-id="resource-copy-5" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">No herbal services or products are confirmed in the current offering list.</p>
+           <span class="service-card-action">View category details →</span>
+          </div>
+         </a>
+         <a href="grief-end-of-life-support.html" class="canva-card feature-card service-card-link">
+          <div class="feature-image-wrap aspect-[4/3]">
+           <img data-template-id="resource-image-6" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/4584663/pexels-photo-4584663.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A comforting support moment between two people during a difficult life transition.">
+          </div>
+          <div class="service-card-content">
+           <h3 data-template-id="resource-title-6" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Grief &amp; End-of-Life Support</h3>
+           <p data-template-id="resource-copy-6" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">Compassionate care for transitions, remembrance, and sacred endings.</p>
+           <span class="service-card-action">Explore this category →</span>
+          </div>
+         </a>
+         <a href="workshops-retreats.html" class="canva-card feature-card service-card-link">
+          <div class="feature-image-wrap aspect-[4/3]">
+           <img data-template-id="resource-image-7" class="canva-image h-full w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/7596882/pexels-photo-7596882.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A group meditation in a bright room, celebrating shared practice and reflection.">
+          </div>
+          <div class="service-card-content">
+           <h3 data-template-id="resource-title-7" class="canva-text brand-serif mt-3" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 22px; line-height: 1.05;">Workshops &amp; Retreats</h3>
+           <p data-template-id="resource-copy-7" class="canva-text mt-3 max-w-sm text-sm leading-6" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.6;">A place for the Mix and Match offering and future group experiences.</p>
+           <span class="service-card-action">Explore this category →</span>
+          </div>
+         </a>
        </div>
       </div>
      </div>
@@ -254,8 +268,8 @@
     <section id="blog-page" data-template-id="blog-page-section" class="canva-section blog-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="blog-page-title" style="background: rgb(247, 242, 240);">
      <div class="routed-page-inner"><a data-template-id="blog-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
       <p data-template-id="blog-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Journal</p>
-      <h1 id="blog-page-title" data-template-id="blog-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Medicinal Messages</h1>
-      <p data-template-id="blog-page-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Read, write, and heal.</p>
+      <h1 id="blog-page-title" data-template-id="blog-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Cindy's Kitchen</h1>
+      <p data-template-id="blog-page-copy" class="canva-text mt-8 max-w-2xl text-lg leading-8" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.6;">Recipes from my heart to your soul.</p>
       <div class="mt-8 max-w-md">
        <label for="blog-collection-select" class="mb-2 block text-[10px] font-bold uppercase tracking-[.14em]" style="color: rgb(239, 79, 50);">Browse by blog</label>
        <select id="blog-collection-select" aria-label="Choose a blog collection" class="w-full rounded-full border border-black/15 bg-[#faf9f5] px-4 py-3 text-sm" style="color: rgb(17, 17, 17);">
@@ -461,7 +475,7 @@
       <p data-template-id="about-hope-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">In loving honor</p>
       <h1 data-template-id="about-hope-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px;">Honoring Emmanuel "Hope" Lang</h1>
       <div class="mx-auto mt-8 max-w-[440px]">
-       <img src="1018 EH.jpg" alt="A heartfelt family portrait honoring Emmanuel 'Hope' Lang" class="mx-auto block h-auto w-full rounded-[1.25rem] object-cover shadow-[0_18px_45px_rgba(17,17,17,0.08)]" loading="lazy">
+       <img src="eileenhope.jpg" alt="A heartfelt family portrait honoring Emmanuel 'Hope' Lang" class="mx-auto block h-auto w-full rounded-[1.25rem] object-cover shadow-[0_18px_45px_rgba(17,17,17,0.08)]" loading="lazy">
       </div>
       <div class="bio-page-copy mt-8 max-w-4xl text-lg leading-8">
        <p data-template-id="about-hope-copy" class="canva-text" style="color: rgb(86, 83, 78); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;"><strong>Hope's Holistic Haven is named after my late father, Emmanuel “Hope” Lang. Hope's Holistic Haven is a sacred space created in honor of my father, Hope, whose unwavering faith and spiritual wisdom laid the foundation for my own journey.</strong> He lived a blessed 87 years, enduring both Hurricane Janet in the 1950s and Hurricane Beryl in 2024 with strength, grace, and an unshakable trust in God. A devoted husband, loving father and grandfather, singer, farmer, construction worker, spiritualist, and pillar of his community, he taught me that prayer is power, intentions carry purpose, and our spiritual gifts are meant to be used in service to others. Today, I carry his legacy forward by offering a space where faith, holistic healing, and divine guidance come together to nurture the mind, body, and spirit.</p>
@@ -658,7 +672,7 @@
       </div>
      </div>
     </section>
-    <section id="services-page" data-template-id="services-page-section" class="canva-section services-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="services-page-title" style="background: rgb(247, 242, 240);">
+    <section id="services-page" data-template-id="services-page-section" class="canva-section services-page px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="services-page-title" tabindex="-1" style="background: rgb(247, 242, 240);">
      <div class="mx-auto max-w-[1200px]"><a data-template-id="services-page-back" class="canva-link focus-ring mb-10 inline-block rounded-sm text-sm font-bold uppercase tracking-[.12em]" href="#top" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 16px;">← Back to home</a>
       <p data-template-id="services-page-kicker" class="canva-text eyebrow text-xs font-bold" style="color: rgb(239, 79, 50); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.14rem;">Ways we support you</p>
       <h1 id="services-page-title" data-template-id="services-page-title" class="canva-text brand-serif mt-4 max-w-4xl leading-[.95]" style="color: rgb(17, 17, 17); font-weight: 700; font-style: normal; font-size: 50px; letter-spacing: -0.04rem; line-height: 0.98;">Support that feels real, useful, and human.</h1>
@@ -817,7 +831,26 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
-      const syncRoute = () => { const hash = window.location.hash; document.body.classList.toggle("route-services", hash === "#services-page"); document.body.classList.toggle("route-blog", hash === "#blog"); document.body.classList.toggle("route-about-who", hash === "#about-who"); document.body.classList.toggle("route-about-founder", hash === "#about-founder"); document.body.classList.toggle("route-about-hope", hash === "#about-hope"); document.body.classList.toggle("route-about-eileen", hash === "#about-eileen"); document.body.classList.toggle("route-the-haven", hash === "#the-haven"); };
+      const syncRoute = () => {
+        const hash = window.location.hash;
+        const showServices = hash === "#services-page";
+        document.body.classList.toggle("route-services", showServices);
+        document.body.classList.toggle("route-blog", hash === "#blog");
+        document.body.classList.toggle("route-about-who", hash === "#about-who");
+        document.body.classList.toggle("route-about-founder", hash === "#about-founder");
+        document.body.classList.toggle("route-about-hope", hash === "#about-hope");
+        document.body.classList.toggle("route-about-eileen", hash === "#about-eileen");
+        document.body.classList.toggle("route-the-haven", hash === "#the-haven");
+        if (showServices) {
+          requestAnimationFrame(() => {
+            const servicesSection = document.getElementById("services-page");
+            if (!servicesSection) return;
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            servicesSection.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+            servicesSection.focus({ preventScroll: true });
+          });
+        }
+      };
       syncRoute();
       window.addEventListener("hashchange", syncRoute);
       const aboutDropdown = document.querySelector(".about-dropdown");
@@ -885,27 +918,6 @@
       showSlide(currentSlide);
       window.addEventListener("resize", () => showSlide(currentSlide), { passive: true });
       restartRotation();
-
-      const serviceTrack = document.querySelector(".service-carousel-track");
-      const serviceCards = [...document.querySelectorAll(".service-carousel-card")];
-      let serviceIndex = 0;
-      const serviceVisible = () => window.innerWidth >= 768 ? 3 : 1;
-      const showServices = (index) => {
-        const visible = serviceVisible();
-        const max = Math.max(0, serviceCards.length - visible);
-        serviceIndex = Math.min(Math.max(index, 0), max);
-        const gap = 40;
-        const cardWidth = serviceCards[0].getBoundingClientRect().width + gap;
-        serviceTrack.style.transform = `translateX(-${serviceIndex * cardWidth}px)`;
-      };
-      const advanceServices = () => showServices(serviceIndex >= serviceCards.length - serviceVisible() ? 0 : serviceIndex + 1);
-      document.getElementById("services-prev").addEventListener("click", () => showServices(serviceIndex - 1));
-      document.getElementById("services-next").addEventListener("click", advanceServices);
-      let serviceTimer = setInterval(advanceServices, 6500);
-      serviceTrack.parentElement.addEventListener("mouseenter", () => clearInterval(serviceTimer));
-      serviceTrack.parentElement.addEventListener("mouseleave", () => { serviceTimer = setInterval(advanceServices, 6500); });
-      showServices(0);
-      window.addEventListener("resize", () => showServices(serviceIndex), { passive: true });
 
       const blogCollectionSelect = document.getElementById("blog-collection-select");
       const blogCollectionPanels = [...document.querySelectorAll(".blog-collection-panel")];
@@ -1237,6 +1249,13 @@
           contactForm.reset();
         } else {
           formStatus.textContent = "We couldn't send that just now. Please try again or email us directly.";
+        }
+      });
+    });
+  </script>
+ 
+</body></html>
+
         }
       });
     });
